@@ -13,7 +13,6 @@ export function mapPayloadToProduct(doc: any): Product {
     category: categorySlug,
     brand: doc.brand,
     model: doc.model,
-    price: doc.price,
     image: imageUrl,
     magnification: doc.specifications?.magnification || "",
     eyepiece: doc.specifications?.eyepiece || "",

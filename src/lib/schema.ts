@@ -43,18 +43,6 @@ export function generateProductSchema(product: Product) {
       "@type": "Brand",
       name: product.brand,
     },
-    offers: {
-      "@type": "Offer",
-      priceCurrency: "IDR",
-      price: product.price.replace(/[^0-9]/g, ""),
-      availability: product.inStock
-        ? "https://schema.org/InStock"
-        : "https://schema.org/PreOrder",
-      seller: {
-        "@type": "Organization",
-        name: "JualMikroskop.id",
-      },
-    },
     category: "Laboratory Microscope",
   };
 }

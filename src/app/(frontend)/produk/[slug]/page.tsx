@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const category = categories.find((c) => c.slug === product.category) || categories.find((c) => c.id === product.category);
 
   const title = `Jual ${product.name} | ${product.brand} - JualMikroskop.id`;
-  const description = `${product.name} (${product.model}) dari ${product.brand}. ${product.description} Spesifikasi utama: ${product.magnification}, ${product.eyepiece}. Harga: ${product.price}.`;
+  const description = `${product.name} (${product.model}) dari ${product.brand}. ${product.description} Spesifikasi utama: ${product.magnification}, ${product.eyepiece}. Hubungi kami untuk penawaran harga B2B terbaik.`;
 
   return {
     title,
@@ -80,15 +80,6 @@ export default async function ProductDetailPage({ params }: Props) {
     "brand": {
       "@type": "Brand",
       "name": product.brand
-    },
-    "offers": {
-      "@type": "Offer",
-      "priceCurrency": "IDR",
-      // Remove "Rp" and "." from price to get numeric value
-      "price": product.price.replace(/[^0-9]/g, ""),
-      "itemCondition": "https://schema.org/NewCondition",
-      "availability": product.inStock !== false ? "https://schema.org/InStock" : "https://schema.org/PreOrder",
-      "url": `https://jualmikroskop.id/produk/${product.slug}`
     }
   };
 
