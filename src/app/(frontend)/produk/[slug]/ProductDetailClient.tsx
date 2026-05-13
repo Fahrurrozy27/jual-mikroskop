@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -16,6 +17,20 @@ import { Product } from "@/data/products";
 import { Category } from "@/data/categories";
 
 export default function ProductDetailClient({ product, category }: { product: Product, category: Category | undefined }) {
+  const [activeTab, setActiveTab] = useState<"specs" | "features" | "download">("specs");
+  
+  // Image Zoom State
+  const [isZoomed, setIsZoomed] = useState(false);
+  const [transformOrigin, setTransformOrigin] = useState("center center");
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!isZoomed) return;
+    const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
+    const x = ((e.clientX - left) / width) * 100;
+    const y = ((e.clientY - top) / height) * 100;
+    setTransformOrigin(`${x}% ${y}%`);
+  };
+
   // Use specific images or fallbacks
   const imageUrl = product.image;
 
@@ -42,10 +57,10 @@ export default function ProductDetailClient({ product, category }: { product: Pr
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <Link href="/produk" className="inline-flex items-center gap-2 text-sm font-semibold text-surface-500 hover:text-primary-600 mb-8 transition-colors">
+          <button onClick={() => window.history.back()} className="inline-flex items-center gap-2 text-sm font-semibold text-surface-500 hover:text-primary-600 mb-8 transition-colors">
             <ArrowLeft className="w-4 h-4" />
-            Kembali ke Katalog
-          </Link>
+            Kembali
+          </button>
 
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             
@@ -58,14 +73,27 @@ export default function ProductDetailClient({ product, category }: { product: Pr
                   </span>
                 )}
                 
-                <div className="relative w-full h-full flex items-center justify-center">
+                <div 
+                  className="relative w-full h-full flex items-center justify-center cursor-crosshair overflow-hidden"
+                  onMouseEnter={() => setIsZoomed(true)}
+                  onMouseLeave={() => {
+                    setIsZoomed(false);
+                    setTransformOrigin("center center");
+                  }}
+                  onMouseMove={handleMouseMove}
+                >
                   {imageUrl ? (
                     <Image
                       src={imageUrl as string}
                       alt={product.name}
                       width={800}
                       height={800}
-                      className="object-contain max-h-full group-hover:scale-105 transition-transform duration-500 mix-blend-multiply"
+                      style={{
+                        transformOrigin: transformOrigin,
+                        transform: isZoomed ? "scale(2.5)" : "scale(1)",
+                        transition: isZoomed ? "none" : "transform 0.3s ease-out",
+                      }}
+                      className="object-contain max-h-full mix-blend-multiply"
                       priority
                     />
                   ) : (
@@ -76,26 +104,7 @@ export default function ProductDetailClient({ product, category }: { product: Pr
                 </div>
               </div>
               
-              {/* Thumbnail strip simulation */}
-              <div className="flex gap-4 mt-4">
-                {[1, 2, 3, 4].map((i) => (
-                  <div key={i} className={`flex-1 aspect-square rounded-xl border ${i === 1 ? 'border-primary-500 bg-white shadow-sm' : 'border-surface-200 bg-surface-50 opacity-60'} flex items-center justify-center p-2 cursor-pointer hover:opacity-100 transition-opacity overflow-hidden`}>
-                    {imageUrl ? (
-                      <Image
-                        src={imageUrl as string}
-                        alt={`Thumbnail ${i}`}
-                        width={100}
-                        height={100}
-                        className="object-contain w-full h-full mix-blend-multiply"
-                      />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center text-surface-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg>
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
+
             </div>
 
             {/* Product Info */}
@@ -192,55 +201,226 @@ export default function ProductDetailClient({ product, category }: { product: Pr
 
           {/* Full Width Tabs / Details Section */}
           <div className="mt-16 pt-12 border-t border-surface-200">
-            {/* Header Tabs Simulation */}
-            <div className="flex items-center gap-8 mb-8 border-b border-surface-200">
-              <div className="px-4 py-3 border-b-2 border-primary-600 text-primary-600 font-bold text-base md:text-lg">
-                Penerangan Produk & Spesifikasi
-              </div>
+            {/* Header Tabs */}
+            <div className="flex flex-wrap items-center gap-2 md:gap-8 mb-8 border-b border-surface-200">
+              <button 
+                onClick={() => setActiveTab("specs")}
+                className={`px-4 py-3 font-bold text-sm md:text-lg transition-colors border-b-2 ${activeTab === "specs" ? "border-primary-600 text-primary-600" : "border-transparent text-surface-500 hover:text-primary-500"}`}
+              >
+                Keterangan Produk & Spesifikasi
+              </button>
+              <button 
+                onClick={() => setActiveTab("download")}
+                className={`px-4 py-3 font-bold text-sm md:text-lg transition-colors border-b-2 ${activeTab === "download" ? "border-primary-600 text-primary-600" : "border-transparent text-surface-500 hover:text-primary-500"}`}
+              >
+                Download Brosur
+              </button>
             </div>
 
-            <div className="grid lg:grid-cols-3 gap-12">
-              <div className="lg:col-span-1 prose prose-surface">
-                <h3 className="text-xl font-bold text-surface-900 mb-4">Penerangan Produk</h3>
-                <p className="text-surface-600 leading-relaxed mb-6">
-                  {product.description}
+            {activeTab === "specs" && (
+              <div className="grid lg:grid-cols-3 gap-12 animate-in fade-in slide-in-from-bottom-2 duration-500">
+                <div className="lg:col-span-1 prose prose-surface">
+                  <h3 className="text-xl font-bold text-surface-900 mb-4">Keterangan Produk</h3>
+                  <p className="text-surface-600 leading-relaxed mb-6">
+                    {product.description}
+                  </p>
+                  <div className="bg-surface-50 p-5 rounded-xl border border-surface-200">
+                    <h4 className="font-bold text-surface-900 mb-2">Aplikasi Ideal</h4>
+                    <p className="text-sm text-surface-600">{product.application}</p>
+                  </div>
+                </div>
+
+                <div className="lg:col-span-2">
+                  <h3 className="text-xl font-bold text-surface-900 mb-4">Spesifikasi Umum</h3>
+                  <div className="rounded-xl border border-surface-200 overflow-hidden text-sm md:text-base mb-8">
+                    <table className="w-full text-left border-collapse">
+                      <tbody>
+                        <tr className="border-b border-surface-200">
+                          <th className="w-1/3 p-4 font-normal text-surface-900 border-r border-surface-200">Brand</th>
+                          <td className="p-4 text-surface-900">{product.brand}</td>
+                        </tr>
+                        <tr className="border-b border-surface-200">
+                          <th className="w-1/3 p-4 font-normal text-surface-900 border-r border-surface-200">Model</th>
+                          <td className="p-4 text-surface-900">{product.model}</td>
+                        </tr>
+                        {product.application && (
+                          <tr className="border-b border-surface-200">
+                            <th className="w-1/3 p-4 font-normal text-surface-900 border-r border-surface-200">Aplikasi Ideal</th>
+                            <td className="p-4 text-surface-900">{product.application}</td>
+                          </tr>
+                        )}
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <h3 className="text-xl font-bold text-surface-900 mb-4">Spesifikasi Teknis</h3>
+                  <div className="rounded-xl border border-surface-200 overflow-hidden text-sm md:text-base">
+                    <table className="w-full text-left border-collapse">
+                      <tbody>
+                        {product.specs && Object.entries(product.specs)
+                          .filter(([key]) => key !== "Brand" && key !== "Model" && key !== "Optical System")
+                          .sort((a, b) => {
+                            const specOrder = [
+                              // Microscope core
+                              "Optical system",
+                              "Optical System",
+                              "Optical component",
+                              "Microscope frame",
+                              "Illumination",
+                              "Transmitted light illuminator",
+                              "Transmitted illuminator",
+                              "Focusing",
+                              "Focus",
+                              "Revolving Nosepiece",
+                              "Revolving nosepiece",
+                              "Nosepiece",
+                              "Intermediate Magnification Changer",
+                              "Deck insert layer",
+                              "Light path selection",
+                              "Intermediate port",
+                              "Stage",
+                              "Plain stage",
+                              "Mechanical stage",
+                              "Observation Tube",
+                              "Observation tube",
+                              // Stereo microscope
+                              "Zoom microscope body",
+                              "Zoom range",
+                              "Zoom ratio",
+                              "Zoom click stop",
+                              "Total mag. range",
+                              "Aperture diaphragm",
+                              "Working distance",
+                              "Tube inclination angle",
+                              "Objectives",
+                              "Objective",
+                              "Auxiliary objective",
+                              "Eyepiece",
+                              "Maximum port field number",
+                              // Condenser & optics
+                              "Condenser",
+                              "Polarizer/Analyzer",
+                              "Polarizing intermediate tube",
+                              "Test plate",
+                              "Compensator",
+                              "Compensators",
+                              "Extendable eyepoint adjuster",
+                              "Video camera adaptability",
+                              // Fluorescence
+                              "Fluorescence illuminator",
+                              "Fluorescence mirror turret",
+                              "Fluorescence light source",
+                              "Fluorescence",
+                              // Confocal / Laser
+                              "Scanner",
+                              "Field number",
+                              "Spectral confocal detector",
+                              "Laser",
+                              "Laser power monitor",
+                              "Image",
+                              // Focus compensation
+                              "Focus compensator",
+                              "Control unit",
+                              "Control box",
+                              "Super resolution processing",
+                              "Imaging software",
+                              "Observation Method",
+                              "Sample holder",
+                              // Camera specs
+                              "Camera type",
+                              "Image Sensor",
+                              "Sensor Size",
+                              "Effective pixels",
+                              "Effective image resolution",
+                              "Scanning mode",
+                              "Color filter",
+                              "Pixel Size",
+                              "Resolution",
+                              "Resolution (max)",
+                              "Maximum recorded pixels",
+                              "Recording range",
+                              "A/D Converter",
+                              "A/D Converter (Bit Depth)",
+                              "A/D",
+                              "ISO Sensitivity",
+                              "Exposure Time",
+                              "Exposure Times",
+                              "Live Frame Rates",
+                              "Live frame rate",
+                              "Live image display (frame rate)",
+                              "Image size",
+                              "Video recording",
+                              "Video (AVI)",
+                              "Macro optical system",
+                              "Anti-vibration mechanism",
+                              "Magnification changer",
+                              "Data Transfer",
+                              "PC Requirements",
+                              "PC Control",
+                              "Imaging Platform",
+                              "Camera Mount",
+                              "Camera mount",
+                              "Camera Color",
+                              "Camera Monochrome",
+                              "Storage",
+                              // General
+                              "Other features",
+                              "Accessories",
+                              "Operating environment",
+                              "Dimensions",
+                              "Dimensions (W × D × H)",
+                              "Weight",
+                              "WeightApprox.",
+                              "Sensor",
+                              "Frame Rate",
+                              "Imaging Modes",
+                              "Cooling",
+                              "Output Interfaces",
+                              "Color Depth",
+                              "Software",
+                              "Storage"
+                            ];
+                            let indexA = specOrder.indexOf(a[0]);
+                            let indexB = specOrder.indexOf(b[0]);
+                            if (indexA === -1) indexA = 999;
+                            if (indexB === -1) indexB = 999;
+                            return indexA - indexB;
+                          })
+                          .map(([key, value]) => {
+                          return (
+                            <tr key={key} className="border-b border-surface-200 last:border-0">
+                              <th className="w-1/3 p-4 font-normal text-surface-900 border-r border-surface-200">{key}</th>
+                              <td className="p-4 text-surface-900 whitespace-pre-wrap">{value}</td>
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            )}
+
+
+            {activeTab === "download" && (
+              <div className="animate-in fade-in slide-in-from-bottom-2 duration-500 flex flex-col items-center justify-center py-16 bg-surface-50 rounded-2xl border border-surface-200">
+                <div className="w-20 h-20 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center mb-6">
+                  <FileText className="w-10 h-10" />
+                </div>
+                <h3 className="text-2xl font-bold text-surface-900 mb-3 text-center">Brosur Resmi {product.brand} {product.model}</h3>
+                <p className="text-surface-600 mb-8 text-center max-w-lg text-lg">
+                  Unduh lembar spesifikasi teknis dan informasi lengkap produk ini langsung dari katalog resmi {product.brand}.
                 </p>
-                <div className="bg-surface-50 p-5 rounded-xl border border-surface-200">
-                  <h4 className="font-bold text-surface-900 mb-2">Aplikasi Ideal</h4>
-                  <p className="text-sm text-surface-600">{product.application}</p>
-                </div>
+                <a 
+                  href={`/brosur/${product.slug}.pdf`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-8 py-4 bg-primary-600 text-white font-bold rounded-xl hover:bg-primary-700 shadow-lg hover:shadow-primary-600/25 transition-all flex items-center gap-3 text-lg"
+                >
+                  Download Brosur PDF
+                </a>
               </div>
-
-              <div className="lg:col-span-2">
-                <h3 className="text-xl font-bold text-surface-900 mb-4">Spesifikasi Teknis</h3>
-                <div className="rounded-xl border border-surface-200 overflow-hidden text-sm md:text-base">
-                  <table className="w-full text-left border-collapse">
-                    <tbody>
-                      <tr className="border-b border-surface-200">
-                        <th className="w-1/3 bg-surface-50 p-4 font-semibold text-surface-700 border-r border-surface-200">Brand</th>
-                        <td className="p-4 text-surface-900">{product.brand}</td>
-                      </tr>
-                      <tr className="border-b border-surface-200">
-                        <th className="w-1/3 bg-surface-50 p-4 font-semibold text-surface-700 border-r border-surface-200">Model</th>
-                        <td className="p-4 text-surface-900">{product.model}</td>
-                      </tr>
-                      <tr className="border-b border-surface-200">
-                        <th className="w-1/3 bg-surface-50 p-4 font-semibold text-surface-700 border-r border-surface-200">Perbesaran Total</th>
-                        <td className="p-4 text-surface-900">{product.magnification}</td>
-                      </tr>
-                      <tr className="border-b border-surface-200">
-                        <th className="w-1/3 bg-surface-50 p-4 font-semibold text-surface-700 border-r border-surface-200">Lensa Okuler (Eyepiece)</th>
-                        <td className="p-4 text-surface-900">{product.eyepiece}</td>
-                      </tr>
-                      <tr>
-                        <th className="w-1/3 bg-surface-50 p-4 font-semibold text-surface-700 border-r border-surface-200">Sistem Iluminasi</th>
-                        <td className="p-4 text-surface-900">{product.illumination}</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
+            )}
           </div>
         </div>
       </section>

@@ -24,9 +24,9 @@ export default function FeaturedProducts() {
     if (!p.featured) return false;
     if (selectedBrand === "Semua") return true;
     if (selectedBrand === "Others") {
-      return !["Olympus", "Euromex", "Dino-Lite", "Optilab"].includes(p.brand);
+      return !["olympus", "euromex", "dino-lite", "optilab"].includes(p.brand.toLowerCase());
     }
-    return p.brand === selectedBrand;
+    return p.brand.toLowerCase() === selectedBrand.toLowerCase();
   }).slice(0, 4);
 
   return (

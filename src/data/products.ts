@@ -12,304 +12,583 @@ export interface Product {
   application: string;
   description: string;
   specs: Record<string, string>;
+  extraInfo?: {
+    features?: string[];
+    observationImages?: string[];
+  };
   inStock: boolean;
   featured: boolean;
   badge?: string;
 }
 
 export const products: Product[] = [
-  // ===== STUDENT / EDUKASI =====
+  // ===== OLYMPUS CATALOG PRODUCTS =====
   {
-    id: "s1", name: "Mikroskop Monokuler Edukasi A11.1003", slug: "mikroskop-monokuler-edukasi-a11-1003",
-    category: "student", brand: "OPTO-EDU", model: "A11.1003",
-    image: "/images/products/student-1.webp",
-    magnification: "40x - 640x", eyepiece: "WF16x", illumination: "LED 0.5W, Battery/USB",
-    application: "Praktikum SMP/SMA",
-    description: "Mikroskop monokuler entry-level dengan bodi metal kokoh dan iluminasi LED cordless. Ideal untuk praktikum biologi dasar di sekolah menengah.",
-    specs: { "Optical System": "Finite 160mm", "Head": "Monokuler, inklinasi 45°", "Eyepiece": "WF16x", "Objective": "4x, 10x, 40x(S)", "Nosepiece": "Triple", "Stage": "90x90mm, clip", "Focus": "Coaxial coarse & fine", "Condenser": "Disc diaphragm", "Illumination": "LED 0.5W, rechargeable", "Power": "Built-in battery / USB-C" },
-    inStock: true, featured: false, badge: "Termurah"
-  },
-  {
-    id: "s2", name: "Mikroskop Binokuler Student A11.1535-B", slug: "mikroskop-binokuler-student-a11-1535b",
-    category: "student", brand: "OPTO-EDU", model: "A11.1535-B",
-    image: "/images/products/student-1.webp",
-    magnification: "40x - 1000x", eyepiece: "WF10x/18mm", illumination: "LED 1W",
-    application: "Praktikum SMA/Universitas",
-    description: "Mikroskop binokuler dengan optik achromatic untuk pengamatan nyaman dengan kedua mata. Desain Siedentopf ergonomis. Standar praktikum universitas.",
-    specs: { "Optical System": "Finite 160mm", "Head": "Binokuler Siedentopf, 30° inklinasi, 360° rotasi", "Eyepiece": "WF10x/18mm", "Objective": "4x, 10x, 40x(S), 100x(S, Oil)", "Nosepiece": "Quadruple", "Stage": "Double layer 132x142mm", "Focus": "Coaxial coarse & fine, 0.002mm", "Condenser": "Abbe N.A. 1.25, iris diaphragm", "Illumination": "LED 1W, adjustable", "Power": "100-240V, 50/60Hz" },
-    inStock: true, featured: true, badge: "Best Seller"
-  },
-  {
-    id: "s3", name: "Mikroskop Student Cordless A11.1323-B", slug: "mikroskop-student-cordless-a11-1323b",
-    category: "student", brand: "OPTO-EDU", model: "A11.1323-B",
-    image: "/images/products/student-1.webp",
-    magnification: "40x - 1000x", eyepiece: "WF10x/18mm", illumination: "LED Rechargeable",
-    application: "Field Study, Sekolah",
-    description: "Mikroskop binokuler portabel dengan baterai rechargeable built-in. Cocok untuk studi lapangan dan sekolah tanpa akses listrik stabil.",
-    specs: { "Optical System": "Finite 160mm", "Head": "Binokuler, 30° inklinasi", "Eyepiece": "WF10x/18mm", "Objective": "4x, 10x, 40x(S), 100x(S, Oil)", "Nosepiece": "Quadruple", "Stage": "Double layer 125x130mm", "Focus": "Coaxial coarse & fine", "Condenser": "Abbe N.A. 1.25", "Illumination": "LED rechargeable, 8 jam", "Power": "Li-ion Battery + USB-C charging" },
+    id: "oly-cx23", name: "Olympus CX23", slug: "olympus-cx23",
+    category: "student", brand: "Olympus", model: "CX23",
+    image: "/images/products/olympus/cx23.png",
+    magnification: "40x - 1000x", eyepiece: "10X", illumination: "LED",
+    application: "Educational microscopy",
+    description: "Berfokus pada peningkatan alur kerja untuk mikroskop edukasi, mikroskop tegak CX23 memerlukan pengaturan minimal. Sistem ini mudah dibawa, digunakan, dan disimpan di ruang kelas dengan desain yang ringkas dan ringan.",
+    specs: {"Illumination":"Built-in transmitted illumination system,\nLED power consumption 0.5 W (nominal values)","Focusing":"Stage height movement (coarse movement stroke 15 mm)\nFine focus graduation: 2.5 μm","Revolving nosepiece":"Fixed quadruple nosepiece","Stage":"Wire movement mechanical fixed stage\nTraveling range: 76 mm (X) x 30 mm (Y), specimen holder,\nspecimen position scale","Observation tube":"30° inclined binocular tube\nInterpupillary distance adjustment range: 48 – 75 mm\nEyepoint adjustment: 370.0 – 432.9 mm","Objectives":"Plan Achromat, anti-fungus\n4X NA: 0.10 W.D.: 27.8 mm\n10X NA: 0.25 W.D.: 8.0 mm\n40X NA: 0.65 W.D.: 0.6 mm\n100X Oil NA: 1.25 W.D.: 0.13 mm (CX23LEDRFS1 only)","Eyepiece":"(10X) Field Number (FN): 20 (anti-fungus)","Accessories":"Reflection mirror (CH20-MM), 15X eyepiece (WHSZ15X-H: FN 12,\nanti-fungus), Dedicated wooden case, Eyepiece micrometer,\nDarkfield stop (CH2-DS+CH2-FH)","Dimensions":"Binocular: 198 mm × 398 mm × 386 mm\n(W × D × H)","WeightApprox.":"5.9 kg"},
+    extraInfo: {
+      features: [
+        "User-friendly microscope offers ergonomic components to ease sample handling",
+        "Plan achromat objectives help ensure image clarity and flatness throughout the field of view",
+        "Ergonomic grips add safety when retrieving the microscope from high places",
+        "The arm is angled to keep users' wrists in a comfortable, neutral position",
+        "An inward-facing rotating nosepiece facilitates a larger working area above the stage"
+      ]
+    },
     inStock: true, featured: false
   },
   {
-    id: "s4", name: "Mikroskop Monokuler Sederhana A11.1101", slug: "mikroskop-monokuler-sederhana-a11-1101",
-    category: "student", brand: "OPTO-EDU", model: "A11.1101",
-    image: "/images/products/student-1.webp",
-    magnification: "40x - 400x", eyepiece: "WF10x", illumination: "LED + Mirror",
-    application: "Edukasi Dasar SD/SMP",
-    description: "Mikroskop monokuler paling sederhana untuk pengenalan sains di tingkat SD dan SMP. Dilengkapi cermin dan LED sebagai sumber cahaya.",
-    specs: { "Optical System": "Finite 160mm", "Head": "Monokuler, 45° inklinasi", "Eyepiece": "WF10x", "Objective": "4x, 10x, 40x", "Nosepiece": "Triple", "Stage": "Fixed 85x85mm, clips", "Focus": "Coarse only", "Condenser": "Disc diaphragm", "Illumination": "LED + Mirror dual source", "Power": "2x AA Battery" },
+    id: "oly-cx33", name: "Olympus CX33", slug: "olympus-cx33",
+    category: "laboratory", brand: "Olympus", model: "CX33",
+    image: "/images/products/olympus/cx33_43.png",
+    magnification: "40x - 1000x", eyepiece: "10X", illumination: "LED",
+    application: "Everyday brightfield and darkfield observations",
+    description: "Mikroskop CX33 adalah pilihan tepat untuk pengamatan medan terang (brightfield) dan medan gelap (darkfield) sehari-hari dalam satu konfigurasi yang mudah.",
+    specs: {"Observation Tube":"Binocular/Tilting binocular/Trinocular","Nosepiece":"Fixed quadruple nosepiece with inward tilt","Stage":"Size: 188 mm (W) × 134 mm (D)\nTraveling range: 76 mm (X) × 50 mm (Y)\nSpecimen holder: Double slide holder","Condenser":"Abbe condenser, with built-in daylight filter","Focusing":"Stage height movement by roller guide (rack & pinion)\nStroke per rotation: 36.8 mm\nFull stroke range: 25 mm\nUpper limit stopped by simplified pre-focusing dial\nTension adjustment on coarse focus adjustment knob","Illumination":"Built-in transmitted Köhler illuminator LED\n100 – 120 V/220 – 240 V ~ 0.85/0.45 A 50/60 Hz","Dimensions":"211 mm × 397 mm × 430 mm\n(W × D × H)","WeightApprox.":"7.0 kg","Accessories":"Dual-observation attachment, phase contrast attachment,\ndrawing attachment, simple polarizing attachment, digital\ncamera adapter etc."},
+    extraInfo: {
+      features: [
+        "Ergonomic Routine Microscope",
+        "Conforms to your hands, minimizing fatigue during long periods of routine observation",
+        "Control knobs positioned to maximize ergonomics and improve work efficiency",
+        "Set a specimen with one hand while adjusting the focus and operating the stage with the other",
+        "Optional camera port available for digital imaging"
+      ]
+    },
+    inStock: true, featured: true
+  },
+  {
+    id: "oly-cx43", name: "Olympus CX43", slug: "olympus-cx43",
+    category: "laboratory", brand: "Olympus", model: "CX43",
+    image: "/images/products/olympus/cx33_43.png",
+    magnification: "40x - 1000x", eyepiece: "10X", illumination: "LED",
+    application: "Brightfield, darkfield, phase contrast, simple polarization, and fluorescence",
+    description: "Mikroskop CX43 yang serbaguna menawarkan pengamatan medan terang, medan gelap, fase kontras, polarisasi sederhana, dan fluoresensi. Untuk fleksibilitas tambahan, sistem ini dapat mendukung hingga lima lensa objektif UIS2.",
+    specs: {"Observation Tube":"Binocular/Tilting binocular/Trinocular","Nosepiece":"Fixed quintuple nosepiece with inward tilt","Stage":"Size: 188 mm (W) × 134 mm (D)\nTraveling range: 76 mm (X) × 50 mm (Y)\nSpecimen holder: Double slide holder","Condenser":"Universal condenser / Abbe condenser","Focusing":"Stage height movement by roller guide (rack & pinion)\nStroke per rotation: 36.8 mm\nFull stroke range: 25 mm\nUpper limit stopper\nTension adjustment on coarse focus adjustment knob","Illumination":"Built-in transmitted Köhler illuminator LED\n100 – 120 V/220 – 240 V ~ 0.85/0.45 A 50/60 Hz","Dimensions":"211 mm × 376 mm × 393 mm (standard configuration)\n(W × D × H)","WeightApprox.":"7.3 kg","Accessories":"Dual-observation attachment, phase contrast attachment,\ndrawing attachment, simple polarizing attachment, digital\ncamera adapter etc."},
+    extraInfo: {
+      features: [
+        "Ergonomic Routine Microscope designed for multiple observation methods",
+        "Conforms to your hands to reduce fatigue during extended periods",
+        "Support up to five UIS2 objectives",
+        "Set a specimen with one hand while adjusting focus and stage with the other",
+        "Optional camera port available for digital imaging"
+      ]
+    },
     inStock: true, featured: false
   },
-
-  // ===== LABORATORY =====
   {
-    id: "l1", name: "Mikroskop Lab Binokuler Plan A12.0910-B", slug: "mikroskop-lab-binokuler-plan-a12-0910b",
-    category: "laboratory", brand: "OPTO-EDU", model: "A12.0910-B",
-    image: "/images/products/lab-1.webp",
-    magnification: "40x - 1000x", eyepiece: "WF10x/20mm (FN20)", illumination: "LED Köhler 3W",
-    application: "Lab Klinik, Mikrobiologi",
-    description: "Mikroskop binokuler laboratorium dengan optik plan achromatic dan Köhler illumination. Standar untuk laboratorium diagnostik klinik dan mikrobiologi.",
-    specs: { "Optical System": "Finite 160mm, Plan Achromatic", "Head": "Binokuler Siedentopf, 30° inklinasi", "Eyepiece": "WF10x/20mm (FN20)", "Objective": "Plan 4x, 10x, 40x(S), 100x(S, Oil)", "Nosepiece": "Quintuple reverse", "Stage": "Rackless 160x142mm, ceramic coated", "Focus": "Coaxial, fine 0.002mm, tension adjustable", "Condenser": "Abbe N.A. 1.25, swing-out, filter holder", "Illumination": "LED Köhler 3W, adjustable", "Power": "100-240V 50/60Hz" },
-    inStock: true, featured: true, badge: "Rekomendasi"
+    id: "oly-bx43", name: "Olympus BX43", slug: "olympus-bx43",
+    category: "laboratory", brand: "Olympus", model: "BX43",
+    image: "/images/products/olympus/bx43.png",
+    magnification: "40x - 1000x", eyepiece: "10X (FN 22) / Super Widefield (FN 26.5)", illumination: "LED/Halogen",
+    application: "Manual System Microscope",
+    description: "Mikroskop BX43 memungkinkan Anda memilih antara konfigurasi hemat biaya dan tingkat lanjut, tergantung pada kebutuhan Anda. Komponen modular, seperti tabung pengamatan ergonomis dan meja sediaan (stage), memudahkan penyesuaian mikroskop untuk aplikasi Anda.",
+    specs: {"Illumination":"Built-in Köhler illumination for transmitted light, light intensity manager switch\nHigh color rendering index LED light source","Focusing":"Vertical stage movement: 25 mm stage stroke with coarse adjustment limit stopper, Torque adjustment for coarse adjustment knobs, Stage mounting position variable, High sensitivity fine focusing knob (minimum adjustment gradations: 1 μm)","Nosepiece":"Interchangeable reversed quintuple/coded quintuple, sextuple/coded sextuple, septuple/coded septuple nosepiece","Stage":"Ceramic-coated coaxial stage with left or right hand drive control: with rotating mechanism and torque adjustment mechanism, optional rubber grips available (non-stick grooved coaxial, plain, rotatable stages are also available)","Observation tube":"Widefield tilting, telescopic and lifting binocular\nWidefield tilting trinocular\nWidefield trinocular\nWidefield erect image trinocular\nWidefield ergo binocular\nWidefield tilting binocular\nWidefield binocular\nSuper widefield trinocular\nSuper widefield erect image tilting trinocular","Condenser":"Abbe (NA 1.1), for 4X – 100X\nSwing out Achromatic (NA 0.9), for 1.25X – 100X (swing-out: 1.25X – 4X)\nAchromatic Aplanatic (NA 1.4), for 10X – 100X\nPhase contrast, darkfield (NA 1.1), [phase contrast: for 10X – 100X, darkfield: for 10X – 100X (up to NA 0.80)]\nUniversal (NA 0.9), for 1.25X – 100X [swing-out: 1.25X – 4X, with oil top lens: (NA 1.4)]\nLow (NA 0.75), for 2X – 100X (Dry)\nUltra low (NA 0.16), for 1.25X – 4X\nDarkfield dry (NA 0.8 – 0.92), for 10X – 100X\nDarkfield oil (NA 1.20 – 1.40), for 10X – 100X","Dimensions":"274.5 mm × 362 mm × 410 mm (Standard configuration)\n(W × D × H)","Weight":"13.2 kg (Standard configuration)"},
+    extraInfo: {
+      features: [
+        "Modular components for a customized configuration",
+        "Ergonomic observation tubes and stages",
+        "Light intensity manager switch to maintain brightness when changing magnifications",
+        "High color rendering index LED light source for accurate color reproduction",
+        "Highly adaptable for cost-efficient or advanced setups"
+      ]
+    },
+    inStock: true, featured: false
   },
   {
-    id: "l2", name: "Mikroskop Lab Trinokuler Infinity A12.2610", slug: "mikroskop-lab-trinokuler-infinity-a12-2610",
-    category: "laboratory", brand: "OPTO-EDU", model: "A12.2610",
-    image: "/images/products/lab-2.webp",
-    magnification: "40x - 1000x", eyepiece: "WF10x/22mm (FN22)", illumination: "LED Köhler 5W",
-    application: "Riset, Dokumentasi, Universitas",
-    description: "Mikroskop trinokuler profesional dengan sistem optik infinity dan plan semi-APO objectives. Port kamera C-mount untuk dokumentasi. Level BX43/CX43.",
-    specs: { "Optical System": "Infinity (IOS), Plan Semi-APO", "Head": "Trinokuler Siedentopf, 30° inklinasi, port 0.5x C-mount", "Eyepiece": "WF10x/22mm (FN22), adjustable diopter", "Objective": "Infinity Plan Semi-APO 4x, 10x, 20x, 40x(S), 100x(S, Oil)", "Nosepiece": "Quintuple reverse, ball-bearing", "Stage": "Rackless 180x150mm, ceramic coated", "Focus": "Coaxial, fine 0.001mm, torque adjustable", "Condenser": "Abbe-Aplanat N.A. 1.25, swing-out, slot for phase ring", "Illumination": "LED Köhler 5W, field diaphragm", "Power": "100-240V 50/60Hz" },
+    id: "oly-bx53", name: "Olympus BX53", slug: "olympus-bx53",
+    category: "fluorescent", brand: "Olympus", model: "BX53",
+    image: "/images/products/olympus/bx53.png",
+    magnification: "40x - 1000x", eyepiece: "10X (FN 22) / Super Widefield (FN 26.5)", illumination: "LED/Halogen",
+    application: "Semi-Motorized Fluorescence Microscope",
+    description: "Mikroskop fluoresensi semi-bermotor BX53 dapat dikonfigurasi untuk memenuhi hampir semua kebutuhan penelitian. Mikroskop ini mendukung berbagai aplikasi pencitraan fluoresensi dan menawarkan fitur canggih untuk kemudahan operasi serta fleksibilitas proses.",
+    specs: {"Illumination":"Built-in Köhler illumination for transmitted light, Light preset switch, LED light intensity indicator, Built-in filters (LBD-IF, ND6, ND25, optional) high color rendering index LED","Focusing":"Vertical stage movement: 25 mm stage stroke with coarse adjustment limit stopper, Torque adjustment for coarse adjustment knobs, Stage mounting position variable, High sensitivity fine focusing knob (minimum adjustment gradations: 1 μm)","Nosepiece":"Interchangeable reversed quintuple/coded quintuple, sextuple/coded sextuple, septuple/coded septuple nosepiece\nMotorized 9-position","Stage":"Ceramic-coated coaxial stage with left or right hand drive control: with rotating mechanism and torque adjustment mechanism, optional rubber grips available","Observation tube":"Widefield tilting, telescoping, lifting binocular\nWidefield tilting trinocular\nWidefield trinocular\nWidefield erect image trinocular\nWidefield ergo binocular\nWidefield tilting binocular\nWidefield binocular\nSuper widefield trinocular\nSuper widefield erect image tilting trinocular","Condenser":"Abbe (NA 1.1), for 4X – 100X\nSwing out Achromatic (NA 0.9), for 1.25X – 100X (swing-out: 1.25X – 4X)\nAchromatic Aplanatic (NA 1.4), for 10X – 100X\nPhase contrast, darkfield (NA 1.1), [phase contrast: for 10X – 100X, darkfield: for 10X – 100X (up to NA 0.80)]\nUniversal (NA 0.9), for 1.25X – 100X [swing-out: 1.25X – 4X, with oil top lens: (NA 1.4)]\nLow (NA 0.75), for 2X – 100X (Dry)\nUltra low (NA 0.16), for 1.25X – 4X\nDarkfield dry (NA 0.8 – 0.92), for 10X – 100X\nDarkfield oil (NA 1.20 – 1.40), for 10X – 100X","Dimensions":"274.5 mm × 614 mm × 469 mm (Epifluorescence configuration)\n(W × D × H)","Weight":"21 kg (Epifluorescence configuration)"},
+    extraInfo: {
+      features: [
+        "Configurable for advanced fluorescence imaging applications",
+        "Semi-motorized components for process flexibility",
+        "High sensitivity fine focusing knob for precise adjustment",
+        "Built-in filters and light preset switch",
+        "Excellent optical performance for research applications"
+      ]
+    },
+    inStock: true, featured: true
+  },
+  {
+    id: "oly-bx63", name: "Olympus BX63", slug: "olympus-bx63",
+    category: "laboratory", brand: "Olympus", model: "BX63",
+    image: "/images/products/olympus/bx63.png",
+    magnification: "40x - 1000x", eyepiece: "10X (FN 22) / Super Widefield (FN 26.5)", illumination: "LED/Halogen",
+    application: "Motorized Microscope",
+    description: "Mikroskop BX63 sepenuhnya dikendalikan oleh metode pengamatan dan dapat disesuaikan dengan kebutuhan spesifik Anda. *Nosepiece* bermotor dan kondensor universal bermotor tersinkronisasi, sehingga menghemat waktu dan mengurangi risiko kesalahan.",
+    specs: {"Illumination":"Built-in Köhler illumination for transmitted light, LED light intensity indicator, motorized field stop\nHigh color rendering index LED light source\n12 V 100 W halogen bulb (pre-centered)","Focusing":"Built-in motorized nosepiece focus\nStroke: 20 mm, minimum increment: 0.01 μm, maximum speed: 5 mm/s","Nosepiece":"Motorized septuple revolving nosepiece\nInterchangeable reversed coded septuple nosepiece","Stage":"Ultrasonic stage (stroke: X: 76 mm × Y: 52 mm, maximum speed: 30 mm/s)\nCeramic-coated coaxial stage with left or right hand drive control: with rotating mechanism and torque adjustment mechanism, optional rubber grips available\nCross stage with short left handle","Observation tube":"Widefield tilting, telescoping, lifting binocular\nWidefield tilting binocular\nWidefield erect image trinocular\nWidefield tilting trinocular\nWidefield trinocular\nWidefield ergo binocular\nWidefield binocular","Condenser":"Motorized universal condenser (NA 0.9, motorized 8-position turret, aperture stop, polarizing filter in/out mechanism and top lens swing out mechanism), for 1.25X – 100X [swing-out 1.25X – 4X, with oil top lens: (NA 1.4)]\nSwing out Achromatic (NA 0.9), for 1.25X – 100X (swing-out: 1.25X – 4X)\nAchromatic Aplanatic (NA 1.4), for 10X – 100X\nUniversal (NA 0.9), for 1.25X – 100X [swing-out: 1.25X – 4X, with oil top lens: (NA 1.4)]\nUltra low (NA 0.16), for 1.25X – 4X\nDarkfield dry (NA 0.8 – 0.92), for 10X – 100X\nDarkfield oil (NA 1.20 – 1.40), for 10X – 100X","Other features":"ND filter wheel, high-performance control box U-RTCE\nMotorized 9-position","Dimensions":"294.5 mm × 740.5 mm × 582.5 mm (Epifluorescence configuration)\n(W × D × H)","Weight":"35 kg (Epifluorescence configuration)"},
+    extraInfo: {
+      features: [
+        "Fully motorized system for automated workflows",
+        "Motorized nosepiece and universal condenser synchronize automatically",
+        "Ultrasonic stage for high-precision, smooth movement",
+        "Minimum focus adjustment gradation of 0.01 μm",
+        "Touch panel controller for intuitive operation"
+      ]
+    },
+    inStock: true, featured: false, badge: "Premium"
+  },
+  {
+    id: "oly-bx46", name: "Olympus BX46", slug: "olympus-bx46",
+    category: "laboratory", brand: "Olympus", model: "BX46",
+    image: "/images/products/olympus/bx46.png",
+    magnification: "40x - 1000x", eyepiece: "10X (FN 22)", illumination: "LED",
+    application: "Clinical Routine Microscope",
+    description: "Dirancang khusus untuk memenuhi tuntutan mikroskopi rutin yang berulang, mikroskop BX46 dilengkapi dengan meja sediaan (*stage*) pada posisi rendah, tabung pengamatan yang dapat dimiringkan dan diperpanjang, serta manajemen intensitas cahaya.",
+    specs: {"Illumination":"Built-in Köhler illumination for transmitted light, light intensity manager switch\nHigh color rendering index LED light source","Focusing":"Fixed low stage nosepiece focus\n15 mm focus stroke with coarse adjustment limit stop\nTorque adjustment for coarse adjustment knobs\nHigh sensitivity fine focusing knob (adjustment gradations: 1 μm)","Nosepiece":"Fixed reversed coded quintuple nosepiece","Stage":"Ceramic-coated coaxial stage with left or right hand ultra low drive control, rotating mechanism and torque adjustment mechanism (low torque, plain, and rotating stages are also available)","Observation tube":"Widefield tilting, telescoping, lifting binocular\nWidefield tilting binocular\nWidefield tilting trinocular\nWidefield trinocular\nWidefield ergo binocular\nWidefield binocular\n(FN 22)","Condenser":"Built-in condenser (NA 0.9) 1.25X – 100X (swing out: 1.25X – 2X)","Dimensions":"274.5 mm × 362 mm × 410 mm (Standard configuration)\n(W × D × H)","Weight":"17 kg (Standard configuration)"},
+    extraInfo: {
+      features: [
+        "Ultra-low positioned stage reduces arm fatigue during repetitive tasks",
+        "Tilting, telescoping, and lifting binocular tube for perfect posture",
+        "Light intensity manager remembers brightness settings for each objective",
+        "High color rendering index LED provides daylight-like illumination",
+        "Ergonomically designed for long clinical routine work"
+      ]
+    },
+    inStock: true, featured: false
+  },
+  {
+    id: "oly-bx51wi", name: "Olympus BX51WI", slug: "olympus-bx51wi",
+    category: "laboratory", brand: "Olympus", model: "BX51WI",
+    image: "/images/products/olympus/bx51wi.png",
+    magnification: "40x - 1000x", eyepiece: "10X", illumination: "Halogen/LED",
+    application: "Fixed Stage Upright Microscope",
+    description: "Mikroskop *fixed stage* BX51WI memberikan stabilitas luar biasa dan ruang yang luas untuk aplikasi penelitian elektrofisiologi dan ilmu saraf yang melibatkan mikromanipulasi.",
+    specs: {"Illumination":"Transmitted light 12 V 100 W halogen Köhler illumination;\nLight adjustment: less than DC2 V~12 V (continuous adjustment)","Focusing":"Nosepiece focus by roller guide;\nStroke per rotation: fine: 0.1 mm, coarse: 15 mm;\nMaximum stroke: 25 mm; Coarse lower limit stopper mechanism,\nTorque adjustment mechanism for coarse focus","Nosepiece":"Swing, Slide, Single position, Swing-slide","Stage":"Mechanical, bridge","Observation tube":"magnification change unit (FN 22), Trinocular (FN 22), erect image trinocular (FN 22), double port","Condenser":"8-position universal, long working distance oblique, long working distance DIC, swing-out","Dimensions":"317.5 mm × 567 mm × 503.8 mm (Epifluorescence Configuration)\n(W × D × H)","Weight":"19 kg (Epifluorescence Configuration)"},
+    extraInfo: {
+      features: [
+        "Fixed stage design for maximum stability during patch-clamp experiments",
+        "Vibration-free nosepiece movement",
+        "High IR transmission objectives for deep tissue imaging",
+        "Ample workspace for placing multiple micromanipulators",
+        "Front-mounted controls to minimize hand movement and vibration"
+      ]
+    },
+    inStock: true, featured: false
+  },
+  {
+    id: "oly-bx53p", name: "Olympus BX53-P", slug: "olympus-bx53p",
+    category: "polarizing", brand: "Olympus", model: "BX53-P",
+    image: "/images/products/olympus/bx53p.png",
+    magnification: "40x - 1000x", eyepiece: "10X (with crosshair)", illumination: "Halogen/LED",
+    application: "Polarizing Microscope",
+    description: "Mikroskop polarisasi BX53-P memberikan performa luar biasa dalam aplikasi cahaya terpolarisasi menggunakan optik *infinity-corrected* UIS2. Mikroskop ini menghasilkan gambar yang cerah dan kontras tinggi untuk mengidentifikasi kristal dan mineral.",
+    specs: {"Illumination":"High intensity high color rendering index LED, Köhler illumination","Focusing":"Coarse & fine coaxial handle; full stroke: 25 mm;\nminimum fine adjustment: 1 μm","Nosepiece":"Detachable quadruple nosepiece with centering adjustment function","Stage":"Circular rotatable stage with centering adjustment function and attachable mechanical stage.\n360° graduated in 1° increments, lockable in any position","Observation tube":"Trinocular (FN 22)","Condenser":"Achromat strain-free condenser with built-in 360° rotatable polarizer (NA 0.18 – 0.9)","Polarizing intermediate tube":"Swing-out focusable Bertrand lens with slot for 360° rotatable analyzer for conoscopic & orthoscopic observation (U-CPA)","Test plate":"1 wavelength (1λ), 1/4 wavelength (1/4λ)","Compensators":"Berek, Senarmont, Brace-Köhler, quartz wedge, etc. (6 types available)","Dimensions":"274 mm × 436 mm × 535 mm\n(W × D × H)","Weight":"16 kg"},
+    extraInfo: {
+      features: [
+        "Strain-free optics for exact polarization analysis",
+        "Centerable revolving nosepiece ensures optical alignment",
+        "High-precision circular rotating stage with click stops",
+        "Accommodates various compensators for measuring retardation",
+        "Conoscopic observation capability with Bertrand lens"
+      ]
+    },
+    inStock: true, featured: false
+  },
+  {
+    id: "oly-bx53led", name: "Olympus BX53LED+MDO", slug: "olympus-bx53led",
+    category: "laboratory", brand: "Olympus", model: "BX53LED+MDO",
+    image: "/images/products/olympus/bx53led.png",
+    magnification: "40x - 1000x", eyepiece: "10X", illumination: "LED",
+    application: "Multi-Discussion System",
+    description: "The Multi-Discussion Observation (MDO) system enables multiple observers to view the same specimen simultaneously, making it ideal for clinical conferences and educational settings.",
+    specs: {"Illumination":"High-intensity 14-LED light source specifically designed to maintain brightness across all viewing heads","Configuration":"Base BX53/BX43 microscope with Multi-Discussion attachments","Observers":"Configurations available from 2 up to 26 observers","Pointer":"LED pointer with adjustable brightness and multiple colors (arrow shape)","Observation tube":"Binocular or Trinocular for each observer"},
+    extraInfo: {
+      features: [
+        "Simultaneous viewing for up to 26 people",
+        "Consistent brightness and color temperature for all observers",
+        "Built-in LED pointer for the primary observer to highlight features",
+        "Ideal for pathology consultations and medical training",
+        "Uniform orientation of images for all viewers"
+      ]
+    },
+    inStock: true, featured: false
+  },
+  {
+    id: "oly-sz61", name: "Olympus SZ61 / SZ51", slug: "olympus-sz61",
+    category: "stereo", brand: "Olympus", model: "SZ61 / SZ51",
+    image: "/images/products/olympus/sz61.png",
+    magnification: "SZ61: 6.7x-45x / SZ51: 8x-40x", eyepiece: "10X (FN 22)", illumination: "LED",
+    application: "Stereo Microscope",
+    description: "The SZ61 and SZ51 stereo microscopes deliver excellent optical performance and reliability for routine work. The Greenough optical system provides excellent flatness and depth of field.",
+    specs: {"Optical System":"Greenough type optical system","Optical component":"Lead-free","Zoom ratio":"SZ61: 1:6.7 (0.67X - 4.5X)\nSZ51: 1:5 (0.8X - 4.0X)","Working distance":"110 mm","Tube inclination angle":"45° or 60°","Video camera adaptability":"SZ61TR / SZ51TR: C-mount (0.5X built in)","Auxiliary objective":"Mounting by screwing into the thread at the bottom of frame (M48 threadx0.75)","Eyepiece":"WHSZ series","Dimensions":"194 mm × 253 mm × 368 mm (Standard Set Configuration)\n(W × D × H)"},
+    extraInfo: {
+      features: [
+        "Greenough optical system for flat, high-contrast images",
+        "ComfortView eyepieces for greater comfort and faster work",
+        "Long 110 mm working distance provides ample room for manipulation",
+        "ESD safe design prevents static damage to specimens",
+        "Available with 45° or 60° inclination tubes for varying workstation heights"
+      ]
+    },
+    inStock: true, featured: false
+  },
+  {
+    id: "oly-szx7", name: "Olympus SZX7", slug: "olympus-szx7",
+    category: "stereo", brand: "Olympus", model: "SZX7",
+    image: "/images/products/olympus/szx7.png",
+    magnification: "8x - 56x", eyepiece: "10X (FN 22)", illumination: "LED/Halogen",
+    application: "Stereo Microscope",
+    description: "The SZX7 stereo microscope features a Galilean optical system for outstanding image quality and a wide 7:1 zoom ratio. It provides accurate color reproduction and high-resolution images.",
+    specs: {"Optical System":"Galilean type optical system","Zoom microscope body":"Zoom range 0.8X – 5.6X (zoom ratio 1:7), Lead-free","Observation tube":"1.SZX-BI45: 45° binocular, 45° inclination\n2.SZX2-TR30: 30° trinocular, 30° inclination\n3.SZX2-TR30PT: 30° trinocular, 30° inclination\n4.SZX2-LTTR: Ergonomic long tilting trinocular, 5 – 45° variable inclination\nInterpupillary distance adjustable range: 50 – 76 mm\nAll observation tubes: Lead-free","Extendable eyepoint adjuster":"SZX2-EEPA: Height adjustment range: 30 – 150 mm (with a scale attached)","Objectives":"DFPL0.5X-4, DFPL0.75X-4, DFPLAPO1X-4, SZX-ACH1X, DFPLAPO1.25X, SZX-ACH1.25X-2, DFPL1.5X-4, DFPL2X-4","Eyepiece":"WHSZ series","Dimensions":"194 mm × 253 mm × 403 mm (Standard Set Configuration)\n(W × D × H)"},
+    extraInfo: {
+      features: [
+        "Galilean optical system for advanced modularity",
+        "Excellent resolving power with accurate color reproduction",
+        "A wide variety of objectives available for different magnifications and working distances",
+        "Ergonomic design with optional tilting observation tube",
+        "Click-stop mechanism for easy magnification reproducibility"
+      ]
+    },
+    inStock: true, featured: false
+  },
+  {
+    id: "oly-szx16", name: "Olympus SZX16", slug: "olympus-szx16",
+    category: "stereo", brand: "Olympus", model: "SZX16",
+    image: "/images/products/olympus/szx16.png",
+    magnification: "7x - 115x", eyepiece: "10X (FN 22)", illumination: "LED/Halogen",
+    application: "Research Stereo Microscope",
+    description: "The SZX16 research stereo microscope features an ultra-high zoom ratio of 16.4:1. With its advanced optics and high numerical aperture, it bridges the gap between macro and micro imaging.",
+    specs: {"Optical system":"Telescope type system","Zoom range":"0.7X – 11.5X (zoom ratio 1: 16.4)","Total mag. range":"2.1X – 690X (with SDFPLAPO2XPFC)","Aperture diaphragm":"Built-in","Zoom click stop":"Click stop equipped (releasable)","Working distance":"141 mm (with SDFPLFL0.3X) – 20 mm (with SDFPLAPO2XPFC)","Observation tube":"SZX2-TR30/SZX2-TR30PT: 30 degree trinocular, 30° inclination\nSZX2-TTR/SZX2-TTRPT: tilting trinocular, 5 – 45° variable inclination\nSZX-BI45: 45° binocular, 45° inclination\nSZX-BI30: 30° binocular, 30° inclination\nSZX2-LTTR: Ergonomic long tilting trinocular, 5 – 45° variable inclination","Extendable eyepoint adjuster":"SZX2-EEPA: Height adjustment range: 30 – 150 mm (with a scale attached)","Objective":"SDFPLAPO2XPFC, SDFPLAPO1.6XPF, SDFPLAPO1XPF, SDFPLAPO0.8X, SDFPLAPO0.5XPF, SDFLPLFL0.3X","Eyepiece":"WHN10X-H (FN 22), WHSZ10X-H (FN 22), WHSZ15X-H (FN 16), WHSZ20X-H (FN 12.5), WHSZ30X-H (FN 7)","Focusing":"SZX2-FOA: Motorized focus unit, focusing stroke 78 mm\nSZX2-FOFH: Fine focusing unit for heavy loading, stroke 80 mm\nSZX2-FOF: Fine focusing unit, coarse handle stroke 80 mm, fine handle stroke 80 mm\nSZX2-FO: Focusing unit, coarse handle stroke 80 mm","Accessories":"Fluorescence illuminator, coaxial illuminator, light beam splitter, drawing attachment, side by side discussion tube, etc.","Dimensions":"268 mm × 386 mm × 413 mm (Standard Set Configuration)\n(W × D × H)"},
+    extraInfo: {
+      features: [
+        "Unprecedented 16.4:1 zoom ratio for seamless macro-to-micro viewing",
+        "Astigmatism-free SDF objectives provide ultra-high resolution (up to 900 LP/mm)",
+        "Unmatched depth of field and extended focal imaging capabilities",
+        "Motorized focus and zoom options for automated imaging workflows",
+        "Perfect for advanced life science research and materials science"
+      ]
+    },
+    inStock: true, featured: true
+  },
+  {
+    id: "oly-szx10", name: "Olympus SZX10", slug: "olympus-szx10",
+    category: "stereo", brand: "Olympus", model: "SZX10",
+    image: "/images/products/olympus/szx10.png",
+    magnification: "6.3x - 63x", eyepiece: "10X (FN 22)", illumination: "LED/Halogen",
+    application: "Research Stereo Microscope",
+    description: "The SZX10 research stereo microscope provides natural, distortion-free imaging with excellent depth of field and an optimized 10:1 zoom ratio.",
+    specs: {"Optical system":"Telescope type system","Zoom range":"0.63X – 6.3X (zoom ratio 1: 10.0)","Total mag. range":"3.15X – 378X (with DFPL2X-4)","Aperture diaphragm":"Built-in","Zoom click stop":"Click stop equipped (releasable)","Working distance":"171 mm (with DFPL 0.5X) – 33.5 mm (with DFPL2X-4)","Observation tube":"SZX2-TR30/SZX2-TR30PT: 30 degree trinocular, 30° inclination\nSZX2-TTR/SZX2-TTRPT: tilting trinocular, 5 – 45° variable inclination\nSZX-BI45: 45° binocular, 45° inclination\nSZX-BI30: 30° binocular, 30° inclination\nSZX2-LTTR: Ergonomic long tilting trinocular, 5 – 45° variable inclination","Extendable eyepoint adjuster":"SZX2-EEPA: Height adjustment range: 30 – 150 mm (with a scale attached)","Objective":"DFPL1.5X-4, DFPL2X-4, DFPLAPO1.25X, SZX-ACH1.25X-2, DFPLAPO1X-4, SZX-ACH1X, DFPL0.5X-4, DFPL0.75X-4","Eyepiece":"WHN10X-H (FN 22), WHSZ10X-H (FN 22), WHSZ15X-H (FN 16), WHSZ20X-H (FN 12.5), WHSZ30X-H (FN 7)","Focusing":"SZX2-FOA: Motorized focus unit, focusing stroke 78 mm\nSZX2-FOFH: Fine focusing unit for heavy loading, stroke 80 mm\nSZX2-FOF: Fine focusing unit, coarse handle stroke 80 mm, fine handle stroke 80 mm\nSZX2-FO: Focusing unit, coarse handle stroke 80 mm","Accessories":"Fluorescence illuminator, coaxial illuminator, light beam splitter, drawing attachment, side by side discussion tube, etc.","Dimensions":"268 mm × 386 mm × 410 mm (Standard Set Configuration)\n(W × D × H)"},
+    extraInfo: {
+      features: [
+        "Distortion-free imaging with natural color reproduction",
+        "High NA objectives for detailed sample analysis",
+        "Built-in aperture diaphragm for controlling depth of field and contrast",
+        "Modular design accommodates various lighting and imaging accessories",
+        "Ergonomic components to prevent fatigue during long observations"
+      ]
+    },
+    inStock: true, featured: false
+  },
+  {
+    id: "oly-ckx53", name: "Olympus CKX53", slug: "olympus-ckx53",
+    category: "inverted", brand: "Olympus", model: "CKX53",
+    image: "/images/products/olympus/ckx53.png",
+    magnification: "40x - 400x", eyepiece: "10X (FN 22)", illumination: "LED",
+    application: "Inverted Cell Culture Microscope",
+    description: "The CKX53 inverted microscope provides high-quality phase contrast and brightfield imaging in a compact design. It streamlines the cell culture workflow with its easy-to-use operation and stable observation.",
+    specs: {"Illumination":"Entry: Brightfield, Phase Contrast\nStandard: Brightfield, Phase Contrast, Fluorescence","Focusing":"Revolving nosepiece vertical movement system using the coarse and fine focusing knobs.\nStroke: 20 mm (Focal point: up to 18.5 mm from the plain stage top surface)\nStroke per rotation: 36.8 mm (Coarse), 0.3 mm (Fine)","Plain stage":"252 mm (D) × 200 mm (W)\nExchangeable transparent insert plate is incorporated\nXY coaxial knob place on right side of the plain stage","Mechanical stage":"Microplate holder equipped with the escape function\nstage stroke: X = 110 mm, Y = 74 mm\nSubstage: 180 mm (D) × 70 mm (W)","Condenser":"Maximum numerical aperture: 0.3\nWorking distance: 72 mm\nApplicable objective magnification 2X, 4X, 10X, 20X and 40X\nup to 190 mm height tissue flask can be loaded on the stage without detachable condenser","Observation tube":"Fixed Trinocular tube, inclined 45 degrees\nInterpupillary distance 48 – 75 mm\nLight path: eyepiece/camera port = 100/0 ⇔ 0/100","Dimensions":"200 mm × 498 mm × 454 mm (Phase contrast entry configuration)\n(W × D × H)","Weight":"6.9 kg / 7.1 kg / 8.4 kg / 12.5 kg"},
+    extraInfo: {
+      features: [
+        "Integrated Phase Contrast (iPC) system eliminates the need to change ring slits for 4X, 10X, 20X, and 40X objectives",
+        "Compact footprint fits easily inside a clean bench",
+        "Inverted design optimized for checking cell culture in flasks and multi-well plates",
+        "Long-lasting LED provides uniform illumination and saves energy",
+        "Optional fluorescence observation capability"
+      ]
+    },
+    inStock: true, featured: false
+  },
+  {
+    id: "oly-ix73", name: "Olympus IX73", slug: "olympus-ix73",
+    category: "inverted", brand: "Olympus", model: "IX73",
+    image: "/images/products/olympus/ix73.png",
+    magnification: "40x - 1000x", eyepiece: "10X (FN 22)", illumination: "LED/Halogen",
+    application: "Inverted Research Microscope",
+    description: "The IX73 inverted microscope is designed for routine to advanced research applications. Its modular deck system allows you to add or swap components like fluorescence turrets and magnification changers.",
+    specs: {"Optical system":"UIS2 optical system","Revolving nosepiece":"Coded sextuple revolving nosepiece (DIC slider attachable), simple waterproof structure\nMotorized sextuple revolving nosepiece (DIC slider attachable), simple waterproof structure","Focus":"Stroke: 10 mm\nMinimum increment: 0.01 μm,\nMaximum nosepiece movement speed: 3 mm/s","Intermediate port":"2 ports (IX73P2F), 1 port (IX73P1F)","Light path selection":"Manual 0:100/50:50/100:0 (Left side port: BI port)","Observation tube":"Widefield (FN 22)\nWidefield tilting binocular\nWidefield binocular","Stage":"Mechanical stage with left handle: Stage stroke: X: 50 mm x Y: 43 mm, including stage insert plate (ø25 mm), stage insert plate exchangeable (Ø110 mm)\nCross stage with right handle: Stage stroke: X: 50 mm x Y: 50 mm, including stage insert plate (ø25 mm), stage insert plate exchangeable (Ø110 mm)\nMechanical stage with right handle: Stage stroke: X: 114 mm x Y: 75 mm, stage position locking function","Condenser":"Mid long working distance: NA 0.5, W.D. 45 mm, 4 positions for optical devices (for ø50 mm, relief contrast optical devices rotatable)\nMotorized middle long working distance: NA 0.5, W.D. 45 mm, 4 positions for optical devices (for ø50 mm, relief contrast optical devices rotatable)","Transmitted light illuminator":"Pillar tilt mechanism (30° inclination angle, with vibration reducing mechanism),\nCondenser holder (with 88 mm stroke, refocusing mechanism),\nField iris diaphragm adjustable, 4 filter holders\nLight source: High color reproductive LED light source\n12 V, 100 W halogen bulb (pre-centered)","Operating environment":"Indoor use\nAmbient temperature: 5° to 40°C (41° to 104°F)\nMaximum relative humidity: 80% for temperatures up to 31°C (88°F), decreasing linearly to 50% at 40°C (104°F)\nSupply voltage fluctuations: Not to exceed ±10% of the normal voltage"},
+    extraInfo: {
+      features: [
+        "Modular deck design for unprecedented customization and flexibility",
+        "High rigidity frame ensures stability for time-lapse and live-cell imaging",
+        "Fly-eye lens fluorescence illuminator provides incredibly even illumination",
+        "Supports advanced imaging techniques like TIRF and spinning disk confocal",
+        "Ergonomic manual controls for quick and intuitive operation"
+      ]
+    },
+    inStock: true, featured: false
+  },
+  {
+    id: "oly-ix83", name: "Olympus IX83", slug: "olympus-ix83",
+    category: "inverted", brand: "Olympus", model: "IX83",
+    image: "/images/products/olympus/ix83.png",
+    magnification: "40x - 1000x", eyepiece: "10X (FN 22)", illumination: "LED/Halogen",
+    application: "Motorized Inverted Microscope",
+    description: "The fully motorized IX83 inverted microscope is the ultimate platform for live-cell imaging. Its highly rigid deck structure provides outstanding stability for long-term time-lapse experiments.",
+    specs: {"Optical system":"UIS2 optical system","Revolving nosepiece":"Motorized sextuple revolving nosepiece (DIC slider attachable), simple waterproof structure","Focus":"Stroke: 10.5 mm\nMinimum increment: 0.01 μm,\nMaximum nosepiece movement speed: 3 mm/s","Focus compensator":"TruFocus: Offset method (Focus search, one-shot focus, continuous focus), Class 1 laser product, laser wavelength: 830 nm\nZ drift compensator","Intermediate port":"1 port (IX83P1ZF)","Light path selection":"Motorized 0:100/50:50/100:0 (Left side port: BI port)","Observation tube":"Widefield (FN 22)\nWidefield tilting binocular\nWidefield binocular","Stage":"Mechanical stage with left handle: Stage stroke: X: 50 mm x Y: 43 mm, including stage insert plate (ø25 mm), stage insert plate exchangeable (Ø110 mm)\nCross stage with right handle: Stage stroke: X: 50 mm x Y: 50 mm, including stage insert plate (ø25 mm), stage insert plate exchangeable (Ø110 mm)\nMechanical stage with right handle: Stage stroke: X: 114 mm x Y: 75 mm, stage position locking function\nMotorized stage: IX5-SSA: Stage stroke: X: 116 mm x Y: 78 mm, maximum stage movement speed: 40 mm/s, Knob controller","Condenser":"Long working distance universal: NA 0.55, W.D. 27 mm, 5 positions for optical devices (3 positions for ø30 mm and 2 position for ø38 mm)\nMotorized long working distance: W.D. 27 mm, NA 0.55, motorized turret with 7 position slots for optical devices (3 positions for ø30 mm and 4 positions for ø38 mm), motorized aperture and polarizer\nUltra long working distance: NA 0.3, W.D. 73.3 mm, 4 positions for optical devices (for ø29 mm)","Fluorescence illuminator":"L-shaped fluorescence illuminator with fly-eye lens (IX3-RFALFE)\nL-shaped design with exchangeable FS and AS modules, slider shutter and ND filter pocket","Fluorescence mirror turret":"Motorized fluorescence mirror turret (IX3-RFACA)\nCoded fluorescence mirror turret (IX3-RFACS)\nMotorized turret with 8 positions, built-in shutter, simple waterproof structure","Fluorescence light source":"LED and LDP light source (U-LGPS)\n3rd party LED light source","Transmitted light illuminator":"Pillar tilt mechanism (30° inclination angle, with vibration reducing mechanism),\nCondenser holder (with 88 mm stroke, refocusing mechanism),\nField iris diaphragm adjustable, 4 filter holders\nLight source: High color rendering LED (IX3-LHLEDC)\n12 V 100 W halogen (U-LH100L)","Imaging software":"cellSens Standard\ncellSens Dimension","Accessories":"TruFocus system (IX3-ZDC2)\nRemote correction collar controller (IX3-RCC)\nReal-time controller (U-RTC/U-RTCe)\nIncubation housing","Operating environment":"Indoor use\nAmbient temperature: 5° to 40°C (41° to 104°F)\nMaximum relative humidity: 80% for temperatures up to 31°C (88°F), decreasing linearly to 50% at 40°C (104°F)\nSupply voltage fluctuations: Not to exceed ±10% of the normal voltage"},
+    extraInfo: {
+      features: [
+        "Fully motorized operation for complex, multi-dimensional (X, Y, Z, T, λ) imaging",
+        "Z-drift compensation (ZDC) module keeps samples perfectly in focus over days",
+        "Ultrasonic motorized stage offers silent, smooth, and highly precise movement",
+        "Modular decks allow integration of TIRF, FRAP, and multiphoton modules",
+        "Superior thermal and mechanical stability for live-cell experiments"
+      ]
+    },
     inStock: true, featured: true, badge: "Premium"
   },
   {
-    id: "l3", name: "Mikroskop Lab Trinokuler A12.3630", slug: "mikroskop-lab-trinokuler-a12-3630",
-    category: "laboratory", brand: "OPTO-EDU", model: "A12.3630",
-    image: "/images/products/lab-1.webp",
-    magnification: "40x - 1000x", eyepiece: "WF10x/20mm", illumination: "LED Köhler 3W",
-    application: "Hematologi, Patologi, Lab Klinik",
-    description: "Mikroskop trinokuler biologis dengan plan achromatic objectives. Port kamera untuk dokumentasi hasil analisis. Cocok untuk hematologi dan patologi klinik.",
-    specs: { "Optical System": "Finite 160mm, Plan Achromatic", "Head": "Trinokuler, 30° inklinasi, foto port", "Eyepiece": "WF10x/20mm (FN20)", "Objective": "Plan 4x, 10x, 40x(S), 100x(S, Oil)", "Nosepiece": "Quintuple reverse", "Stage": "Rackless 160x142mm", "Focus": "Coaxial coarse & fine 0.002mm", "Condenser": "Abbe N.A. 1.25 with iris", "Illumination": "LED Köhler 3W", "Power": "100-240V 50/60Hz" },
+    id: "oly-ix85", name: "Olympus IX85", slug: "olympus-ix85",
+    category: "inverted", brand: "Olympus", model: "IX85",
+    image: "/images/products/olympus/ix85.png",
+    magnification: "40x - 1000x", eyepiece: "10X (FN 22)", illumination: "LED/Laser",
+    application: "Advanced Research Inverted Microscope",
+    description: "IX85 adalah mikroskop riset *inverted* generasi terbaru, menampilkan desain sistem terbuka (*open-stand*) dengan opsi kustomisasi yang ekstensif untuk resolusi super dan aplikasi konfokal tingkat lanjut.",
+    specs: {"Optical system":"UIS2 optical system","Microscope frame":"IX85P1ZF / IX85P2ZF","Revolving nosepiece":"Motorized 6-position revolving nosepiece (DIC slider attachable)\nSimple water proof structure\nOne position for Automated Correction Collar","Focus":"Stroke: 10.5 mm\nMinimum increment: 0.01 μm,\nMaximum nosepiece movement speed: 3 mm/s","Intermediate Magnification Changer":"3 positions (Coded): 1X / 1.6X / 2X","Deck insert layer":"1 layer / 2 layers","Light path selection":"Motorized 4 positions\nEyepiece 100%, left 100%, right 100%, eyepiece 50%/left 50%","Maximum port field number":"Left/Right side port: FN26.5 / FN18\nBI port: FN22\nDeck right side port: FN18","Observation tube":"U-BI90 Wide field binocular\nU-TBI90BK Wide field tilting binocular\nU-TR30-2/U-TR30NIR Wide field trinocular\nWidefield (FN22)","Stage":"Mechanical stage with left handle: Stage stroke: X: 50 mm x Y: 43 mm\nMechanical stage with right handle: Stage stroke: X: 116 mm x Y: 78 mm, stage position locking function\nRight handle stage: Stage stroke: X: 50 mm x Y: 50 mm\nGliding stage: Upper circular stage 360° rotatable, 20 mm (X/Y) travel\nPlain stage: 232 mm (X) x 240 mm (Y) stage size, stage insert plate exchangeable (ø110 mm)\nMotorized stage: IX5-SSA: Stage stroke: X: 116 mm x Y: 78 mm, maximum stage movement speed: 40 mm/s, Knob controller","Condenser":"Long working distance universal: NA 0.55, W.D. 27 mm 5 positions for optical devices (3 positions for ø30 mm and 2 position for ø38 mm)\nMotorized long working distance: W.D. 27 mm, NA 0.55, motorized turret with 7 position slots for optical devices, motorized aperture and polarizer\nUltra long working distance: NA 0.3, W.D. 73.3 mm, 4 positions for optical devices (for ø29 mm)","Transmitted light illuminator":"Pillar tilt mechanism (30° inclination angle, with vibration reducing mechanism),\nCondenser holder (with 88 mm stroke, refocusing mechanism),\nField iris diaphragm adjustable, 4 filter holders\nLight source: High power LED light source","Focus compensator":"TruFocus: Offset method (Focus search, one-shot focus, continuous focus), Class 1 laser product, laser wavelength: 830 nm\nZ drift compensator","Control unit":"Control unit (IX5-MCZ): ON/OFF, DIA LED power, DIA LED ON/OFF, 4 customizable buttons\nNosepiece position, light path selection, filter turret position, FL shutter","Control box":"PC interface: USB (Type-C), RS-232C","Fluorescence illuminator":"L-shape-fluorescence illuminator ND filter pocket\nL-shaped design with exchangeable FS and AS modules, slider shutter","Fluorescence mirror turret":"Motorized fluorescence mirror turret\nMotorized turret with 8 positions, built-in shutter, simple waterproof structure","Fluorescence light source":"U-LGPS: LED and LDP light source, Class 1 laser product\n3rd party LED light source","Imaging software":"cellSens Standard\ncellSens Dimension","Super resolution processing":"Olympus super-resolution (OSR) filter","Accessories":"TruFocus system (IX3-ZDC2)\nRemote correction collar controller (IX3-RCC)\nReal-time controller (U-RTC/U-RTCe)\nIncubation housing\nConfocal scanner: Spinning disk confocal scanner\nTIRF Illuminator: cellTIRF","Dimensions":"540 mm (D) x 321 mm (W) x 667 mm (H) / 540 mm (D) x 321 mm (W) x 732 mm (H)\n(IX85 Microscope frame with illumination pillar)","Operating environment":"Indoor use\nAmbient temperature: 5° to 40°C (41° to 104°F)\nMaximum relative humidity: 80% for temperatures up to 31°C (88°F), decreasing linearly to 50% at 40°C (104°F)\nSupply voltage fluctuations: Not to exceed ±10% of the normal voltage"},
+    extraInfo: {
+      features: [
+        "Open-stand architecture provides massive space for custom optical setups",
+        "Optimized for cutting-edge techniques like super-resolution and multiphoton",
+        "Exceptional frame rigidity to handle heavy camera and laser modules without vibration",
+        "Advanced real-time focus tracking for long-term experiments",
+        "Seamless integration with cellSens software for fully automated workflows"
+      ]
+    },
     inStock: true, featured: false
   },
   {
-    id: "l4", name: "Mikroskop Lab Multi-Viewing A17.1093-B", slug: "mikroskop-lab-multi-viewing-a17-1093b",
-    category: "laboratory", brand: "OPTO-EDU", model: "A17.1093-B",
-    image: "/images/products/lab-2.webp",
-    magnification: "40x - 1000x", eyepiece: "WF10x/22mm (5 kepala)", illumination: "LED Köhler 5W",
-    application: "Teaching, Diskusi Patologi",
-    description: "Mikroskop multi-viewing 5 kepala untuk pengamatan simultan oleh instruktur dan 4 mahasiswa. Ideal untuk diskusi kasus patologi dan pelatihan diagnostik.",
-    specs: { "Optical System": "Infinity Plan Semi-APO", "Head": "Penta-head (1 main + 4 side), pointer built-in", "Eyepiece": "WF10x/22mm per head", "Objective": "Plan Semi-APO 4x, 10x, 40x, 100x Oil", "Nosepiece": "Quintuple", "Stage": "180x155mm, ceramic", "Focus": "Motorized Z optional", "Condenser": "Swing-out Abbe N.A. 1.25", "Illumination": "LED Köhler 5W", "Power": "100-240V 50/60Hz" },
-    inStock: false, featured: false, badge: "Pre-Order"
-  },
-
-  // ===== STEREO ZOOM =====
-  {
-    id: "st1", name: "Mikroskop Stereo Zoom A23.0907-BL", slug: "mikroskop-stereo-zoom-a23-0907bl",
-    category: "stereo", brand: "OPTO-EDU", model: "A23.0907-BL",
-    image: "/images/products/stereo-1.webp",
-    magnification: "7x - 45x (Zoom 0.7-4.5x)", eyepiece: "WF10x/20mm", illumination: "LED Ring 144 pcs",
-    application: "Inspeksi PCB, Geologi, Botani",
-    description: "Mikroskop stereo zoom kontinyu standar industri. LED ring 144 pcs memberikan pencahayaan merata dari segala arah. Working distance 100mm.",
-    specs: { "Zoom Range": "0.7x - 4.5x (ratio 1:6.5)", "Total Magnification": "7x - 45x (with WF10x)", "Eyepiece": "WF10x/20mm, adjustable diopter", "Working Distance": "100mm", "Field of View": "30mm (at 7x) - 4.6mm (at 45x)", "Head": "Binokuler, 45° inklinasi", "Illumination": "LED Ring 144 pcs, adjustable", "Stand": "Post stand, arm adjustable height", "Stage Plate": "Black/White reversible, 95mm", "Power": "12V DC adapter" },
-    inStock: true, featured: true
+    id: "oly-fv5000", name: "Olympus FLUOVIEW FV5000", slug: "olympus-fv5000",
+    category: "fluorescent", brand: "Olympus", model: "FV5000",
+    image: "/images/products/olympus/fv5000.png",
+    magnification: "Varies", eyepiece: "Varies", illumination: "Laser",
+    application: "Confocal Laser Scanning Microscope",
+    description: "The FLUOVIEW FV5000 confocal laser scanning microscope redefines 3D imaging with unparalleled speed, sensitivity, and macro-to-micro capabilities for deep tissue and live-cell research.",
+    specs: {"Scanner":"Galvanometer scanner: 64 x 64 – 8192 x 8192 pixels, 0.2 μs/pixel – 1000 μs/pixel\nResonant scanner: 512 x 512 pixels, 1024 x 1024 pixels, 2048 x 2048 pixels","Field number":"20 (for both scanner types)","Spectral confocal detector":"Detector: SilVIR detector (cooled SiPM, broadband type/red-shifted type)\nMaximum channels: Six channels\nSpectral method: VPH, detectable wavelength range: 400 nm - 900 nm","Laser":"VIS laser: 405 nm, 445 nm, 488 nm, 514 nm, 561 nm, 594 nm, 640 nm\nNIR laser: 685 nm, 730 nm, 785 nm","Laser power monitor":"Built in","Image":"High dynamic range photon counting (1G cps, 16-bit)"},
+    extraInfo: {
+      features: [
+        "Silicone oil immersion objectives for deep, bright imaging of thick tissues",
+        "Resonant scanner enables ultra-fast imaging to capture dynamic cellular events",
+        "High-sensitivity GaAsP detectors minimize laser power to reduce phototoxicity",
+        "Intuitive macro-to-micro workflow for navigating large specimens",
+        "TruSpectral detection technology for high-resolution spectral unmixing"
+      ]
+    },
+    inStock: true, featured: false, badge: "Premium"
   },
   {
-    id: "st2", name: "Mikroskop Stereo Trinokuler A23.2603-T", slug: "mikroskop-stereo-trinokuler-a23-2603t",
-    category: "stereo", brand: "OPTO-EDU", model: "A23.2603-T",
-    image: "/images/products/stereo-1.webp",
-    magnification: "7x - 45x + USB Camera 5MP", eyepiece: "WF10x/23mm", illumination: "LED Ring 56 + Gooseneck",
-    application: "QC Industri, Forensik, Dokumentasi",
-    description: "Stereo zoom trinokuler dengan port kamera untuk dokumentasi digital. Dilengkapi gooseneck LED tambahan untuk pencahayaan directional.",
-    specs: { "Zoom Range": "0.7x - 4.5x", "Total Magnification": "7x - 45x", "Eyepiece": "WF10x/23mm super widefield", "Port Kamera": "Trinocular, 0.5x C-mount", "Working Distance": "100mm", "Head": "Trinokuler, 45° inklinasi", "Illumination": "LED Ring 56 pcs + 2x Gooseneck LED", "Stand": "Heavy-duty pillar, boom arm optional", "Stage Plate": "Glass plate + B/W plate", "Power": "100-240V 50/60Hz" },
-    inStock: true, featured: false
+    id: "oly-ep50", name: "Olympus EP50", slug: "olympus-ep50",
+    category: "digital", brand: "Olympus", model: "EP50",
+    image: "/images/products/olympus/ep50.png",
+    magnification: "N/A", eyepiece: "N/A", illumination: "N/A",
+    application: "Wireless Educational Camera",
+    description: "The EP50 color camera makes digital classroom documentation easy. With its built-in WLAN network, students can use their smartphones or tablets to view, capture, and share images wirelessly.",
+    specs: {"Image Sensor":"Color CMOS","Sensor Size":"1/1.8 inch (7.140 mm × 4.980 mm)","Resolution":"2592 x 1944 pixels (Snapshot only)\n1920 x 1080 pixels (HDMI, WLAN, on PC)","Pixel Size":"2.4 × 2.4 μm","A/D Converter":"8 bits","Exposure Times":"1 ms – 918 ms","Live Frame Rates":"Up to 60 fps (HDMI output, 1920 x 1080 pixels)\nUp to 25 fps (WLAN output, 1920 x 1080 pixels)\nUp to 30 fps (on PC, 1920 x 1080 pixels)\nSnapshot only (2592 x 1944 pixels)","Data Transfer":"HDMI, WLAN (using the WLAN adapter), Ethernet (using the USB-to-Ethernet adapter)","PC Control":"Microsoft Windows 10 (64 bit)\nMicrosoft Windows 11 (64 bit)","Camera Mount":"C-mount","Storage":"SD (HC I; UHS-I, Class 10)","Dimensions":"78 mm × 65 mm × 88 mm (3.08 in. × 2.56 in. × 3.47 in.)\n(W × D × H)","Weight":"Approx. 470 g (1.04 lb)"},
+    extraInfo: {
+      features: [
+        "Stand-alone operation without a PC using a monitor and mouse via HDMI",
+        "Create a local wireless network for up to 6 mobile devices",
+        "Fast 60 fps frame rate provides smooth, lag-free live viewing",
+        "Perfect for interactive digital classrooms and training environments",
+        "Easy-to-use OSD menu for capturing images and recording video directly to an SD card"
+      ]
+    },
+    inStock: true, featured: false, badge: "Camera"
   },
   {
-    id: "st3", name: "Mikroskop Stereo Step Zoom A22.1201-T", slug: "mikroskop-stereo-step-zoom-a22-1201t",
-    category: "stereo", brand: "OPTO-EDU", model: "A22.1201-T",
-    image: "/images/products/stereo-1.webp",
-    magnification: "20x / 40x (Step Zoom)", eyepiece: "WF10x", illumination: "LED Top/Bottom",
-    application: "Edukasi, Diseksi Biologi",
-    description: "Mikroskop stereo step zoom ekonomis dengan 2 tingkat perbesaran. Ideal untuk praktikum diseksi biologi dan pengamatan spesimen 3D di sekolah.",
-    specs: { "Zoom Type": "Step zoom 2x/4x", "Total Magnification": "20x / 40x", "Eyepiece": "WF10x/20mm", "Working Distance": "57mm", "Head": "Binokuler, 45° inklinasi", "Illumination": "LED Top (incident) + Bottom (transmitted)", "Stand": "Fixed post stand", "Stage Plate": "Frosted glass + B/W plate", "Power": "100-240V 50/60Hz", "Weight": "3.2 kg" },
-    inStock: true, featured: false
-  },
-
-  // ===== DIGITAL =====
-  {
-    id: "d1", name: "Mikroskop Digital LCD A33.5101", slug: "mikroskop-digital-lcd-a33-5101",
-    category: "digital", brand: "OPTO-EDU", model: "A33.5101",
-    image: "/images/products/digital-1.webp",
-    magnification: "40x - 400x (Digital 1600x)", eyepiece: "LCD 9.7\" IPS Touchscreen", illumination: "LED Ring + Bottom LED",
-    application: "Edukasi Interaktif, QC, Presentasi",
-    description: "Mikroskop digital all-in-one dengan layar sentuh 9.7 inch IPS. Capture foto/video langsung ke SD card. Software pengukuran terintegrasi.",
-    specs: { "Display": "9.7\" IPS Touchscreen, 2048x1536", "Camera Sensor": "5MP CMOS Sony IMX335", "Objective": "4x, 10x, 40x Plan Achromatic", "Digital Zoom": "Hingga 4x (total 1600x)", "Storage": "SD Card max 64GB", "Output": "HDMI, USB 2.0, Wi-Fi optional", "OS": "Android 11 built-in", "Illumination": "LED Ring (top) + LED (bottom)", "Measurement": "Length, area, angle, count software", "Power": "100-240V 50/60Hz" },
-    inStock: true, featured: true, badge: "Produk Baru"
+    id: "oly-lc35", name: "Olympus LC35", slug: "olympus-lc35",
+    category: "digital", brand: "Olympus", model: "LC35",
+    image: "/images/products/olympus/lc35.png",
+    magnification: "N/A", eyepiece: "N/A", illumination: "N/A",
+    application: "Standard Microscope Camera",
+    description: "The LC35 microscope camera delivers excellent value for standard brightfield imaging applications. It provides detailed, accurate color images for routine documentation.",
+    specs: {"Image Sensor":"Color CMOS","Sensor Size":"1/2.5-inch","Resolution (max)":"2160 x 1620 pixels\n1920 x 1080 pixels (full HD 16:9)\n1296 x 972 pixels (fast mode)","Pixel Size":"2.64 × 2.64 μm","A/D Converter (Bit Depth)":"10-bits","Exposure Time":"25 μs – 1.5 s","Live Frame Rates":"Up to 19 fps at 2160 x 1620 pixels (full resolution)\nUp to 25 fps at 1920 x 1080 pixels (full HD)\nUp to 40 fps at 1296 x 972 pixels (fast mode)","Data Transfer":"USB 3.1 Gen1 Type-C","PC Requirements":"CPU: Intel® Xenon, Intel® Core i5, i7, i9, or the equivalent\nRAM: 8 GB\nRecommended: 4 or more physical CPU cores, 8 GB RAM (dual channel)","PC Control":"Windows 10 64-bit","Imaging Platform":"cellSens Entry, Standard, and Dimension v. 3.2 or higher\nOlympus Stream Start, Basic, and Essentials v.2.5 or higher\nPRECiV Capture, Core, and Pro v1.1 or higher\nLCmicro\nDP2-TWAIN","Camera Mount":"C-mount","Dimensions":"47 mm × 46 mm × 28.8 mm (1.9 in. × 1.7 in. × 1.13 in.)\n(W × D × H)","Weight":"Approx. 33 g (1.16 oz)"},
+    extraInfo: {
+      features: [
+        "Cost-effective solution for brightfield documentation",
+        "USB 3.1 interface for fast data transfer and responsive live images",
+        "Accurate color reproduction for H&E and other common stains",
+        "Seamless integration with Olympus imaging software",
+        "Compact design easily fits on any microscope"
+      ]
+    },
+    inStock: true, featured: false, badge: "Camera"
   },
   {
-    id: "d2", name: "Mikroskop Digital USB A33.5002", slug: "mikroskop-digital-usb-a33-5002",
-    category: "digital", brand: "OPTO-EDU", model: "A33.5002",
-    image: "/images/products/digital-1.webp",
-    magnification: "40x - 1000x + USB Camera", eyepiece: "WF10x/18mm + USB 5MP", illumination: "LED 3W",
-    application: "Dokumentasi Lab, Telepathology",
-    description: "Mikroskop compound binokuler dengan kamera USB 5MP terintegrasi. Tampilkan gambar real-time di PC/laptop melalui software pengukuran.",
-    specs: { "Optical System": "Finite 160mm", "Head": "Binokuler + camera port", "Camera": "USB 5MP CMOS, 30fps", "Eyepiece": "WF10x/18mm", "Objective": "4x, 10x, 40x(S), 100x(S, Oil)", "Software": "Measurement & annotation included", "Output": "USB 2.0 to PC", "Illumination": "LED 3W Köhler", "Stage": "140x132mm double layer", "Power": "100-240V 50/60Hz" },
-    inStock: true, featured: false
+    id: "oly-dp23", name: "Olympus DP23", slug: "olympus-dp23",
+    category: "digital", brand: "Olympus", model: "DP23",
+    image: "/images/products/olympus/dp23.png",
+    magnification: "N/A", eyepiece: "N/A", illumination: "N/A",
+    application: "Color Microscope Camera",
+    description: "The DP23 digital microscope camera delivers high-resolution images and excellent color accuracy for clinical research, life science, and materials science applications.",
+    specs: {"Camera type":"C-mount CCD camera head","Image Sensor":"1/1.8 inch color CCD","Effective pixels":"2.83 million pixels (total pixels: 2.98 million pixels)","Scanning mode":"Progressive scan","Color filter":"RGB primary color on-chip filters","Maximum recorded pixels":"2.76 megapixels (1920 x 1440)","Recording range":"7.08 mm (H) × 5.31 mm (V), 8.8 mm (diagonal length)","ISO Sensitivity":"Equivalent to ISO 200/400/800","Camera mount":"C-mount","Image size":"Stand Alone: TIFF 1920 x 1440, JPEG-LOW (1/2.7) 1920 x 1080, JPEG-HIGH (1/8) 960 x 720\nPC Connection: File format according to cellSens specifications","Video recording":"AVI 960 x 720","Live image display (frame rate)":"1920 x 1440: 25 fps / 25 fps\n1920 x 1080: 30 fps / 28 fps\n960 x 720: 25 fps / 25 fps"},
+    extraInfo: {
+      features: [
+        "Smart image averaging feature reduces noise for crystal-clear images",
+        "Wide field of view captures more of your sample in a single shot",
+        "Exceptional color fidelity for demanding staining evaluations",
+        "Fast 60 fps live image makes panning and focusing comfortable",
+        "Network capabilities for easy image sharing"
+      ]
+    },
+    inStock: true, featured: false, badge: "Camera"
   },
   {
-    id: "d3", name: "Mikroskop Digital HDMI A33.5103", slug: "mikroskop-digital-hdmi-a33-5103",
-    category: "digital", brand: "OPTO-EDU", model: "A33.5103",
-    image: "/images/products/digital-1.webp",
-    magnification: "40x - 1000x", eyepiece: "12\" HDMI Monitor", illumination: "LED Köhler 5W",
-    application: "Teaching Hospital, Konferensi",
-    description: "Mikroskop digital profesional dengan monitor HDMI 12 inch terpisah. Ideal untuk teaching hospital dan presentasi konferensi patologi.",
-    specs: { "Display": "12\" HDMI Monitor, 1920x1080", "Camera": "HDMI 1080p60 + USB 5MP", "Optical System": "Infinity Plan Semi-APO", "Objective": "Plan Semi-APO 4x, 10x, 40x, 100x Oil", "Software": "Full measurement suite", "Output": "HDMI + USB 3.0", "Illumination": "LED Köhler 5W", "Stage": "180x150mm ceramic", "Focus": "Coaxial fine 0.001mm", "Power": "100-240V 50/60Hz" },
-    inStock: true, featured: false
-  },
-
-  // ===== METALLURGICAL =====
-  {
-    id: "m1", name: "Mikroskop Metalurgi Trinokuler A13.2603-T", slug: "mikroskop-metalurgi-trinokuler-a13-2603t",
-    category: "metallurgical", brand: "OPTO-EDU", model: "A13.2603-T",
-    image: "/images/products/metallurgical-1.webp",
-    magnification: "50x - 500x (Reflected Light)", eyepiece: "WF10x/22mm", illumination: "LED Epi 5W + Halogen 6V/20W",
-    application: "Metalurgi, QC Material",
-    description: "Mikroskop metalurgi trinokuler dengan iluminasi reflected light untuk analisis struktur logam dan paduan. Bright field & dark field built-in.",
-    specs: { "Optical System": "Infinity Plan, Epi-illumination", "Head": "Trinokuler, foto port, 30° inklinasi", "Eyepiece": "WF10x/22mm (FN22)", "Objective": "LMPlan 5x, 10x, 20x, 50x, 100x (BD)", "Nosepiece": "Quintuple reverse", "Stage": "150x150mm, X-Y travel 75x50mm", "Illumination": "LED Epi 5W reflected + Halogen transmitted", "Observation": "Bright Field, Dark Field", "Focus": "Coaxial fine 0.001mm", "Power": "100-240V 50/60Hz" },
-    inStock: true, featured: false
+    id: "oly-dp28", name: "Olympus DP28", slug: "olympus-dp28",
+    category: "digital", brand: "Olympus", model: "DP28",
+    image: "/images/products/olympus/dp28.png",
+    magnification: "N/A", eyepiece: "N/A", illumination: "N/A",
+    application: "4K Color Microscope Camera",
+    description: "The DP28 camera delivers stunning 4K resolution images, providing incredible detail and accurate color for conferences, teaching, and publication-ready documentation.",
+    specs: {"Camera type":"Single chip color CCD camera","Image Sensor":"2/3 inch color CCD","Effective pixels":"5.05 megapixels (total: 5.24 megapixels)","Scanning mode":"Progressive scan","Color filter":"RGB Bayer primary color filter","Recording range":"8.45 mm (H) × 6.62 mm (V), 10.733 mm (diagonal length)","Maximum recorded pixels":"4.7 megapixels (2448 x 1920)","ISO Sensitivity":"Equivalent to ISO 100/200/400","Camera mount":"C-mount","Image size":"Stand-alone: TIFF 2448 x 1920, JPEG-LOW (1/2.7) 1920 x 1080, JPEG-HIGH (1/8) 1224 x 960\nPC connection: File format according to cellSens specifications","Video (AVI)":"1224 x 960","Live image display (frame rate)":"2448 x 1920: 15 fps / 15 fps\n1920 x 1080: 22 fps / 22 fps\n1224 x 960: 30 fps / 30 fps"},
+    extraInfo: {
+      features: [
+        "Breathtaking 4K resolution on a large 1-inch sensor",
+        "Global shutter eliminates rolling shutter artifacts for distortion-free panning",
+        "Olympus Smart Image Averaging (OSIA) actively suppresses noise without leaving artifacts",
+        "Ideal for presenting detailed pathology or histology slides on large 4K monitors",
+        "Incredible color accuracy and sensitivity"
+      ]
+    },
+    inStock: true, featured: false, badge: "Camera"
   },
   {
-    id: "m2", name: "Mikroskop Metalurgi Upright A13.0212-B", slug: "mikroskop-metalurgi-upright-a13-0212b",
-    category: "metallurgical", brand: "OPTO-EDU", model: "A13.0212-B",
-    image: "/images/products/metallurgical-1.webp",
-    magnification: "50x - 500x", eyepiece: "WF10x/18mm", illumination: "LED Epi 3W",
-    application: "QC Pabrik, Material Testing",
-    description: "Mikroskop metalurgi binokuler kompak untuk quality control pabrik. Bright field reflected light untuk inspeksi rutin struktur material.",
-    specs: { "Optical System": "Infinity Plan, Reflected Light", "Head": "Binokuler Siedentopf, 30°", "Eyepiece": "WF10x/18mm", "Objective": "LMPlan 5x, 10x, 20x, 50x", "Nosepiece": "Quadruple", "Stage": "150x150mm with clips", "Illumination": "LED Epi 3W reflected", "Observation": "Bright Field", "Focus": "Coaxial coarse & fine", "Power": "100-240V 50/60Hz" },
-    inStock: true, featured: false
+    id: "oly-dp75", name: "Olympus DP75", slug: "olympus-dp75",
+    category: "digital", brand: "Olympus", model: "DP75",
+    image: "/images/products/olympus/dp75.png",
+    magnification: "N/A", eyepiece: "N/A", illumination: "N/A",
+    application: "High-Performance Hybrid Camera",
+    description: "The DP75 is a high-performance hybrid camera that captures brightfield and fluorescence images with exceptional quality, eliminating the need to switch between multiple cameras.",
+    specs: {"Camera type":"Single-chip color camera (pixel shifting)\nCooling system: Peltier device (active cooling)","Image Sensor":"1.1-inch, 12.37-megapixel color CMOS image sensor","Scanning mode":"Progressive scan","Camera mount":"C-mount","Effective image resolution":"8192 x 6000 (pixel shifting)\n4096 x 3000 (3CMOS mode)\n4096 x 3000 (1 x 1)\n3840 x 2160 (1 x 1) (by cropped)\n2048 x 1500 (2 x 2)\n2048 x 1500 (1 x 1)\n1920 x 1080 (1 x 1), ROI","ISO Sensitivity":"ISO 100/200/400/800/1600/3200","A/D":"12-bit","Live frame rate":"4096 x 3000 (1 x 1): 22 fps\n2048 x 1500 (1 x 1): 44 fps\n2048 x 1500 (2 x 2): 22 fps\n1920 x 1080 (1 x 1): 60 fps","Macro optical system":"Built-in, 0.07x macro optics","Anti-vibration mechanism":"Built-in","Magnification changer":"Color/Monochrome 0.5x fixed","Focusing":"Motorized focusing with automatic control","Stage":"Motorized XY stage with automatic control","Transmitted illuminator":"Built-in Köhler illumination for transmitted light,\nTransmitted high color rendering LED\nCondenser: WD 45 mm, including PHL, PH1, PH2, and PH3","Objectives":"Choose from 25 available objectives (4X–100X)\nSix-position motorized revolving nosepiece\nMotorized aberration correction: One motorized position, five standard positions","Observation Method":"Brightfield, fluorescence, phase contrast, gradient contrast","Sample holder":"Glass slides (3 slides), 35 mm dish (3 dishes), microplate, general","Fluorescence":"Fluorescence illuminator with fly-eye lens\nChoose from 18 mirror cubes; eight-position motorized mirror turret\nHigh brightness light guide light source (U-LGPS), motorized ND filter changer (100%, 25%, and 6%)","Camera Color":"6.41 megapixels, 1/1.8 color CMOS","Camera Monochrome":"6.41 megapixels, 1/1.8 monochrome CMOS"},
+    extraInfo: {
+      features: [
+        "Dual functionality captures stunning color images and highly sensitive fluorescence",
+        "Linear cooling minimizes thermal noise for faint fluorescence signals",
+        "Pixel-shift technology produces ultra-high resolution images",
+        "Fast live frame rates for smooth navigation across the specimen",
+        "Simplifies microscope setups by combining two cameras into one"
+      ]
+    },
+    inStock: true, featured: false, badge: "Premium"
   },
-
-  // ===== POLARIZING =====
+// ===== OPTILAB CATALOG PRODUCTS =====
   {
-    id: "p1", name: "Mikroskop Polarisasi Trinokuler A15.2604-T", slug: "mikroskop-polarisasi-trinokuler-a15-2604t",
-    category: "polarizing", brand: "OPTO-EDU", model: "A15.2604-T",
-    image: "/images/products/polarizing-1.webp",
-    magnification: "40x - 600x (Polarized Light)", eyepiece: "WF10x/20mm, crosshair", illumination: "LED 3W Transmitted",
-    application: "Geologi, Petrografi, Mineralogi",
-    description: "Mikroskop polarisasi trinokuler untuk analisis sayatan tipis batuan dan mineral. Meja putar 360° dengan skala vernier, Bertrand lens built-in.",
-    specs: { "Optical System": "Infinity Strain-Free Plan", "Head": "Trinokuler, foto port", "Eyepiece": "WF10x/20mm with crosshair & scale", "Objective": "Strain-Free Plan 4x, 10x, 20x, 40x, 60x", "Polarizer": "360° rotatable, removable", "Analyzer": "Slide-in, 0-90° rotatable", "Bertrand Lens": "Built-in, centering adjustable", "Stage": "Circular 360° rotating, vernier 6'", "Compensator": "λ plate, λ/4 plate, quartz wedge", "Power": "100-240V 50/60Hz" },
-    inStock: true, featured: false
-  },
-
-  // ===== FLUORESCENT =====
-  {
-    id: "f1", name: "Mikroskop Fluorescence LED A16.2603-T", slug: "mikroskop-fluorescence-led-a16-2603t",
-    category: "fluorescent", brand: "OPTO-EDU", model: "A16.2603-T",
-    image: "/images/products/lab-2.webp",
-    magnification: "40x - 1000x + Fluorescence", eyepiece: "WF10x/22mm (FN22)", illumination: "LED Epi-fluorescence + LED Transmitted",
-    application: "Riset Biomedis, Imunologi, TB Screening",
-    description: "Mikroskop fluorescence trinokuler dengan modul epi-fluorescence LED. Filter set B/G/UV/V. LED lebih aman dan tahan lama dibanding lampu merkuri konvensional.",
-    specs: { "Optical System": "Infinity Plan Semi-APO", "Head": "Trinokuler Siedentopf, 100:0/80:20", "Eyepiece": "WF10x/22mm (FN22) extra wide", "Objective": "Plan Fluor 10x, 20x, 40x, 100x Oil", "Fluorescence Module": "LED Epi-fluorescence, 4 position turret", "Filter Set": "B (Blue), G (Green), UV, V (Violet)", "Excitation Source": "High-power LED per channel", "Stage": "180x155mm ceramic, X-Y mechanical", "Illumination": "LED Transmitted 5W Köhler", "Power": "100-240V 50/60Hz" },
-    inStock: false, featured: false, badge: "Pre-Order"
-  },
-
-  // ===== INVERTED =====
-  {
-    id: "i1", name: "Mikroskop Inverted Phase Contrast A14.0205-T", slug: "mikroskop-inverted-phase-contrast-a14-0205t",
-    category: "inverted", brand: "OPTO-EDU", model: "A14.0205-T",
-    image: "/images/products/inverted-1.webp",
-    magnification: "100x - 400x (Inverted)", eyepiece: "WF10x/22mm", illumination: "LED Transmitted 5W",
-    application: "Kultur Sel, IVF, Tissue Culture",
-    description: "Mikroskop inverted trinokuler dengan phase contrast untuk pengamatan sel hidup dalam flask dan petri dish. Standar lab kultur sel dan IVF.",
-    specs: { "Optical System": "Infinity Plan Phase Contrast", "Head": "Trinokuler, foto port", "Eyepiece": "WF10x/22mm", "Objective": "LWD Phase Plan 10x, 20x, 40x (long working distance)", "Phase Contrast": "Built-in phase ring slider", "Stage": "Fixed 230x225mm, specimen holder for flask/petri", "Condenser": "Long working distance condenser, swing-out", "Illumination": "LED Transmitted 5W, top-mounted", "Focus": "Coaxial coarse & fine, range 30mm", "Power": "100-240V 50/60Hz" },
-    inStock: true, featured: false
-  },
-
-  // ===== NEW BRANDS (DUMMY PRODUCTS) =====
-  // OLYMPUS
-  {
-    id: "o1", name: "Olympus CX23 Laboratory Microscope", slug: "olympus-cx23-laboratory",
-    category: "laboratory", brand: "Olympus", model: "CX23",
-    image: "/images/products/lab-2.webp",
-    magnification: "40x - 1000x", eyepiece: "10x/20", illumination: "LED",
-    application: "Klinik, Edukasi Tinggi",
-    description: "Mikroskop binokuler standar industri untuk keperluan rutin laboratorium klinik dan institusi pendidikan.",
-    specs: { "Optical System": "Infinity", "Head": "Binokuler" },
-    inStock: true, featured: true, badge: "Populer"
+    id: "op-cat-1", name: "OptiLab Iris-2 Binocular", slug: "optilab-iris-2-binocular",
+    category: "laboratory", brand: "OptiLab", model: "Iris-2 Binocular",
+    image: "/images/products/optilab-iris-2.png",
+    magnification: "40x - 1000x", eyepiece: "WF 10x/20 mm", illumination: "3W LED Illumination System",
+    application: "Klinik, Lab",
+    description: "Mikroskop biologi binokuler yang didesain ergonomis, ideal untuk penggunaan klinis, laboratorium, pengajaran, dan demonstrasi. Dilengkapi sistem pencahayaan asferis dan fitur backup baterai Li-ion.",
+    specs: { "Illumination": "3W LED Illumination System", "Focusing": "Coaxial Coarse and Fine Focusing Knobs, Travel Range: 26mm, Scale: 2um", "Nosepiece": "Quadplex, Quintuple (Optional)", "Stage": "Stage Size 145mm x 140mm, Travel: 76mm x 52mm, Scale 0.1mm, Two Slide Holder. Optional: Integrated Stage", "Condenser": "Abbe N.A 1.25 (Iris Diaphragm)", "Eyepiece": "WF 10x/20 mm (Standard), WF 10x/18 mm (Optional)", "Objective": "Finity Plan 4X, 10X, 40X/0.65 (S), 100X/1.25 (Oil) (S). Optional: Infinity Plan Objectives, Plan 20X, Plan 60X", "Head": "Binocular Seidentopf, Inclined 30°, Rotatable 360°, Interpupilary Distance 48-75 mm. Optional: Trinocular Head", "Back Up System": "Li-ion Battery 3000 mAH" },
+    inStock: true, featured: false, badge: "TKDN (Optional)"
   },
   {
-    id: "o2", name: "Olympus SZ61 Stereo Microscope", slug: "olympus-sz61-stereo",
-    category: "stereo", brand: "Olympus", model: "SZ61",
-    image: "/images/products/stereo-1.webp",
-    magnification: "6.7x - 45x", eyepiece: "10x/22", illumination: "LED Ring (Opsional)",
-    application: "Industri, Inspeksi PCB",
-    description: "Mikroskop stereo dengan rentang zoom rasio tinggi, memberikan gambar resolusi tinggi dan kedalaman fokus yang sangat baik.",
-    specs: { "Zoom Ratio": "6.7:1", "Head": "Binokuler" },
-    inStock: true, featured: true
-  },
-
-  // EUROMEX
-  {
-    id: "eu1", name: "Euromex BioBlue Lab", slug: "euromex-bioblue-lab",
-    category: "laboratory", brand: "Euromex", model: "BB.1152",
-    image: "/images/products/lab-1.webp",
-    magnification: "40x - 1000x", eyepiece: "WF10x/20", illumination: "NeoLED",
-    application: "Universitas, Laboratorium Rutin",
-    description: "Mikroskop laboratorium Eropa dengan sistem NeoLED yang inovatif untuk pencahayaan optimal tanpa panas berlebih.",
-    specs: { "Optical System": "Finite", "Head": "Binokuler" },
-    inStock: true, featured: true
+    id: "op-cat-2", name: "OptiLab Iris-4 Binocular", slug: "optilab-iris-4-binocular",
+    category: "laboratory", brand: "OptiLab", model: "Iris-4 Binocular",
+    image: "/images/products/optilab-iris-4.png",
+    magnification: "40x - 1000x", eyepiece: "WF 10x/20 mm", illumination: "3W LED Illumination System",
+    application: "Klinik, Lab, Riset",
+    description: "Mikroskop biologi binokuler dengan sistem optik infinity plan untuk resolusi dan definisi terbaik. Cocok untuk aplikasi klinis dan laboratorium tingkat lanjut.",
+    specs: { "Illumination": "3W LED Illumination System", "Focusing": "Coaxial Coarse and Fine Focusing Knobs, Travel Range: 26mm, Scale: 2um", "Nosepiece": "Quadplex, Quintuple (Optional)", "Stage": "Stage Size 145mm x 140mm, Travel: 76mm x 52mm, Scale 0.1mm, Two Slide Holder. Optional: Integrated Stage", "Condenser": "Abbe N.A 1.25 (Iris Diaphragm)", "Eyepiece": "WF 10x/20 mm (Standard), WF 10x/18 mm (Optional)", "Objective": "Infinity Plan 4X, 10X, 40X (S), 100X (Oil) (S). Optional: Finity Plan Objectives, Plan 20X, Plan 60X", "Head": "Binocular Seidentopf, Inclined 30°, Rotatable 360°, Interpupilary Distance 48-75 mm. Optional: Trinocular Head", "Back Up System": "Li-ion Battery 3000 mAH" },
+    inStock: true, featured: false, badge: "TKDN"
   },
   {
-    id: "eu2", name: "Euromex NexiusZoom", slug: "euromex-nexiuszoom",
-    category: "stereo", brand: "Euromex", model: "NZ.1902",
-    image: "/images/products/stereo-1.webp",
-    magnification: "6.7x - 45x", eyepiece: "WF10x/22", illumination: "LED 3W Top & Bottom",
-    application: "Riset Material, Botani",
-    description: "Mikroskop stereo zoom tangguh dengan sistem iluminasi ganda, ideal untuk pengamatan spesimen biologi dan material opak.",
-    specs: { "Zoom": "0.67x - 4.5x", "Stand": "Pillar" },
-    inStock: true, featured: true, badge: "Terlaris"
-  },
-
-  // DINO-LITE
-  {
-    id: "dl1", name: "Dino-Lite Edge 5MP AM7115MZT", slug: "dinolite-edge-5mp-am7115mzt",
-    category: "digital", brand: "Dino-Lite", model: "AM7115MZT",
-    image: "/images/products/digital-1.webp",
-    magnification: "20x - 220x", eyepiece: "Digital (PC/Mac)", illumination: "8x White LED",
-    application: "Inspeksi Manufaktur, Forensik",
-    description: "Mikroskop digital genggam 5 Megapixel dengan polarizer terintegrasi dan fitur pengukuran presisi tinggi (AMR).",
-    specs: { "Sensor": "5MP CMOS", "Interface": "USB 2.0", "Polarizer": "Yes" },
-    inStock: true, featured: true, badge: "Premium"
-  },
-  {
-    id: "dl2", name: "Dino-Lite Premier AM4113T", slug: "dinolite-premier-am4113t",
-    category: "digital", brand: "Dino-Lite", model: "AM4113T",
-    image: "/images/products/digital-1.webp",
-    magnification: "10x - 200x", eyepiece: "Digital", illumination: "8x White LED",
-    application: "Edukasi, Pemeriksaan Kulit",
-    description: "Mikroskop digital USB 1.3MP yang serbaguna untuk kebutuhan dokumentasi dasar dan pengamatan sehari-hari.",
-    specs: { "Sensor": "1.3MP", "Interface": "USB 2.0" },
-    inStock: true, featured: true
-  },
-
-  // OPTILAB
-  {
-    id: "op1", name: "Kamera Mikroskop Optilab Advance Plus", slug: "optilab-advance-plus",
-    category: "digital", brand: "Optilab", model: "Advance Plus",
-    image: "/images/products/digital-1.webp",
-    magnification: "Tergantung Mikroskop", eyepiece: "PC View", illumination: "N/A",
-    application: "Digitalisasi Mikroskop, Telepathology",
-    description: "Kamera mikroskop buatan Indonesia (TKDN) untuk mendigitalisasi mikroskop analog Anda menjadi sistem pencitraan modern.",
-    specs: { "Sensor": "CMOS 5MP", "Software": "Optilab Viewer", "TKDN": "Tersertifikasi" },
+    id: "op-cat-3", name: "OptiLab Iris-4 Trinocular", slug: "optilab-iris-4-trinocular",
+    category: "laboratory", brand: "OptiLab", model: "Iris-4 Trinocular",
+    image: "/images/products/optilab-iris-4.png",
+    magnification: "40x - 1000x", eyepiece: "WF 10x/20 mm", illumination: "3W LED Illumination System",
+    application: "Dokumentasi, Klinik, Lab, Riset",
+    description: "Mikroskop biologi trinokuler dengan port kamera untuk dokumentasi digital. Sistem optik infinity plan memberikan gambar yang luar biasa tajam.",
+    specs: { "Illumination": "3W LED Illumination System", "Focusing": "Coaxial Coarse and Fine Focusing Knobs, Travel Range: 26mm, Scale: 2um", "Nosepiece": "Quadplex, Quintuple (Optional)", "Stage": "Stage Size 145mm x 140mm, Travel: 76mm x 52mm, Scale 0.1mm, Two Slide Holder. Optional: Integrated Stage", "Condenser": "Abbe N.A 1.25 (Iris Diaphragm)", "Eyepiece": "WF 10x/20 mm (Standard), WF 10x/18 mm (Optional)", "Objective": "Infinity Plan 4X, 10X, 40X (S), 100X (Oil) (S). Optional: Finity Plan Objectives, Plan 20X, Plan 60X", "Head": "Trinocular Seidentopf, Inclined 30°, Rotatable 360°, Interpupilary Distance 48-75 mm, Light Distribution 20:80. Optional: Binocular Head", "Back Up System": "Li-ion Battery 3000 mAH" },
     inStock: true, featured: true, badge: "TKDN"
   },
   {
-    id: "op2", name: "Optilab Mikroskop Trinokuler Paket", slug: "optilab-mikroskop-trinokuler-paket",
-    category: "laboratory", brand: "Optilab", model: "Pro Series",
-    image: "/images/products/lab-1.webp",
-    magnification: "40x - 1000x", eyepiece: "WF10x/18", illumination: "LED",
-    application: "Laboratorium Klinik, Kampus",
-    description: "Paket bundling mikroskop trinokuler dan kamera Optilab lengkap dengan software analisis berbahasa Indonesia.",
-    specs: { "System": "Bundled Digital Microscope", "Camera": "Optilab Pro" },
-    inStock: true, featured: true, badge: "Paket Lengkap"
-  }
-];
+    id: "op-cat-4", name: "OptiLab Iris-4 Stereo Binocular", slug: "optilab-iris-4-stereo-binocular",
+    category: "stereo", brand: "OptiLab", model: "Iris-4 Stereo Binocular",
+    image: "/images/products/optilab-stereo-bino-v2.png",
+    magnification: "6.8x - 47x", eyepiece: "WF 10X/24 mm", illumination: "3W LED (Transmiting & Reflecting)",
+    application: "Industri, Elektronik, Mineral",
+    description: "Mikroskop stereo binokuler dengan rasio zoom tinggi, banyak digunakan di bidang logam, mineral, dan elektronik. Desain modern dan ergonomis.",
+    specs: { "Illumination": "Transmiting 3W LED, Reflecting 3W LED", "Eyepiece": "WF 10X/24 mm", "Zoom Ratio": "1:6.8", "Magnification": "6.8 - 47X", "Head Type": "Binocular Stereo", "Viewing Angle": "35°", "Stereo Angle": "12°", "Working Distance": "110 mm", "Field Diameter": "23 mm", "Interpupillary Distance": "50 - 75 mm", "Focusing Distance": "Pilar Stand 115mm / Guide Rail Stand 80mm", "Battery": "Li-ion Battery 3000 mAH", "Base": "330x300mm", "Plate": "Black & White" },
+    inStock: true, featured: false, badge: "TKDN"
+  },
+  {
+    id: "op-cat-5", name: "OptiLab Iris-4 Stereo Trinocular", slug: "optilab-iris-4-stereo-trinocular",
+    category: "stereo", brand: "OptiLab", model: "Iris-4 Stereo Trinocular",
+    image: "/images/products/optilab-stereo-trino-v2.png",
+    magnification: "6.8x - 47x", eyepiece: "WF 10X/24 mm", illumination: "3W LED (Transmiting & Reflecting)",
+    application: "Industri, Dokumentasi Digital",
+    description: "Mikroskop stereo trinokuler dengan rasio zoom tinggi dan port tambahan untuk kamera digital. Ideal untuk analisis dan dokumentasi spesimen 3D.",
+    specs: { "Illumination": "Transmiting 3W LED, Reflecting 3W LED", "Eyepiece": "WF 10X/24 mm", "Zoom Ratio": "1:6.8", "Magnification": "6.8 - 47X", "Head Type": "Trinocular Stereo", "Viewing Angle": "35°", "Stereo Angle": "12°", "Working Distance": "110 mm", "Field Diameter": "23 mm", "Interpupillary Distance": "50 - 75 mm", "Focusing Distance": "Pilar Stand 115mm / Guide Rail Stand 80mm", "Battery": "Li-ion Battery 3000 mAH", "Base": "330x300mm", "Plate": "Black & White" },
+    inStock: true, featured: false, badge: "TKDN"
+  },
+  {
+    id: "op-cat-6", name: "OptiLab Advance Lite", slug: "optilab-advance-lite",
+    category: "digital", brand: "OptiLab", model: "Advance Lite",
+    image: "/images/products/optilab-advance.png",
+    magnification: "Tergantung Mikroskop", eyepiece: "Digital (PC/Laptop)", illumination: "N/A",
+    application: "Dokumentasi Dasar, Edukasi",
+    description: "Kamera digital untuk mikroskop dengan sensor Sony IMX307. Mendukung dokumentasi foto dan video dalam format Full HD yang dihubungkan melalui USB 2.0.",
+    specs: { "Sensor": "1/2.8\"", "Output Interface": "USB 2.0", "Resolusi Foto": "1920x1080", "Resolusi Video": "26 fps@640x480, 38 fps@960x540, 38 fps@1920x1080", "Software": "Optilab Viewer 4", "System Minimum": "Intel core i3 or Higher, 2GB RAM, 500MB Hard disk space", "OS": "Windows 7/8/10 – 32/64 bit", "Exposure & White Balance": "Automatic and Manual", "Mount": "C-mount to 23.2mm Adapter (With Reduction Lens Included)" },
+    inStock: true, featured: false, badge: "TKDN"
+  },
+  {
+    id: "op-cat-7", name: "OptiLab Advance Observer", slug: "optilab-advance-observer",
+    category: "digital", brand: "OptiLab", model: "Advance Observer",
+    image: "/images/products/optilab-advance.png",
+    magnification: "Tergantung Mikroskop", eyepiece: "Digital (PC/Laptop)", illumination: "N/A",
+    application: "Lab, Riset, Telepathology",
+    description: "Kamera digital mikroskop kelas menengah dengan sensor Sony IMX335 (5MP). Mampu merekam video dan mengambil foto resolusi tinggi untuk kebutuhan analitik.",
+    specs: { "Sensor": "1/2.8\"", "Output Interface": "USB 2.0", "Resolusi Foto": "2592x1944", "Resolusi Video": "20fps 960x760, 26 fps@1280x960, 26 fps@2592x1944", "Software": "Optilab Viewer 4", "System Minimum": "Intel core i3 or Higher, 2GB RAM, 500MB Hard disk space", "OS": "Windows 7/8/10 – 32/64 bit", "Exposure & White Balance": "Automatic and Manual", "Mount": "C-mount to 23.2mm Adapter (With Reduction Lens Included)" },
+    inStock: true, featured: false, badge: "TKDN"
+  },
+  {
+    id: "op-cat-8", name: "OptiLab Advance Plus", slug: "optilab-advance-plus",
+    category: "digital", brand: "OptiLab", model: "Advance Plus",
+    image: "/images/products/optilab-advance.png",
+    magnification: "Tergantung Mikroskop", eyepiece: "Digital (PC/Laptop)", illumination: "N/A",
+    application: "Dokumentasi Profesional, Publikasi",
+    description: "Kamera digital mikroskop premium dengan sensor Sony IMX577. Mengambil gambar resolusi 4K (3840x3040) dengan kualitas superior untuk riset dan publikasi.",
+    specs: { "Sensor": "1/2.3\"", "Output Interface": "USB 2.0", "Resolusi Foto": "3840x3040", "Resolusi Video": "20fps 1920x1520, 20fps 3840x3040", "Software": "Optilab Viewer 4", "System Minimum": "Intel core i3 or Higher, 2GB RAM, 500MB Hard disk space", "OS": "Windows 7/8/10 – 32/64 bit", "Exposure & White Balance": "Automatic and Manual", "Mount": "C-mount to 23.2mm Adapter (With Reduction Lens Included)" },
+    inStock: true, featured: true, badge: "TKDN"
+  },
+  {
+    id: "op-cat-9", name: "OptiLab Sigma Full HD", slug: "optilab-sigma-full-hd",
+    category: "digital", brand: "OptiLab", model: "Sigma Full HD",
+    image: "/images/products/optilab-sigma.png",
+    magnification: "Tergantung Mikroskop", eyepiece: "HDMI Monitor / PC", illumination: "N/A",
+    application: "Presentasi, Diskusi Kasus",
+    description: "Kamera digital mikroskop yang dilengkapi output ganda HDMI dan USB. Dilengkapi software internal untuk penggunaan tanpa PC (melalui mouse dan monitor).",
+    specs: { "Sensor": "1/2.8” Sony IMX415", "Output Interface": "HDMI + USB 2.0", "Resolusi Foto": "1920x1080 (Full HD)", "Resolusi Video": "60fps @1920x1080 (HDMI), 30fps @1920x1080 (USB)", "Storage": "SD Card", "Software": "Internal Software (HDMI + Mouse) & Optilab Viewer 4", "System Minimum": "Intel core i3 or Higher, 2GB RAM, 500MB Hard disk space", "OS": "Windows 7/8/10 – 32/64 bit", "Exposure & White Balance": "Automatic and Manual", "Mount": "C-mount to 23.2mm Adapter (With Reduction Lens Included)" },
+    inStock: true, featured: false, badge: "TKDN"
+  },
+  {
+    id: "op-cat-10", name: "OptiLab Sigma 4K", slug: "optilab-sigma-4k",
+    category: "digital", brand: "OptiLab", model: "Sigma 4K",
+    image: "/images/products/optilab-sigma.png",
+    magnification: "Tergantung Mikroskop", eyepiece: "HDMI Monitor / PC", illumination: "N/A",
+    application: "High-End Riset, Konferensi",
+    description: "Kamera mikroskop resolusi 4K ultra-high definition dengan output HDMI dan USB 3.0. Menghasilkan gambar paling detail untuk observasi presisi tinggi.",
+    specs: { "Sensor": "1/1.8” Sony IMX678", "Output Interface": "HDMI + USB 3.0", "Resolusi Foto": "3840 x 2160 (4K)", "Resolusi Video": "72fps 3840x2160 (HDMI), 30 fps 3840x2160 (USB)", "Storage": "SD Card & Flashdisk", "Software": "Internal Software (HDMI + Mouse) & Optilab Viewer 4", "System Minimum": "Intel core i3 or Higher, 2GB RAM, 500MB Hard disk space", "OS": "Windows 7/8/10 – 32/64 bit", "Exposure & White Balance": "Automatic and Manual", "Mount": "C-mount to 23.2mm Adapter (With Reduction Lens Included)" },
+    inStock: true, featured: true, badge: "TKDN"
+  },
+  {
+    id: "op-cat-11", name: "OptiLab NVeCam", slug: "optilab-nvecam",
+    category: "digital", brand: "OptiLab", model: "NVeCam",
+    image: "/images/products/optilab-nvecam.png",
+    magnification: "Digital", eyepiece: "Smartphone/Laptop", illumination: "Built-in LED",
+    application: "Screening Kanker Serviks, IVA",
+    description: "Kamera khusus skrining serviks (Cervical Screening Camera) yang sangat membantu mendeteksi kanker serviks melalui metode IVA. Mendukung koneksi WiFi tanpa aplikasi tambahan.",
+    specs: { "Resolusi": "640 x 480 pixel", "Data Transmission": "WLAN 2.4 GHz", "User Interface": "Webpage", "Battery": "Lithium 3000mAh", "Input Power": "DC 5V 2A", "Field of View": "19 degree/6 cm", "Object Focal Distance": "18 cm", "Dimension": "140 x 55 x 60 mm" },
+    inStock: true, featured: true, badge: "TKDN"
+  },
+  
+  ];
