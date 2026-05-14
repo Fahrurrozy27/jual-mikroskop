@@ -29,7 +29,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const category = categories.find((c) => c.slug === product.category) || categories.find((c) => c.id === product.category);
+  const categoryId = Array.isArray(product.category) ? product.category[0] : product.category;
+  const category = categories.find((c) => c.slug === categoryId) || categories.find((c) => c.id === categoryId);
 
   const title = `Jual ${product.name} | ${product.brand} - JualMikroskop.id`;
   const description = `${product.name} (${product.model}) dari ${product.brand}. ${product.description} Spesifikasi utama: ${product.magnification}, ${product.eyepiece}. Hubungi kami untuk penawaran harga B2B terbaik.`;
@@ -67,7 +68,8 @@ export default async function ProductDetailPage({ params }: Props) {
     notFound();
   }
 
-  const category = categories.find((c) => c.slug === product.category) || categories.find((c) => c.id === product.category);
+  const categoryId = Array.isArray(product.category) ? product.category[0] : product.category;
+  const category = categories.find((c) => c.slug === categoryId) || categories.find((c) => c.id === categoryId);
 
   // JSON-LD Product Schema
   const jsonLd = {

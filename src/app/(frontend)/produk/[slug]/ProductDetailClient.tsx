@@ -44,7 +44,7 @@ export default function ProductDetailClient({ product, category }: { product: Pr
             <ChevronRight className="w-3.5 h-3.5 flex-shrink-0" />
             <Link href="/produk" className="hover:text-primary-600 transition-colors">Produk</Link>
             <ChevronRight className="w-3.5 h-3.5 flex-shrink-0" />
-            <Link href={`/produk?kategori=${product.category}`} className="hover:text-primary-600 transition-colors">
+            <Link href={`/produk?kategori=${Array.isArray(product.category) ? product.category[0] : product.category}`} className="hover:text-primary-600 transition-colors">
               {category?.name || "Kategori"}
             </Link>
             <ChevronRight className="w-3.5 h-3.5 flex-shrink-0" />

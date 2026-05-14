@@ -2,7 +2,7 @@ export interface Product {
   id: string;
   name: string;
   slug: string;
-  category: string;
+  category: string | string[];
   brand: string;
   model: string;
     image: string;
@@ -44,7 +44,7 @@ export const products: Product[] = [
   },
   {
     id: "oly-cx33", name: "Olympus CX33", slug: "olympus-cx33",
-    category: "laboratory", brand: "Olympus", model: "CX33",
+    category: ["laboratory", "student"], brand: "Olympus", model: "CX33",
     image: "/images/products/olympus/cx33_43.png",
     magnification: "40x - 1000x", eyepiece: "10X", illumination: "LED",
     application: "Everyday brightfield and darkfield observations",
@@ -63,7 +63,7 @@ export const products: Product[] = [
   },
   {
     id: "oly-cx43", name: "Olympus CX43", slug: "olympus-cx43",
-    category: "laboratory", brand: "Olympus", model: "CX43",
+    category: ["laboratory", "student"], brand: "Olympus", model: "CX43",
     image: "/images/products/olympus/cx33_43.png",
     magnification: "40x - 1000x", eyepiece: "10X", illumination: "LED",
     application: "Brightfield, darkfield, phase contrast, simple polarization, and fluorescence",
@@ -482,7 +482,7 @@ export const products: Product[] = [
 // ===== OPTILAB CATALOG PRODUCTS =====
   {
     id: "op-cat-1", name: "OptiLab Iris-2 Binocular", slug: "optilab-iris-2-binocular",
-    category: "laboratory", brand: "OptiLab", model: "Iris-2 Binocular",
+    category: ["laboratory", "student"], brand: "OptiLab", model: "Iris-2 Binocular",
     image: "/images/products/optilab-iris-2.png",
     magnification: "40x - 1000x", eyepiece: "WF 10x/20 mm", illumination: "3W LED Illumination System",
     application: "Klinik, Lab",
@@ -492,7 +492,7 @@ export const products: Product[] = [
   },
   {
     id: "op-cat-2", name: "OptiLab Iris-4 Binocular", slug: "optilab-iris-4-binocular",
-    category: "laboratory", brand: "OptiLab", model: "Iris-4 Binocular",
+    category: ["laboratory", "student"], brand: "OptiLab", model: "Iris-4 Binocular",
     image: "/images/products/optilab-iris-4.png",
     magnification: "40x - 1000x", eyepiece: "WF 10x/20 mm", illumination: "3W LED Illumination System",
     application: "Klinik, Lab, Riset",
@@ -502,7 +502,7 @@ export const products: Product[] = [
   },
   {
     id: "op-cat-3", name: "OptiLab Iris-4 Trinocular", slug: "optilab-iris-4-trinocular",
-    category: "laboratory", brand: "OptiLab", model: "Iris-4 Trinocular",
+    category: ["laboratory", "student"], brand: "OptiLab", model: "Iris-4 Trinocular",
     image: "/images/products/optilab-iris-4.png",
     magnification: "40x - 1000x", eyepiece: "WF 10x/20 mm", illumination: "3W LED Illumination System",
     application: "Dokumentasi, Klinik, Lab, Riset",
@@ -590,5 +590,602 @@ export const products: Product[] = [
     specs: { "Resolusi": "640 x 480 pixel", "Data Transmission": "WLAN 2.4 GHz", "User Interface": "Webpage", "Battery": "Lithium 3000mAh", "Input Power": "DC 5V 2A", "Field of View": "19 degree/6 cm", "Object Focal Distance": "18 cm", "Dimension": "140 x 55 x 60 mm" },
     inStock: true, featured: true, badge: "TKDN"
   },
-  
-  ];
+  {
+    id: "bone-1", name: "B-ONE BTNC-8-4100", slug: "bone-btnc-8-4100",
+    category: ["laboratory", "digital", "student"], brand: "B-ONE", model: "BTNC-8-4100",
+    image: "/images/products/b-one-btnc-clean.png",
+    magnification: "40x - 1000x", eyepiece: "WF10x", illumination: "6V 20W Halogen",
+    application: "Klinik, Edukasi, Laboratorium",
+    description: "Mikroskop biologis dengan LCD screen 8-inch dan kamera CCD terintegrasi. Memiliki eyepiece bidang pandang luas dan objektif achromatic untuk gambar yang jernih.",
+    specs: {
+      "Viewing head": "4x, 10x, 40x(s), 100x(s, oil)",
+      "Huygens eyepiecesng head": "Wide field eyepiece: WF10x (WF16x optional)",
+      "Mechanical tube length": "160mm",
+      "Object to primary image distance": "195mm",
+      "Viewing head ": "Compensation free binocular head inclined at 45°",
+      "Stage size": "Double layer mechanical stage size 132x140mm, moving range 75x45mm",
+      "Focusing": "Coaxial coarse and fine adjustment, focusing range 30mm, focusing interval 0,002mm",
+      "Condenser": "Abbe NA= 1,25 with iris diaphragm & filter",
+      "Illumination": "6V 20W halogen lamp, adjustable brightness",
+      "Display": "8 inch lcd display",
+      "Power": "AC 220V ±22V output 6V",
+      "Nett weight": "6,5kg",
+      "Dimension (including binocular)": "185x270x400mm"
+    },
+    inStock: true, featured: true, badge: "New"
+  },
+  {
+    id: "biobase-szm-45", name: "Biobase SZM-45", slug: "biobase-szm-45",
+    category: ["stereo"], brand: "Biobase", model: "SZM-45",
+    image: "/images/products/szm45.jpg",
+    magnification: "7x - 45x (Zoom 0.7x~4.5x)", eyepiece: "WF10X", illumination: "LED lights (Uplighting & Downlighting)",
+    application: "Inspeksi PCB, Riset, Edukasi",
+    description: "Stereo Zoom Microscope tipe binokuler dengan perbesaran zoom kontinu 0.7X~4.5X dan lampu LED ganda.",
+    specs: {
+      "Observation Head": "Binocular observation head tilted 45°",
+      "Eyepiece": "High point wide field of view adjustable eyepiece WF10X",
+      "Zoom Objective": "0.7X~4.5X",
+      "Zoom Ratio": "6.4:1",
+      "Working Distance": "100mm",
+      "Focusing Bracket": "Focusing frame adjustment knob",
+      "Interpupillary Distance": "5.4~7.6mm",
+      "Uplighting": "LED lights",
+      "Downlighting": "LED lights",
+      "Power Supply": "AC100~240V, 50/60Hz",
+      "Package": "Foam carton",
+      "Packing Size": "500*260*370 mm",
+      "Gross Weight": "8 kg"
+    },
+    inStock: true, featured: true
+  },
+  {
+    id: "biobase-szm-45t", name: "Biobase SZM-45T", slug: "biobase-szm-45t",
+    category: ["stereo"], brand: "Biobase", model: "SZM-45T",
+    image: "/images/products/szm45t.jpg",
+    magnification: "7x - 45x (Zoom 0.7x~4.5x)", eyepiece: "WF10X", illumination: "LED lights (Uplighting & Downlighting)",
+    application: "Dokumentasi, Inspeksi PCB, Riset",
+    description: "Stereo Zoom Microscope tipe trinokuler dengan port kamera, perbesaran zoom kontinu 0.7X~4.5X dan lampu LED ganda.",
+    specs: {
+      "Observation Head": "Trinocular body tilted 45°",
+      "Eyepiece": "High point wide field of view adjustable eyepiece WF10X",
+      "Zoom Objective": "0.7X~4.5X",
+      "Zoom Ratio": "6.4:1",
+      "Working Distance": "100mm",
+      "Focusing Bracket": "Focusing frame adjustment knob",
+      "Interpupillary Distance": "5.4~7.6mm",
+      "Uplighting": "LED lights",
+      "Downlighting": "LED lights",
+      "Power Supply": "AC100~240V, 50/60Hz",
+      "Package": "Foam carton",
+      "Packing Size": "500*260*370 mm",
+      "Gross Weight": "8 kg"
+    },
+    inStock: true, featured: true, badge: "Trinocular"
+  },
+  {
+    id: "biobase-st-20", name: "Biobase ST-20", slug: "biobase-st-20",
+    category: ["stereo"], brand: "Biobase", model: "ST-20",
+    image: "/images/products/st20.jpg",
+    magnification: "20x", eyepiece: "WF10X", illumination: "Natural light binocular",
+    application: "Edukasi Dasar, Inspeksi Sederhana",
+    description: "Stereo Microscope ST-20 dengan pencahayaan alami (Natural light) dan objektif tetap 2X.",
+    specs: {
+      "Lighting": "Natural light binocular",
+      "Observation Head & Main Body": "Straight head",
+      "Objective Lens": "2X",
+      "Working Distance": "80mm",
+      "Eyepiece": "WF10X",
+      "Power Supply": "/",
+      "Packing Size": "300*200*150mm",
+      "Gross Weight": "3kg"
+    },
+    inStock: true, featured: true
+  },
+  {
+    id: "biobase-st-40", name: "Biobase ST-40", slug: "biobase-st-40",
+    category: ["stereo"], brand: "Biobase", model: "ST-40",
+    image: "/images/products/st40.jpg",
+    magnification: "20x & 40x", eyepiece: "WF10X", illumination: "Transmissive illuminator / oblique light",
+    application: "Edukasi, Laboratorium",
+    description: "Stereo Microscope ST-40 dengan iluminasi ganda, kepala binokuler miring yang dapat diputar, dan objektif 2X & 4X (rotasi 90°).",
+    specs: {
+      "Lighting": "Transmissive illuminator/oblique light binocular",
+      "Observation Head & Main Body": "Tilt observation, rotatable body",
+      "Objective Lens": "2X&4X, rotate 90°",
+      "Working Distance": "57mm",
+      "Eyepiece": "WF10X",
+      "Power Supply": "AC100~240V, 50/60Hz",
+      "Packing Size": "360*170*290mm",
+      "Gross Weight": "6kg"
+    },
+    inStock: true, featured: true
+  },
+  {
+    id: "biobase-st-60", name: "Biobase ST-60", slug: "biobase-st-60",
+    category: ["stereo"], brand: "Biobase", model: "ST-60",
+    image: "/images/products/st60.jpg",
+    magnification: "20x & 40x", eyepiece: "WF10X", illumination: "Ring light binocular",
+    application: "Inspeksi, Perbaikan Elektronik",
+    description: "Stereo Microscope ST-60 dengan ring light, kepala binokuler miring yang dapat berputar 360°, dan objektif 2X & 4X (rotasi 360°).",
+    specs: {
+      "Lighting": "Ring light binocular",
+      "Observation Head & Main Body": "Tilt viewing body can be rotated 360°",
+      "Objective Lens": "2X&4X, 360° rotation",
+      "Working Distance": "100mm",
+      "Eyepiece": "WF10X",
+      "Power Supply": "AC100~240V, 50/60Hz",
+      "Packing Size": "400*250*360mm",
+      "Gross Weight": "8kg"
+    },
+    inStock: true, featured: true
+  }
+,
+  {
+    "id": "euromex-microblue",
+    "name": "Euromex MicroBlue",
+    "slug": "euromex-microblue",
+    "category": [
+      "education"
+    ],
+    "brand": "Euromex",
+    "model": "MicroBlue",
+    "image": "",
+    "magnification": "40x - 1000x",
+    "eyepiece": "WF 10x/18 mm",
+    "illumination": "1W LED / NeoLED",
+    "application": "Edukasi Dasar, Sekolah",
+    "description": "Mikroskop biologi level entri yang ideal untuk pendidikan dengan pencahayaan LED yang terang.",
+    "specs": {
+      "Eyepiece": "WF 10x/18 mm",
+      "Objectives": "Achromatic 4x, 10x, S40x, S100x",
+      "Stage": "Mechanical X-Y stage",
+      "Focusing": "Coaxial coarse and fine",
+      "Illumination": "1W LED cordless"
+    },
+    "inStock": true,
+    "featured": true,
+    "badge": "Education"
+  },
+  {
+    "id": "euromex-ecoblue",
+    "name": "Euromex EcoBlue",
+    "slug": "euromex-ecoblue",
+    "category": [
+      "education"
+    ],
+    "brand": "Euromex",
+    "model": "EcoBlue",
+    "image": "",
+    "magnification": "40x - 1000x",
+    "eyepiece": "WF 10x/18 mm",
+    "illumination": "1W NeoLED",
+    "application": "Edukasi Menengah, Biologi Dasar",
+    "description": "Mikroskop tangguh dengan ergonomi yang sangat baik, direkomendasikan untuk pengguna edukasi tingkat lanjut.",
+    "specs": {
+      "Eyepiece": "WF 10x/18 mm",
+      "Objectives": "Achromatic 4x, 10x, S40x, S100x",
+      "Stage": "Integrated X-Y mechanical stage",
+      "Focusing": "Coaxial coarse and fine",
+      "Illumination": "1W NeoLED"
+    },
+    "inStock": true,
+    "featured": true
+  },
+  {
+    "id": "euromex-bioblue",
+    "name": "Euromex BioBlue",
+    "slug": "euromex-bioblue",
+    "category": [
+      "education",
+      "laboratory"
+    ],
+    "brand": "Euromex",
+    "model": "BioBlue",
+    "image": "",
+    "magnification": "40x - 1000x",
+    "eyepiece": "WF 10x/18 mm",
+    "illumination": "1W NeoLED",
+    "application": "Laboratorium Sekolah, Universitas",
+    "description": "Seri unggulan dengan lensa Semi-Plan, menghasilkan resolusi dan ketajaman tinggi untuk riset tingkat mahasiswa.",
+    "specs": {
+      "Eyepiece": "WF 10x/18 mm",
+      "Objectives": "Semi-Plan 4x, 10x, S40x, S100x",
+      "Stage": "Mechanical X-Y stage 130x130mm",
+      "Focusing": "Coaxial coarse and fine",
+      "Illumination": "1W NeoLED adjustable"
+    },
+    "inStock": true,
+    "featured": true,
+    "badge": "Best Seller"
+  },
+  {
+    "id": "euromex-biobluelab",
+    "name": "Euromex BioBlue.Lab",
+    "slug": "euromex-biobluelab",
+    "category": [
+      "laboratory",
+      "education"
+    ],
+    "brand": "Euromex",
+    "model": "BioBlue.Lab",
+    "image": "",
+    "magnification": "40x - 1000x",
+    "eyepiece": "WF 10x/20 mm",
+    "illumination": "3W NeoLED",
+    "application": "Universitas, Rutin Laboratorium",
+    "description": "Mikroskop laboratorium tingkat lanjut dengan fitur rackless stage dan lensa plan infinity.",
+    "specs": {
+      "Eyepiece": "WF 10x/20 mm",
+      "Objectives": "Plan IOS 4x, 10x, S40x, S100x",
+      "Stage": "Rackless mechanical X-Y stage",
+      "Focusing": "Coaxial coarse and fine",
+      "Illumination": "3W NeoLED Köhler"
+    },
+    "inStock": true,
+    "featured": true
+  },
+  {
+    "id": "euromex-bluescope",
+    "name": "Euromex BlueScope",
+    "slug": "euromex-bluescope",
+    "category": [
+      "education",
+      "digital"
+    ],
+    "brand": "Euromex",
+    "model": "BlueScope",
+    "image": "",
+    "magnification": "40x - 1000x",
+    "eyepiece": "WF 10x/18 mm",
+    "illumination": "NeoLED",
+    "application": "Edukasi Digital",
+    "description": "Solusi lengkap mikroskop edukasi yang mendukung pengamatan digital dengan fitur modern.",
+    "specs": {
+      "Eyepiece": "WF 10x/18 mm",
+      "Objectives": "Achromatic 4x, 10x, S40x",
+      "Stage": "Mechanical stage",
+      "Focusing": "Coaxial coarse/fine",
+      "Illumination": "NeoLED"
+    },
+    "inStock": true,
+    "featured": true
+  },
+  {
+    "id": "euromex-stereoblue-edu",
+    "name": "Euromex StereoBlue (Edu)",
+    "slug": "euromex-stereoblue-edu",
+    "category": [
+      "stereo",
+      "education"
+    ],
+    "brand": "Euromex",
+    "model": "StereoBlue",
+    "image": "",
+    "magnification": "7x - 45x Zoom",
+    "eyepiece": "WF 10x/20 mm",
+    "illumination": "3W LED Dual",
+    "application": "Inspeksi Preparat, Botani",
+    "description": "Mikroskop stereo dengan rentang zoom 0.7x - 4.5x yang ideal untuk pengamatan spesimen utuh.",
+    "specs": {
+      "Eyepiece": "WF 10x/20 mm",
+      "Zoom": "0.7x to 4.5x",
+      "Working Distance": "100 mm",
+      "Stand": "Rack & Pinion",
+      "Illumination": "3W LED Incident & Transmitted"
+    },
+    "inStock": true,
+    "featured": true
+  },
+  {
+    "id": "euromex-nexiuszoom",
+    "name": "Euromex NexiusZoom",
+    "slug": "euromex-nexiuszoom",
+    "category": [
+      "industry",
+      "stereo"
+    ],
+    "brand": "Euromex",
+    "model": "NexiusZoom",
+    "image": "",
+    "magnification": "6.5x - 45x Zoom",
+    "eyepiece": "WF 10x/22 mm",
+    "illumination": "3W LED",
+    "application": "Inspeksi Industri, PCB",
+    "description": "Mikroskop stereo profesional yang tangguh untuk industri dan penelitian dengan bidang pandang luas.",
+    "specs": {
+      "Eyepiece": "WF 10x/22 mm",
+      "Zoom Ratio": "1:6.7",
+      "Working Distance": "110 mm",
+      "Stand": "Pillar or Boom stand",
+      "Illumination": "3W LED (optional ring light)"
+    },
+    "inStock": true,
+    "featured": true,
+    "badge": "Industry"
+  },
+  {
+    "id": "euromex-nexiuszoom-evo",
+    "name": "Euromex NexiusZoom EVO",
+    "slug": "euromex-nexiuszoom-evo",
+    "category": [
+      "industry",
+      "stereo"
+    ],
+    "brand": "Euromex",
+    "model": "NexiusZoom EVO",
+    "image": "",
+    "magnification": "6.5x - 55x Zoom",
+    "eyepiece": "WF 10x/22 mm",
+    "illumination": "3W LED",
+    "application": "Quality Control, Microelectronics",
+    "description": "Versi evolusi dari NexiusZoom dengan rentang zoom yang lebih panjang hingga 55x.",
+    "specs": {
+      "Eyepiece": "WF 10x/22 mm",
+      "Zoom Ratio": "1:8.4",
+      "Working Distance": "110 mm",
+      "Stand": "Ergonomic rack & pinion",
+      "Illumination": "3W LED Incident/Transmitted"
+    },
+    "inStock": true,
+    "featured": true
+  },
+  {
+    "id": "euromex-ultrazoom",
+    "name": "Euromex UltraZoom",
+    "slug": "euromex-ultrazoom",
+    "category": [
+      "industry",
+      "stereo"
+    ],
+    "brand": "Euromex",
+    "model": "UltraZoom",
+    "image": "",
+    "magnification": "8x - 50x Zoom",
+    "eyepiece": "WF 10x/22 mm",
+    "illumination": "Various options",
+    "application": "Material Science, Industri Lanjut",
+    "description": "Mikroskop stereo tingkat atas dengan resolusi luar biasa dan koreksi apochromatic parsial.",
+    "specs": {
+      "Eyepiece": "WF 10x/22 mm",
+      "Zoom Ratio": "1:6.3",
+      "Working Distance": "115 mm",
+      "Head": "Trinocular 20° inclined",
+      "Illumination": "Optional"
+    },
+    "inStock": true,
+    "featured": true
+  },
+  {
+    "id": "euromex-dz-series",
+    "name": "Euromex DZ Series",
+    "slug": "euromex-dz-series",
+    "category": [
+      "industry",
+      "stereo"
+    ],
+    "brand": "Euromex",
+    "model": "DZ Series",
+    "image": "",
+    "magnification": "8x - 80x Zoom",
+    "eyepiece": "WF 10x/22 mm",
+    "illumination": "Fluorescence / LED",
+    "application": "Riset Material, Semikonduktor",
+    "description": "Mikroskop stereoskopik modular yang mendukung pencahayaan fluoresensi dan observasi materi kompleks.",
+    "specs": {
+      "Eyepiece": "WF 10x/22 mm",
+      "Zoom Ratio": "1:10",
+      "Working Distance": "78 mm",
+      "Objective": "1x Plan Apochromatic",
+      "Illumination": "Coaxial LED / Fluorescence"
+    },
+    "inStock": true,
+    "featured": true,
+    "badge": "Premium"
+  },
+  {
+    "id": "euromex-z-series",
+    "name": "Euromex Z Series",
+    "slug": "euromex-z-series",
+    "category": [
+      "industry",
+      "stereo"
+    ],
+    "brand": "Euromex",
+    "model": "Z Series",
+    "image": "",
+    "magnification": "Customizable",
+    "eyepiece": "WF 10x/23 mm",
+    "illumination": "Cold light source",
+    "application": "OEM, Custom Integration",
+    "description": "Sistem mikroskop stereo modular (Parallel optics) untuk integrasi industri yang fleksibel.",
+    "specs": {
+      "Eyepiece": "WF 10x/23 mm",
+      "Optical System": "Parallel Galilean",
+      "Zoom": "1:6 or 1:8 options",
+      "Modularity": "High",
+      "Stand": "Articulated arm or boom stand"
+    },
+    "inStock": true,
+    "featured": true
+  },
+  {
+    "id": "euromex-be-18",
+    "name": "Euromex BE-18 Series",
+    "slug": "euromex-be-18",
+    "category": [
+      "industry",
+      "stereo"
+    ],
+    "brand": "Euromex",
+    "model": "BE-18",
+    "image": "",
+    "magnification": "10x, 20x (Fixed)",
+    "eyepiece": "WF 10x/20 mm",
+    "illumination": "Incident/Transmitted",
+    "application": "Inspeksi Cepat, Jalur Perakitan",
+    "description": "Mikroskop stereo kokoh dengan perbesaran ganda, sangat handal untuk inspeksi rutin di pabrik.",
+    "specs": {
+      "Eyepiece": "WF 10x/20 mm",
+      "Objective": "1x/2x revolving",
+      "Working Distance": "60 mm",
+      "Head": "Binocular 45° inclined",
+      "Stand": "Pole stand"
+    },
+    "inStock": true,
+    "featured": true
+  },
+  {
+    "id": "euromex-iscope",
+    "name": "Euromex iScope",
+    "slug": "euromex-iscope",
+    "category": [
+      "laboratory",
+      "clinical"
+    ],
+    "brand": "Euromex",
+    "model": "iScope",
+    "image": "",
+    "magnification": "40x - 1000x",
+    "eyepiece": "EWF 10x/22 mm",
+    "illumination": "3W NeoLED Köhler",
+    "application": "Klinik, Riset Medis",
+    "description": "Mikroskop laboratorium mutakhir dengan optik E-Plan / Plan IOS dan sistem cerdas iCare sensor.",
+    "specs": {
+      "Eyepiece": "EWF 10x/22 mm",
+      "Objectives": "Plan IOS 4x, 10x, S40x, S100x",
+      "Stage": "Rackless 216x150 mm",
+      "Condenser": "Abbe NA 1.25",
+      "Illumination": "3W NeoLED Köhler + iCare"
+    },
+    "inStock": true,
+    "featured": true,
+    "badge": "Lab"
+  },
+  {
+    "id": "euromex-achios-x",
+    "name": "Euromex Achios-X Observer",
+    "slug": "euromex-achios-x",
+    "category": [
+      "laboratory"
+    ],
+    "brand": "Euromex",
+    "model": "Achios-X Observer",
+    "image": "",
+    "magnification": "40x - 1000x",
+    "eyepiece": "HWF 10x/22 mm",
+    "illumination": "3W LED / Halogen",
+    "application": "Laboratorium Lanjutan",
+    "description": "Mikroskop Life Science premium dengan bidang pandang ekstra lebar dan desain ergonomis tingkat tinggi.",
+    "specs": {
+      "Eyepiece": "HWF 10x/22 mm",
+      "Objectives": "Plan Phase IOS",
+      "Focusing": "Coaxial coarse/fine",
+      "Stage": "Ceramic coated",
+      "Illumination": "3W LED or 30W Halogen"
+    },
+    "inStock": true,
+    "featured": true
+  },
+  {
+    "id": "euromex-delphi-x-obs",
+    "name": "Euromex Delphi-X Observer",
+    "slug": "euromex-delphi-x-obs",
+    "category": [
+      "laboratory",
+      "clinical"
+    ],
+    "brand": "Euromex",
+    "model": "Delphi-X Observer",
+    "image": "",
+    "magnification": "40x - 1000x",
+    "eyepiece": "SWF 10x/25 mm",
+    "illumination": "3W LED Köhler",
+    "application": "Riset Klinis, Histologi, Sitologi",
+    "description": "Mikroskop kelas atas (State-of-the-Art) dengan objektif Plan Apochromatic dan bidang pandang raksasa 25mm.",
+    "specs": {
+      "Eyepiece": "Super Wide Field 10x/25 mm",
+      "Objectives": "Plan Semi-Apochromatic IOS",
+      "Stage": "Gorilla glass coated",
+      "Condenser": "Swing-out Abbe",
+      "Illumination": "3W LED Köhler"
+    },
+    "inStock": true,
+    "featured": true,
+    "badge": "Premium"
+  },
+  {
+    "id": "euromex-delphi-x-inv",
+    "name": "Euromex Delphi-X Inverso",
+    "slug": "euromex-delphi-x-inv",
+    "category": [
+      "laboratory"
+    ],
+    "brand": "Euromex",
+    "model": "Delphi-X Inverso",
+    "image": "",
+    "magnification": "40x - 600x",
+    "eyepiece": "SWF 10x/22 mm",
+    "illumination": "5W LED / 100W Halogen",
+    "application": "Kultur Sel, IVF, Life Science",
+    "description": "Mikroskop inverted profesional untuk observasi sel hidup dan kultur jaringan pada cawan petri atau flask.",
+    "specs": {
+      "Eyepiece": "SWF 10x/22 mm",
+      "Objectives": "Long Working Distance Plan IOS",
+      "Stage": "250x230 mm with inserts",
+      "Condenser": "LWD NA 0.30",
+      "Illumination": "5W LED transmitted"
+    },
+    "inStock": true,
+    "featured": true
+  },
+  {
+    "id": "euromex-oxion-inv",
+    "name": "Euromex Oxion Inverso",
+    "slug": "euromex-oxion-inv",
+    "category": [
+      "laboratory"
+    ],
+    "brand": "Euromex",
+    "model": "Oxion Inverso",
+    "image": "",
+    "magnification": "100x - 400x",
+    "eyepiece": "DIN WF 10x/22 mm",
+    "illumination": "5W LED Phase Contrast",
+    "application": "Observasi Sel, Mikrobiologi",
+    "description": "Inverted microscope yang kuat dan sangat populer untuk analisis biologi rutin dengan fase kontras.",
+    "specs": {
+      "Eyepiece": "WF 10x/22 mm",
+      "Objectives": "LWD Plan Phase IOS",
+      "Stage": "250x230 mm mechanical",
+      "Condenser": "NA 0.30 with phase annuli",
+      "Illumination": "5W LED"
+    },
+    "inStock": true,
+    "featured": true
+  },
+  {
+    "id": "euromex-bscope",
+    "name": "Euromex bScope",
+    "slug": "euromex-bscope",
+    "category": [
+      "laboratory"
+    ],
+    "brand": "Euromex",
+    "model": "bScope",
+    "image": "",
+    "magnification": "40x - 1000x",
+    "eyepiece": "HWF 10x/20 mm",
+    "illumination": "3W NeoLED",
+    "application": "Veteriner, Biologi Rutin",
+    "description": "Mikroskop serbaguna, kokoh, ringan dengan sistem penyimpanan kabel yang pintar.",
+    "specs": {
+      "Eyepiece": "HWF 10x/20 mm",
+      "Objectives": "Plan IOS 4x, 10x, 40x, 100x",
+      "Stage": "Rackless mechanical stage",
+      "Focusing": "Coaxial low position",
+      "Illumination": "3W NeoLED Köhler"
+    },
+    "inStock": true,
+    "featured": true
+  }
+];

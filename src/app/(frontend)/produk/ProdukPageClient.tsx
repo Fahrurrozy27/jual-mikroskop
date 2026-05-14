@@ -38,18 +38,18 @@ export default function ProdukPageClient({ initialProducts, initialCategories }:
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
   const [showMobileFilter, setShowMobileFilter] = useState(false);
 
-  const brandsList = ["Olympus/Evident", "Euromex", "Dino-Lite", "Optilab", "Others"];
+  const brandsList = ["Olympus/Evident", "Euromex", "Optilab", "B-ONE", "Biobase", "Others"];
 
   const filteredProducts = useMemo(() => {
     let result = initialProducts;
     if (activeCategory !== "semua") {
-      result = result.filter((p) => p.category === activeCategory);
+      result = result.filter((p) => Array.isArray(p.category) ? p.category.includes(activeCategory) : p.category === activeCategory);
     }
     if (activeBrand !== "semua") {
       result = result.filter((p) => {
         const brandName = p.brand || "";
         if (activeBrand === "Others") {
-          const mainBrands = ["olympus", "evident", "euromex", "dino-lite", "optilab", "olympus/evident"];
+          const mainBrands = ["olympus", "evident", "euromex", "optilab", "olympus/evident", "b-one", "biobase"];
           return !mainBrands.includes(brandName.toLowerCase());
         }
         if (activeBrand === "Olympus/Evident") {
@@ -115,7 +115,7 @@ export default function ProdukPageClient({ initialProducts, initialCategories }:
                     <span className="text-xs text-surface-400">{initialProducts.length} produk</span>
                   </button>
                   {initialCategories.map((cat) => {
-                    const count = initialProducts.filter((p) => p.category === cat.id).length;
+                    const count = initialProducts.filter((p) => Array.isArray(p.category) ? p.category.includes(cat.id) : p.category === cat.id).length;
                     return (
                       <button
                         key={cat.id}
@@ -221,7 +221,7 @@ export default function ProdukPageClient({ initialProducts, initialCategories }:
                         onClick={() => { setActiveCategory(cat.id); setShowMobileFilter(false); }}
                         className={`w-full text-left px-4 py-3 rounded-xl text-base font-medium ${activeCategory === cat.id ? "bg-primary-50 text-primary-700 border border-primary-200" : "text-surface-600"}`}
                       >
-                        {cat.name} ({initialProducts.filter(p => p.category === cat.id).length})
+                        {cat.name} ({initialProducts.filter((p) => Array.isArray(p.category) ? p.category.includes(cat.id) : p.category === cat.id).length})
                       </button>
                     ))}
                   </div>
@@ -306,7 +306,7 @@ export default function ProdukPageClient({ initialProducts, initialCategories }:
                     </div>
                     <div className="p-5">
                       <p className="text-xs text-surface-400 font-medium uppercase tracking-wider mb-1">
-                        {product.brand} • {initialCategories.find(c => c.id === product.category)?.name}
+                        {product.brand} • {Array.isArray(product.category) ? initialCategories.find(c => c.id === product.category[0])?.name : initialCategories.find(c => c.id === product.category)?.name}
                       </p>
                       <h3 className="text-base font-bold text-surface-900 mb-2 group-hover:text-primary-700 transition-colors">
                         {product.name}

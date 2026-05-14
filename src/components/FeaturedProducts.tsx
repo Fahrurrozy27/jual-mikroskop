@@ -1,33 +1,43 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Microscope, Star } from "lucide-react";
-import { products } from "@/data/products";
+import { products, Product } from "@/data/products";
 import { categories } from "@/data/categories";
 
 const brandLogos = [
   { id: "Semua", label: "Semua Brand", src: null },
   { id: "Olympus", label: "Olympus/Evident", src: "/images/brands/olympus2.png" },
   { id: "Euromex", label: "Euromex", src: "/images/brands/euromex.png" },
-  { id: "Dino-Lite", label: "Dino-Lite", src: "/images/brands/dinolite.svg" },
   { id: "Optilab", label: "Optilab (TKDN)", src: "/images/brands/optilab.svg" },
+  { id: "B-ONE", label: "B-ONE", src: "/images/brands/bone.png" },
+  { id: "Biobase", label: "Biobase", src: "/images/brands/logo-biobase.webp" },
   { id: "Others", label: "Others", src: null },
 ];
 
 export default function FeaturedProducts() {
   const [selectedBrand, setSelectedBrand] = useState<string>("Semua");
 
-  // Filter products by featured and optionally by brand
-  const filteredProducts = products.filter((p) => {
-    if (!p.featured) return false;
-    if (selectedBrand === "Semua") return true;
-    if (selectedBrand === "Others") {
-      return !["olympus", "euromex", "dino-lite", "optilab"].includes(p.brand.toLowerCase());
-    }
-    return p.brand.toLowerCase() === selectedBrand.toLowerCase();
-  }).slice(0, 4);
+  const [displayProducts, setDisplayProducts] = useState<Product[]>(() => {
+    return products.filter(p => p.featured).slice(0, 4);
+  });
+
+  useEffect(() => {
+    const filtered = products.filter((p) => {
+      if (!p.featured) return false;
+      if (selectedBrand === "Semua") return true;
+      if (selectedBrand === "Others") {
+        return !["olympus", "euromex", "optilab", "b-one", "biobase"].includes(p.brand.toLowerCase());
+      }
+      return p.brand.toLowerCase() === selectedBrand.toLowerCase();
+    });
+
+    // Randomize the products on client-side
+    const shuffled = [...filtered].sort(() => 0.5 - Math.random());
+    setDisplayProducts(shuffled.slice(0, 4));
+  }, [selectedBrand]);
 
   return (
     <section className="py-16 lg:py-20 bg-white" id="produk-unggulan">
@@ -83,8 +93,8 @@ export default function FeaturedProducts() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 stagger-children">
-          {filteredProducts.length > 0 ? (
-            filteredProducts.map((product) => (
+          {displayProducts.length > 0 ? (
+            displayProducts.map((product) => (
               <Link
                 href={`/produk/${product.slug}`}
                 key={product.id}
@@ -120,7 +130,7 @@ export default function FeaturedProducts() {
                 </div>
                 <div className="p-5 flex flex-col flex-grow">
                   <p className="text-xs text-surface-400 font-medium uppercase tracking-wider mb-1">
-                    {product.brand} • {categories.find(c => c.id === product.category)?.name || product.category}
+                    {product.brand} • {Array.isArray(product.category) ? categories.find(c => c.id === product.category[0])?.name : categories.find(c => c.id === product.category)?.name || product.category}
                   </p>
                   <h3 className="text-base font-bold text-surface-900 mb-2 group-hover:text-primary-700 transition-colors line-clamp-2">
                     {product.name}
