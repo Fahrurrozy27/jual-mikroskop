@@ -80,7 +80,7 @@ export default function ProductDetailClient({ product, category, relatedArticles
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             
             {/* Product Image Gallery Simulation */}
-            <div className="sticky top-24">
+            <div className="lg:sticky lg:top-24">
               <div className="bg-surface-50 rounded-3xl border border-surface-200 overflow-hidden relative group aspect-square flex items-center justify-center p-8 mb-4">
                 {product.badge && (
                   <span className="absolute top-6 left-6 z-10 px-3 py-1.5 bg-accent-500 text-white text-sm font-bold rounded-lg shadow-sm">
