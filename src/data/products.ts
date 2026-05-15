@@ -19,6 +19,7 @@ export interface Product {
   inStock: boolean;
   featured: boolean;
   badge?: string;
+  tags?: string[];
 }
 
 export const products: Product[] = [
