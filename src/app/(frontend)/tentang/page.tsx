@@ -19,6 +19,7 @@ import {
   FileCheck,
   Headphones,
   BookOpen,
+  Quote,
 } from "lucide-react";
 import { generateBreadcrumbSchema } from "@/lib/schema";
 
@@ -31,32 +32,25 @@ export const metadata: Metadata = {
   },
 };
 
-const stats = [
-  { value: "5,000+", label: "Unit Terjual", icon: <Microscope className="w-6 h-6" /> },
-  { value: "600+", label: "Klien Aktif", icon: <Users className="w-6 h-6" /> },
-  { value: "15+", label: "Tahun Pengalaman", icon: <Award className="w-6 h-6" /> },
-  { value: "34", label: "Provinsi Terjangkau", icon: <Truck className="w-6 h-6" /> },
-];
-
 const values = [
   {
     icon: <ShieldCheck className="w-7 h-7" />,
-    title: "Kualitas Terjamin",
+    title: "Quality FIRST",
     desc: "Setiap mikroskop yang kami jual adalah produk original dengan garansi resmi dari pabrik. Kami tidak pernah menjual produk refurbished atau non-original.",
   },
   {
     icon: <Heart className="w-7 h-7" />,
-    title: "Customer-First",
+    title: "Customer FIRST",
     desc: "Kepuasan pelanggan adalah prioritas utama kami. Tim sales dan teknis kami selalu siap mendampingi dari proses konsultasi hingga after-sales support.",
   },
   {
     icon: <Target className="w-7 h-7" />,
-    title: "Integritas Bisnis",
+    title: "Integrity FIRST",
     desc: "Transparansi harga, kelengkapan dokumen legal (faktur pajak, sertifikat), dan komitmen pada timeline pengiriman menjadi fondasi kepercayaan klien kami.",
   },
   {
     icon: <Eye className="w-7 h-7" />,
-    title: "Inovasi Berkelanjutan",
+    title: "Innovation FIRST",
     desc: "Kami terus memperluas portofolio produk dan meningkatkan layanan dengan mengikuti perkembangan teknologi mikroskopi terkini.",
   },
 ];
@@ -70,25 +64,7 @@ const services = [
   { icon: <Headphones className="w-6 h-6" />, title: "Support Teknis", desc: "Konsultasi teknis responsif via WhatsApp dan email" },
 ];
 
-const certifications = [
-  "ISO 9001:2015",
-  "Sertifikat Distributor Resmi",
-  "Sertifikat Kalibrasi KAN",
-  "NPWP & SIUP Lengkap",
-  "Terdaftar di LPSE",
-  "Rekanan Pemerintah",
-];
 
-const clients = [
-  { icon: <GraduationCap className="w-5 h-5" />, name: "Universitas Indonesia" },
-  { icon: <GraduationCap className="w-5 h-5" />, name: "Institut Teknologi Bandung" },
-  { icon: <GraduationCap className="w-5 h-5" />, name: "Universitas Gadjah Mada" },
-  { icon: <FlaskConical className="w-5 h-5" />, name: "RSUD Dr. Soetomo" },
-  { icon: <FlaskConical className="w-5 h-5" />, name: "Lab Klinik Prodia" },
-  { icon: <Factory className="w-5 h-5" />, name: "PT Astra International" },
-  { icon: <Building2 className="w-5 h-5" />, name: "BPOM RI" },
-  { icon: <Building2 className="w-5 h-5" />, name: "Kemenkes RI" },
-];
 
 export default function TentangPage() {
   const breadcrumbSchema = generateBreadcrumbSchema([
@@ -129,22 +105,6 @@ export default function TentangPage() {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="bg-white border-b border-surface-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, i) => (
-              <div key={i} className="text-center">
-                <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mx-auto mb-3 text-primary-600">
-                  {stat.icon}
-                </div>
-                <p className="text-3xl font-extrabold text-primary-700">{stat.value}</p>
-                <p className="text-sm text-surface-500 font-medium mt-1">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Company Profile */}
       <section className="py-16 bg-surface-50">
@@ -156,26 +116,37 @@ export default function TentangPage() {
               </h2>
               <div className="space-y-4 text-surface-600 leading-relaxed">
                 <p>
-                  Dengan pengalaman lebih dari <strong>15 tahun</strong> di industri peralatan laboratorium
-                  Indonesia, kami telah membangun reputasi sebagai distributor mikroskop yang
-                  mengedepankan kualitas produk, transparansi harga, dan layanan purnajual yang responsif.
+                  <strong>JualMikroskop.id</strong> adalah divisi spesialis mikroskop dari{" "}
+                  <a href="https://haianlab.com" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-700 font-bold transition-colors">
+                    PT. HAIAN SAINTIKA ELTANINDO
+                  </a>
+                  . Dengan pengalaman di laboratorium lebih dari <strong>5 tahun</strong>, saat ini kami tengah membangun reputasi sebagai distributor mikroskop yang mengedepankan kualitas produk, transparansi harga, dan layanan purnajual yang responsif.
                 </p>
                 <p>
-                  Kami memahami bahwa investasi mikroskop laboratorium bukan sekadar pembelian alat — melainkan
-                  investasi jangka panjang yang mempengaruhi kualitas riset, diagnostik, dan pendidikan.
-                  Oleh karena itu, setiap transaksi kami dampingi dari konsultasi kebutuhan, penyusunan
-                  spesifikasi teknis, hingga instalasi, training, dan maintenance berkala.
-                </p>
-                <p>
-                  Sebagai rekanan terdaftar di berbagai platform pengadaan pemerintah (LPSE), kami
-                  berpengalaman menangani proses pengadaan instansi dengan kelengkapan dokumen yang
-                  dibutuhkan — termasuk penerbitan faktur pajak, surat jaminan, dan sertifikat kalibrasi
-                  yang sesuai standar.
+                  Sebagai perusahaan yang terdaftar di berbagai platform pengadaan, kami berpengalaman menangani proses pengadaan instansi dengan kelengkapan dokumen yang dibutuhkan — termasuk penerbitan faktur pajak, surat jaminan, dan sertifikat kalibrasi yang sesuai standar.
                 </p>
               </div>
             </div>
-            <div className="bg-gradient-to-br from-primary-100 to-accent-100 rounded-3xl p-10 flex items-center justify-center">
-              <Microscope className="w-40 h-40 text-primary-300" />
+            <div className="bg-[#f4fbf7] border border-accent-100 rounded-[2rem] p-8 lg:p-10 relative shadow-sm">
+              <Quote className="absolute top-8 left-8 w-12 h-12 text-accent-200 fill-accent-200 opacity-40" />
+              <div className="relative z-10 pl-2 pt-2">
+                <p className="text-xl md:text-2xl font-bold italic text-primary-950 leading-snug mb-8">
+                  "Kami percaya sains di Indonesia bisa maju jika infrastrukturnya memadai dan terjangkau."
+                </p>
+                <div className="flex items-center gap-4">
+                  <div className="w-16 h-16 rounded-full overflow-hidden border-4 border-white shadow-sm bg-surface-200 flex-shrink-0 flex items-center justify-center">
+                    <img 
+                      src="https://ui-avatars.com/api/?name=Evans+Abqoury&background=dcfce7&color=166534&bold=true&size=128" 
+                      alt="Evans Abqoury" 
+                      className="w-full h-full object-cover" 
+                    />
+                  </div>
+                  <div>
+                    <p className="font-bold text-lg text-primary-950">Evans Abqoury</p>
+                    <p className="text-sm text-surface-500">Direktur Utama</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -185,9 +156,28 @@ export default function TentangPage() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-extrabold text-primary-950 mb-3 text-center">Nilai-Nilai Kami</h2>
-          <p className="text-lg text-surface-600 text-center mb-10 max-w-2xl mx-auto">
-            Prinsip yang melandasi setiap keputusan bisnis dan interaksi dengan pelanggan.
-          </p>
+          <div className="mb-16">
+            <p className="text-lg text-surface-600 text-center mb-10 max-w-2xl mx-auto">
+              Prinsip yang melandasi setiap keputusan bisnis dan interaksi dengan pelanggan.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
+              {[
+                { letter: 'F', title: 'Fokus Kualitas', desc: 'Memusatkan energi pada jaminan kualitas terbaik.' },
+                { letter: 'I', title: 'Inovasi', desc: 'Terus beradaptasi, mencari metode baru, dan memperbarui teknologi agar selalu relevan dengan perkembangan industri.' },
+                { letter: 'R', title: 'Responsif', desc: 'Cepat tanggap terhadap setiap permintaan klien, perubahan tren pasar, maupun dalam menyelesaikan kendala operasional.' },
+                { letter: 'S', title: 'Solutif', desc: 'Hadir bukan hanya untuk mengerjakan tugas, tapi memberikan jalan keluar yang paling efektif untuk kebutuhan klien.' },
+                { letter: 'T', title: 'Terpercaya', desc: 'Membangun kredibilitas dan hubungan jangka panjang yang sehat dengan klien melalui transparansi.' },
+              ].map((item, idx) => (
+                <div key={idx} className="flex flex-col items-center text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary-100 to-accent-100 rounded-2xl flex items-center justify-center border border-primary-200/50 shadow-sm mb-4 transition-transform hover:-translate-y-1">
+                    <span className="text-3xl font-extrabold text-primary-700">{item.letter}</span>
+                  </div>
+                  <h4 className="text-lg font-bold text-surface-900 mb-2">{item.title}</h4>
+                  <p className="text-sm text-surface-600 leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((v, i) => (
               <div key={i} className="bg-surface-50 rounded-2xl border border-surface-200 p-6 hover:border-primary-200 hover:shadow-md transition-all">
@@ -225,41 +215,7 @@ export default function TentangPage() {
         </div>
       </section>
 
-      {/* Certifications */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-extrabold text-primary-950 mb-3">Sertifikasi & Legalitas</h2>
-          <p className="text-lg text-surface-600 mb-10 max-w-2xl mx-auto">
-            Jaminan kredibilitas dan kepatuhan kami terhadap standar nasional dan internasional.
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            {certifications.map((cert, i) => (
-              <div key={i} className="flex items-center gap-2 px-5 py-3 bg-primary-50 border border-primary-200 rounded-xl">
-                <CheckCircle2 className="w-4 h-4 text-accent-600" />
-                <span className="text-sm font-semibold text-primary-800">{cert}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Clients */}
-      <section className="py-16 bg-surface-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-extrabold text-primary-950 mb-3">Klien & Mitra Kami</h2>
-          <p className="text-lg text-surface-600 mb-10 max-w-2xl mx-auto">
-            Dipercaya oleh institusi terkemuka di seluruh Indonesia.
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {clients.map((client, i) => (
-              <div key={i} className="bg-white rounded-xl border border-surface-200 p-4 flex items-center gap-3 hover:border-primary-200 transition-colors">
-                <div className="text-primary-500">{client.icon}</div>
-                <span className="text-sm font-medium text-surface-700">{client.name}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA */}
       <section className="py-16 bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800 text-white relative overflow-hidden">

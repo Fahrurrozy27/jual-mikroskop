@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import {
   ChevronRight,
   ShieldCheck,
@@ -11,12 +12,17 @@ import {
   MessageCircle,
   Truck,
   Award,
-  ArrowLeft
+  ArrowLeft,
+  BookOpen,
+  ArrowRight
 } from "lucide-react";
 import { Product } from "@/data/products";
 import { Category } from "@/data/categories";
+import { Article } from "@/data/types";
+import { Clock } from "lucide-react";
 
-export default function ProductDetailClient({ product, category }: { product: Product, category: Category | undefined }) {
+export default function ProductDetailClient({ product, category, relatedArticles = [] }: { product: Product, category: Category | undefined, relatedArticles?: Article[] }) {
+  const router = useRouter();
   const [activeTab, setActiveTab] = useState<"specs" | "features" | "download">("specs");
   
   // Image Zoom State
@@ -57,7 +63,16 @@ export default function ProductDetailClient({ product, category }: { product: Pr
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <button onClick={() => window.history.back()} className="inline-flex items-center gap-2 text-sm font-semibold text-surface-500 hover:text-primary-600 mb-8 transition-colors">
+          <button 
+            onClick={() => {
+              if (window.history.length > 2) {
+                router.back();
+              } else {
+                router.push('/produk');
+              }
+            }} 
+            className="inline-flex items-center gap-2 text-sm font-semibold text-surface-500 hover:text-primary-600 mb-8 transition-colors"
+          >
             <ArrowLeft className="w-4 h-4" />
             Kembali
           </button>
@@ -228,6 +243,37 @@ export default function ProductDetailClient({ product, category }: { product: Pr
                     <h4 className="font-bold text-surface-900 mb-2">Aplikasi Ideal</h4>
                     <p className="text-sm text-surface-600">{product.application}</p>
                   </div>
+                  
+                  {/* Related Articles (SILO structure) */}
+                  {relatedArticles.length > 0 && (
+                    <div className="mt-8">
+                      <h4 className="font-bold text-surface-900 mb-4 flex items-center gap-2">
+                        <BookOpen className="w-5 h-5 text-primary-600" />
+                        Panduan Terkait
+                      </h4>
+                      <div className="flex flex-col gap-4">
+                        {relatedArticles.map((article) => (
+                          <Link
+                            href={`/mikroskopedia/${article.slug}`}
+                            key={article.id}
+                            className="group flex gap-3 p-3 bg-white border border-surface-200 rounded-xl hover:border-primary-300 hover:shadow-md transition-all"
+                          >
+                            <div className="relative w-20 h-20 bg-surface-100 rounded-lg overflow-hidden flex-shrink-0">
+                              <Image src={article.image} alt={article.title} fill sizes="80px" className="object-cover group-hover:scale-110 transition-transform" />
+                            </div>
+                            <div className="flex flex-col justify-center">
+                              <h5 className="text-sm font-bold text-surface-900 group-hover:text-primary-600 line-clamp-2 leading-tight mb-1">
+                                {article.title}
+                              </h5>
+                              <span className="text-xs text-surface-500 flex items-center gap-1">
+                                <Clock className="w-3 h-3" /> {article.readTime}
+                              </span>
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 <div className="lg:col-span-2">
@@ -425,23 +471,62 @@ export default function ProductDetailClient({ product, category }: { product: Pr
         </div>
       </section>
 
-      {/* SEO Section */}
-      <section className="py-16 bg-surface-50 border-t border-surface-200">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-primary-950 mb-4">Informasi Tambahan {product.name}</h2>
-          <div className="prose prose-surface">
-            <p>
-              <strong>JualMikroskop<span className="text-accent-500">.id</span></strong> adalah distributor resmi untuk produk {product.brand} di Indonesia.
-              Pembelian <strong>{product.name}</strong> ({product.model}) melalui kami dijamin 100% original, 
-              dilengkapi dengan garansi resmi, dan didukung oleh teknisi bersertifikat untuk layanan purnajual 
-              seperti perbaikan dan kalibrasi rutin.
+      {/* Trust & B2B SEO Section */}
+      <section className="py-20 bg-gradient-to-b from-white to-surface-50 border-t border-surface-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl font-extrabold text-primary-950 mb-4">
+              Mengapa Pengadaan {product.name} di JualMikroskop<span className="text-accent-600">.id</span>?
+            </h2>
+            <p className="text-lg text-surface-600">
+              Sebagai mitra terpercaya untuk pengadaan instansi, kami memastikan setiap pembelian <strong>{product.brand} {product.model}</strong> memenuhi standar tertinggi B2B.
             </p>
-            <p>
-              Untuk instansi pemerintah, sekolah, universitas, maupun perusahaan swasta, kami memfasilitasi 
-              pembelian melalui sistem pengadaan resmi, menerbitkan faktur pajak (PPN 11%), serta membantu 
-              penyusunan dokumen Rencana Anggaran Biaya (RAB) dan spesifikasi teknis. Hubungi kami segera untuk 
-              mendapatkan penawaran harga terbaik.
-            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Card 1 */}
+            <div className="bg-white rounded-2xl p-6 border border-surface-200 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-primary-300 transition-all duration-300 group">
+              <div className="w-14 h-14 bg-primary-50 text-primary-600 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary-600 group-hover:text-white transition-colors duration-300">
+                <Award className="w-7 h-7" />
+              </div>
+              <h3 className="text-lg font-bold text-surface-900 mb-3">Distributor Resmi</h3>
+              <p className="text-sm text-surface-600 leading-relaxed">
+                Produk dijamin <strong>100% original</strong>. Kami adalah jalur distribusi resmi yang memastikan keaslian setiap unit mikroskop.
+              </p>
+            </div>
+
+            {/* Card 2 */}
+            <div className="bg-white rounded-2xl p-6 border border-surface-200 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-primary-300 transition-all duration-300 group">
+              <div className="w-14 h-14 bg-primary-50 text-primary-600 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary-600 group-hover:text-white transition-colors duration-300">
+                <ShieldCheck className="w-7 h-7" />
+              </div>
+              <h3 className="text-lg font-bold text-surface-900 mb-3">Garansi & Kalibrasi</h3>
+              <p className="text-sm text-surface-600 leading-relaxed">
+                Dilengkapi dengan <strong>garansi resmi</strong> dan dukungan teknisi bersertifikat untuk layanan purnajual seperti perbaikan dan kalibrasi rutin.
+              </p>
+            </div>
+
+            {/* Card 3 */}
+            <div className="bg-white rounded-2xl p-6 border border-surface-200 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-primary-300 transition-all duration-300 group">
+              <div className="w-14 h-14 bg-primary-50 text-primary-600 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary-600 group-hover:text-white transition-colors duration-300">
+                <FileText className="w-7 h-7" />
+              </div>
+              <h3 className="text-lg font-bold text-surface-900 mb-3">Faktur Pajak PPN</h3>
+              <p className="text-sm text-surface-600 leading-relaxed">
+                Mendukung pengadaan resmi dengan penerbitan <strong>faktur pajak (PPN 11%)</strong> untuk instansi pemerintah maupun perusahaan swasta.
+              </p>
+            </div>
+
+            {/* Card 4 */}
+            <div className="bg-white rounded-2xl p-6 border border-surface-200 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-primary-300 transition-all duration-300 group">
+              <div className="w-14 h-14 bg-primary-50 text-primary-600 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary-600 group-hover:text-white transition-colors duration-300">
+                <CheckCircle2 className="w-7 h-7" />
+              </div>
+              <h3 className="text-lg font-bold text-surface-900 mb-3">Support Pengadaan</h3>
+              <p className="text-sm text-surface-600 leading-relaxed">
+                Tim kami berpengalaman mendampingi proses pengadaan instansi — dokumen lengkap mulai dari penawaran hingga serah terima.
+              </p>
+            </div>
           </div>
         </div>
       </section>

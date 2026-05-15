@@ -49,7 +49,7 @@ export const products: Product[] = [
     magnification: "40x - 1000x", eyepiece: "10X", illumination: "LED",
     application: "Everyday brightfield and darkfield observations",
     description: "Mikroskop CX33 adalah pilihan tepat untuk pengamatan medan terang (brightfield) dan medan gelap (darkfield) sehari-hari dalam satu konfigurasi yang mudah.",
-    specs: {"Observation Tube":"Binocular/Tilting binocular/Trinocular","Nosepiece":"Fixed quadruple nosepiece with inward tilt","Stage":"Size: 188 mm (W) × 134 mm (D)\nTraveling range: 76 mm (X) × 50 mm (Y)\nSpecimen holder: Double slide holder","Condenser":"Abbe condenser, with built-in daylight filter","Focusing":"Stage height movement by roller guide (rack & pinion)\nStroke per rotation: 36.8 mm\nFull stroke range: 25 mm\nUpper limit stopped by simplified pre-focusing dial\nTension adjustment on coarse focus adjustment knob","Illumination":"Built-in transmitted Köhler illuminator LED\n100 – 120 V/220 – 240 V ~ 0.85/0.45 A 50/60 Hz","Dimensions":"211 mm × 397 mm × 430 mm\n(W × D × H)","WeightApprox.":"7.0 kg","Accessories":"Dual-observation attachment, phase contrast attachment,\ndrawing attachment, simple polarizing attachment, digital\ncamera adapter etc."},
+    specs: {"Observation Tube":"Binocular/Tilting binocular/Trinocular","Nosepiece":"Fixed quadruple nosepiece with inward tilt","Stage":"Size: 188 mm (W) × 134 mm (D)\nTraveling range: 76 mm (X) × 50 mm (Y)\nSpecimen holder: Double slide holder","Condenser":"Abbe condenser, with built-in daylight filter","Focusing":"Stage height movement by roller guide (rack & pinion)\nStroke per rotation: 36.8 mm\nFull stroke range: 25 mm\nUpper limit stopped by simplified pre-focusing dial\nTension adjustment on coarse focus adjustment knob","Illumination":"Built-in transmitted Köhler illuminator LED\n100 – 120 V/220 – 240 V ~ 0.85/0.45 A 50/60 Hz","Dimensions":"211 mm × 397 mm × 430 mm\n(W × D × H)","WeightApprox.":"7.0 kg","Accessories":"Dual-observation attachment, phase contrast attachment,\ndrawing attachment, simple polarisasi attachment, digital\ncamera adapter etc."},
     extraInfo: {
       features: [
         "Ergonomic Routine Microscope",
@@ -68,7 +68,7 @@ export const products: Product[] = [
     magnification: "40x - 1000x", eyepiece: "10X", illumination: "LED",
     application: "Brightfield, darkfield, phase contrast, simple polarization, and fluorescence",
     description: "Mikroskop CX43 yang serbaguna menawarkan pengamatan medan terang, medan gelap, fase kontras, polarisasi sederhana, dan fluoresensi. Untuk fleksibilitas tambahan, sistem ini dapat mendukung hingga lima lensa objektif UIS2.",
-    specs: {"Observation Tube":"Binocular/Tilting binocular/Trinocular","Nosepiece":"Fixed quintuple nosepiece with inward tilt","Stage":"Size: 188 mm (W) × 134 mm (D)\nTraveling range: 76 mm (X) × 50 mm (Y)\nSpecimen holder: Double slide holder","Condenser":"Universal condenser / Abbe condenser","Focusing":"Stage height movement by roller guide (rack & pinion)\nStroke per rotation: 36.8 mm\nFull stroke range: 25 mm\nUpper limit stopper\nTension adjustment on coarse focus adjustment knob","Illumination":"Built-in transmitted Köhler illuminator LED\n100 – 120 V/220 – 240 V ~ 0.85/0.45 A 50/60 Hz","Dimensions":"211 mm × 376 mm × 393 mm (standard configuration)\n(W × D × H)","WeightApprox.":"7.3 kg","Accessories":"Dual-observation attachment, phase contrast attachment,\ndrawing attachment, simple polarizing attachment, digital\ncamera adapter etc."},
+    specs: {"Observation Tube":"Binocular/Tilting binocular/Trinocular","Nosepiece":"Fixed quintuple nosepiece with inward tilt","Stage":"Size: 188 mm (W) × 134 mm (D)\nTraveling range: 76 mm (X) × 50 mm (Y)\nSpecimen holder: Double slide holder","Condenser":"Universal condenser / Abbe condenser","Focusing":"Stage height movement by roller guide (rack & pinion)\nStroke per rotation: 36.8 mm\nFull stroke range: 25 mm\nUpper limit stopper\nTension adjustment on coarse focus adjustment knob","Illumination":"Built-in transmitted Köhler illuminator LED\n100 – 120 V/220 – 240 V ~ 0.85/0.45 A 50/60 Hz","Dimensions":"211 mm × 376 mm × 393 mm (standard configuration)\n(W × D × H)","WeightApprox.":"7.3 kg","Accessories":"Dual-observation attachment, phase contrast attachment,\ndrawing attachment, simple polarisasi attachment, digital\ncamera adapter etc."},
     extraInfo: {
       features: [
         "Ergonomic Routine Microscope designed for multiple observation methods",
@@ -101,7 +101,7 @@ export const products: Product[] = [
   },
   {
     id: "oly-bx53", name: "Olympus BX53", slug: "olympus-bx53",
-    category: "fluorescent", brand: "Olympus", model: "BX53",
+    category: "fluorescence", brand: "Olympus", model: "BX53",
     image: "/images/products/olympus/bx53.png",
     magnification: "40x - 1000x", eyepiece: "10X (FN 22) / Super Widefield (FN 26.5)", illumination: "LED/Halogen",
     application: "Semi-Motorized Fluorescence Microscope",
@@ -125,7 +125,7 @@ export const products: Product[] = [
     magnification: "40x - 1000x", eyepiece: "10X (FN 22) / Super Widefield (FN 26.5)", illumination: "LED/Halogen",
     application: "Motorized Microscope",
     description: "Mikroskop BX63 sepenuhnya dikendalikan oleh metode pengamatan dan dapat disesuaikan dengan kebutuhan spesifik Anda. *Nosepiece* bermotor dan kondensor universal bermotor tersinkronisasi, sehingga menghemat waktu dan mengurangi risiko kesalahan.",
-    specs: {"Illumination":"Built-in Köhler illumination for transmitted light, LED light intensity indicator, motorized field stop\nHigh color rendering index LED light source\n12 V 100 W halogen bulb (pre-centered)","Focusing":"Built-in motorized nosepiece focus\nStroke: 20 mm, minimum increment: 0.01 μm, maximum speed: 5 mm/s","Nosepiece":"Motorized septuple revolving nosepiece\nInterchangeable reversed coded septuple nosepiece","Stage":"Ultrasonic stage (stroke: X: 76 mm × Y: 52 mm, maximum speed: 30 mm/s)\nCeramic-coated coaxial stage with left or right hand drive control: with rotating mechanism and torque adjustment mechanism, optional rubber grips available\nCross stage with short left handle","Observation tube":"Widefield tilting, telescoping, lifting binocular\nWidefield tilting binocular\nWidefield erect image trinocular\nWidefield tilting trinocular\nWidefield trinocular\nWidefield ergo binocular\nWidefield binocular","Condenser":"Motorized universal condenser (NA 0.9, motorized 8-position turret, aperture stop, polarizing filter in/out mechanism and top lens swing out mechanism), for 1.25X – 100X [swing-out 1.25X – 4X, with oil top lens: (NA 1.4)]\nSwing out Achromatic (NA 0.9), for 1.25X – 100X (swing-out: 1.25X – 4X)\nAchromatic Aplanatic (NA 1.4), for 10X – 100X\nUniversal (NA 0.9), for 1.25X – 100X [swing-out: 1.25X – 4X, with oil top lens: (NA 1.4)]\nUltra low (NA 0.16), for 1.25X – 4X\nDarkfield dry (NA 0.8 – 0.92), for 10X – 100X\nDarkfield oil (NA 1.20 – 1.40), for 10X – 100X","Other features":"ND filter wheel, high-performance control box U-RTCE\nMotorized 9-position","Dimensions":"294.5 mm × 740.5 mm × 582.5 mm (Epifluorescence configuration)\n(W × D × H)","Weight":"35 kg (Epifluorescence configuration)"},
+    specs: {"Illumination":"Built-in Köhler illumination for transmitted light, LED light intensity indicator, motorized field stop\nHigh color rendering index LED light source\n12 V 100 W halogen bulb (pre-centered)","Focusing":"Built-in motorized nosepiece focus\nStroke: 20 mm, minimum increment: 0.01 μm, maximum speed: 5 mm/s","Nosepiece":"Motorized septuple revolving nosepiece\nInterchangeable reversed coded septuple nosepiece","Stage":"Ultrasonic stage (stroke: X: 76 mm × Y: 52 mm, maximum speed: 30 mm/s)\nCeramic-coated coaxial stage with left or right hand drive control: with rotating mechanism and torque adjustment mechanism, optional rubber grips available\nCross stage with short left handle","Observation tube":"Widefield tilting, telescoping, lifting binocular\nWidefield tilting binocular\nWidefield erect image trinocular\nWidefield tilting trinocular\nWidefield trinocular\nWidefield ergo binocular\nWidefield binocular","Condenser":"Motorized universal condenser (NA 0.9, motorized 8-position turret, aperture stop, polarisasi filter in/out mechanism and top lens swing out mechanism), for 1.25X – 100X [swing-out 1.25X – 4X, with oil top lens: (NA 1.4)]\nSwing out Achromatic (NA 0.9), for 1.25X – 100X (swing-out: 1.25X – 4X)\nAchromatic Aplanatic (NA 1.4), for 10X – 100X\nUniversal (NA 0.9), for 1.25X – 100X [swing-out: 1.25X – 4X, with oil top lens: (NA 1.4)]\nUltra low (NA 0.16), for 1.25X – 4X\nDarkfield dry (NA 0.8 – 0.92), for 10X – 100X\nDarkfield oil (NA 1.20 – 1.40), for 10X – 100X","Other features":"ND filter wheel, high-performance control box U-RTCE\nMotorized 9-position","Dimensions":"294.5 mm × 740.5 mm × 582.5 mm (Epifluorescence configuration)\n(W × D × H)","Weight":"35 kg (Epifluorescence configuration)"},
     extraInfo: {
       features: [
         "Fully motorized system for automated workflows",
@@ -177,7 +177,7 @@ export const products: Product[] = [
   },
   {
     id: "oly-bx53p", name: "Olympus BX53-P", slug: "olympus-bx53p",
-    category: "polarizing", brand: "Olympus", model: "BX53-P",
+    category: "polarisasi", brand: "Olympus", model: "BX53-P",
     image: "/images/products/olympus/bx53p.png",
     magnification: "40x - 1000x", eyepiece: "10X (with crosshair)", illumination: "Halogen/LED",
     application: "Polarizing Microscope",
@@ -367,7 +367,7 @@ export const products: Product[] = [
   },
   {
     id: "oly-fv5000", name: "Olympus FLUOVIEW FV5000", slug: "olympus-fv5000",
-    category: "fluorescent", brand: "Olympus", model: "FV5000",
+    category: "fluorescence", brand: "Olympus", model: "FV5000",
     image: "/images/products/olympus/fv5000.png",
     magnification: "Varies", eyepiece: "Varies", illumination: "Laser",
     application: "Confocal Laser Scanning Microscope",
@@ -725,22 +725,29 @@ export const products: Product[] = [
     "name": "Euromex MicroBlue",
     "slug": "euromex-microblue",
     "category": [
-      "education"
+          "student"
     ],
     "brand": "Euromex",
     "model": "MicroBlue",
-    "image": "",
+    "image": "/images/products/euromex/microblue.png",
     "magnification": "40x - 1000x",
     "eyepiece": "WF 10x/18 mm",
     "illumination": "1W LED / NeoLED",
     "application": "Edukasi Dasar, Sekolah",
     "description": "Mikroskop biologi level entri yang ideal untuk pendidikan dengan pencahayaan LED yang terang.",
     "specs": {
-      "Eyepiece": "WF 10x/18 mm",
-      "Objectives": "Achromatic 4x, 10x, S40x, S100x",
-      "Stage": "Mechanical X-Y stage",
-      "Focusing": "Coaxial coarse and fine",
-      "Illumination": "1W LED cordless"
+      "Eyepiece(s)": "Wide field WF 10x/18 mm secured eyepiece with pointer. The eyepieces of the binocular models are supplied without pointer",
+      "Head": "Monocular models have a 45° inclined tube. Binocular and trinocular models have 45° inclined tubes, adjustable interpupillary distance between 48 and 75 mm and a ± 5 diopter adjustment on the left tube. All heads are 360° rotatable. Models with an integrated USB-2.0 camera are supplied with a 1.3 MP 1/2.5\" CMOS sensor with 1772 x 952 pixels or a 5.0 MP 1/2.8\" CMOS sensor with 2560 x 1920 pixel resolution. The trinocular head has a fixed light path beam splitter (50:50) and generates an erect image. The MicroBlue can also be equipped with an LCD screen",
+      "Nosepiece": "Revolving nosepiece for three or four reversed objectives on ball bearings",
+      "Objectives": "Achromatic 4x/0.10, 10x/0.25 and S40x/0.65. Models with S60X or S100x oil immersion are also available. The S40x, S60x and S100x oil immersion objectives are spring loaded. All optics are anti-fungus treated and anti-reflection coated for maximum light throughput",
+      "Focusing": "Coaxial coarse and fine adjustments, 200 graduations, 15 μm per graduation, 3 mm per rotation, total travel range is approximately 15 mm. Supplied with an adjustable rack stop to prevent damage to sample and objectives",
+      "Stage": "All models are supplied with a 115 x 100 mm stage with integrated 55 x 20 mm mechanical X-Y stage, except for the basic model MB.1001(-LCD), which is supplied with a 105 x 105 mm stage and two non-removable clamps",
+      "Condenser": "Height adjustable Abbe condenser N.A. 1.25 with iris diaphragm and filter holder, except for the MB.1001(-LCD) model, which is equipped with a single N.A. 0.65 condenser with built-in iris diaphragm",
+      "Dual Illumination System": "1 W white (Neo)LED™: 6000 – 6500 K, ideal for standard observations with crisp, cool lighting. 1 W halogen colored (Neo)LED™: 3000 – 3200 K, enhances contrast for specific applications such as transparent objects. All MicroBlue microscopes are supplied with rechargeable AA batteries for cordless operation and with an external 5V DC power adapter",
+      "Camera And Software": "Models with an integrated 5.0 MP camera are compatible with ImageFocus Plus software and with an integrated 1.3 MP CMOS USB-2.0 camera are compatible with ImageFocus 4. Besides capturing images and videos, this software allows measurements on still and live images and annotations on captured images. Compatible with Windows 10 and higher, both 32 and 64 bits configurations",
+      "LCD Screen": "All the MicroBlue LCD microscopes are equipped with a 7” LCD screen. Images can be saved directly to a micro SD card in JPEG format. Screen resolution 1920 x 1080 @ 30 fps, image resolution up to 1844 x 1080 pixels. Videos can be shot in AVI format, resolution 1280 x 720. Basic measurement function (line) with calibration",
+      "Anti-Theft Slot": "At the back of the microscope a Kensington Security slot is placed, which can be used to secure the instrument from theft",
+      "Package Content": "Supplied with 100-240 Vac / 5 Vdc USB power adapter, USB-2 cable (except for the LCD models, which are supplied with an extra mains adapter), three rechargeable AA batteries, dust cover, user manual and 5 ml immersion oil for models with an S100x oil objective. Including a white filter. All packed in a polystyrene box"
     },
     "inStock": true,
     "featured": true,
@@ -751,22 +758,25 @@ export const products: Product[] = [
     "name": "Euromex EcoBlue",
     "slug": "euromex-ecoblue",
     "category": [
-      "education"
+          "student"
     ],
     "brand": "Euromex",
     "model": "EcoBlue",
-    "image": "",
+    "image": "/images/products/euromex/ecoblue.png",
     "magnification": "40x - 1000x",
     "eyepiece": "WF 10x/18 mm",
     "illumination": "1W NeoLED",
     "application": "Edukasi Menengah, Biologi Dasar",
     "description": "Mikroskop tangguh dengan ergonomi yang sangat baik, direkomendasikan untuk pengguna edukasi tingkat lanjut.",
     "specs": {
-      "Eyepiece": "WF 10x/18 mm",
-      "Objectives": "Achromatic 4x, 10x, S40x, S100x",
-      "Stage": "Integrated X-Y mechanical stage",
-      "Focusing": "Coaxial coarse and fine",
-      "Illumination": "1W NeoLED"
+          "Eyepiece(s)": "Wide field WF 10x/18 mm eyepiece with pointer. The eyepieces of the binocular and trinocular models are supplied without pointer",
+          "Head": "Monocular models with 45° inclined tubes. Binocular and trinocular models have 30° inclined tubes. The interpupillary distance is adjustable between 48 and 75 mm. All binocular and trinocular models have a ± 5 diopter adjustment on the left tube. All heads are 360° rotatable. The trinocular head has a fixed light path beam splitter (50:50)",
+          "Nosepiece": "Reversed revolving nosepiece for four objectives on ball bearings. Models for polarization are supplied with swing-out analyzer",
+          "Objectives": "Achromatic 4x/0.10, 10x/0.25, S40x/0.65 and S100x oil/1.25 objectives. The S40x, S60x and S100x oil immersion objectives are spring loaded. The HLED-S models for polarization are equipped with semi-plan objectives",
+          "Focusing": "Coaxial coarse and fine adjustments, 200 graduations, 12.5 µm per graduation, 2.5 mm per rotation, total travel range is approximately 15 mm. Supplied with an adjustable rack stop",
+          "Stage": "Plain 123 x 119 mm stage with two non-removable object clamps. Plain 123 x 128 mm stage with integrated 70 x 27 mm mechanical X-Y stage",
+          "Condenser": "Height adjustable color coded Abbe condenser N.A. 1.25 with iris diaphragm and filter holder",
+          "Dual Illumination System": "1 W white (Neo)LED™: 6000 – 6500 K. 1 W halogen colored (Neo)LED™: 3000 – 3200 K. All models are supplied with three rechargeable AA batteries for cordless operation"
     },
     "inStock": true,
     "featured": true
@@ -776,23 +786,25 @@ export const products: Product[] = [
     "name": "Euromex BioBlue",
     "slug": "euromex-bioblue",
     "category": [
-      "education",
-      "laboratory"
+          "student"
     ],
     "brand": "Euromex",
     "model": "BioBlue",
-    "image": "",
+    "image": "/images/products/euromex/bioblue.png",
     "magnification": "40x - 1000x",
     "eyepiece": "WF 10x/18 mm",
     "illumination": "1W NeoLED",
     "application": "Laboratorium Sekolah, Universitas",
     "description": "Seri unggulan dengan lensa Semi-Plan, menghasilkan resolusi dan ketajaman tinggi untuk riset tingkat mahasiswa.",
     "specs": {
-      "Eyepiece": "WF 10x/18 mm",
-      "Objectives": "Semi-Plan 4x, 10x, S40x, S100x",
-      "Stage": "Mechanical X-Y stage 130x130mm",
-      "Focusing": "Coaxial coarse and fine",
-      "Illumination": "1W NeoLED adjustable"
+          "Eyepiece(s)": "Wide field WF 10x/18 mm secured eyepieces with pointer for monocular models. The BioBlue EVO models are supplied with WF 10x/20 mm eyepieces",
+          "Heads": "Monocular models with 45° inclined tubes. Binocular and trinocular models have 30° inclined tubes, interpupillary distance is adjustable between 48 and 75 mm and equipped with a ± 5 diopter adjustment on the left tube. All heads are 360° rotatable",
+          "Nosepiece": "Reversed quadruple nosepiece on ball bearings",
+          "Objectives": "All models are supplied with semi plan 4x/0.10, 10x/0.25 and S40x/0.65 objectives. Models with an S60x/0.85 or S100x/1.25 oil immersion objective are also available",
+          "Focusing": "Coaxial coarse and fine adjustments with 200 graduations. Precision 2 μm per graduation. Total travel range is approximately 23 mm. Supplied with an adjustable rack stop. The BioBlue is equipped with a quick focus aid",
+          "Stage": "130 x 130 mm with mechanical 70 x 28 mm X-Y translation stage except for models BB.4200 and BB.4205",
+          "Condenser": "Height adjustable Abbe condenser N.A. 1.25 with iris diaphragm and filter holder",
+          "Dual Illumination System": "1 W white (Neo)LED™: 6000 – 6500 K. 1 W halogen colored (Neo)LED™: 3000 – 3200 K. The EVO models are equipped with Köhler NeoLED™ illumination"
     },
     "inStock": true,
     "featured": true,
@@ -808,18 +820,21 @@ export const products: Product[] = [
     ],
     "brand": "Euromex",
     "model": "BioBlue.Lab",
-    "image": "",
+    "image": "/images/products/euromex/biobluelab.png",
     "magnification": "40x - 1000x",
     "eyepiece": "WF 10x/20 mm",
     "illumination": "3W NeoLED",
     "application": "Universitas, Rutin Laboratorium",
     "description": "Mikroskop laboratorium tingkat lanjut dengan fitur rackless stage dan lensa plan infinity.",
     "specs": {
-      "Eyepiece": "WF 10x/20 mm",
-      "Objectives": "Plan IOS 4x, 10x, S40x, S100x",
-      "Stage": "Rackless mechanical X-Y stage",
-      "Focusing": "Coaxial coarse and fine",
-      "Illumination": "3W NeoLED Köhler"
+          "Eyepieces": "Wide field WF 10x/20 mm eyepieces",
+          "Head": "All models have 30° inclined Ø 30 mm tubes. The interpupillary distance is adjustable between 48 to 75 mm. All models have a ±5 diopter adjustment on the left tube. All heads are 360° rotatable",
+          "Nosepiece": "Reversed quadruple nosepiece on ball bearings. Slot for analyzer",
+          "Objectives": "All microscopes are equipped with plan and plan IOS objectives. Optional 20x/0.40 and S60x/0.85 objectives are also available",
+          "Focusing": "Coaxial coarse and fine adjustments, 200 graduations, 1.5 µm per graduation, 0.3 mm per rotation, total travel range is approximately 28 mm. Supplied with an adjustable rack stop",
+          "Stage": "Rackless 150 x 140 mm stage with mechanical 75 x 30 mm X-Y translation stage",
+          "Condenser": "Height adjustable Abbe condenser N.A. 1.25 with iris diaphragm and filter holder",
+          "Illumination": "Binocular and trinocular models are supplied with an adjustable 3 W NeoLED™ illumination system. Power supply with integrated 100-240 Vac"
     },
     "inStock": true,
     "featured": true
@@ -829,23 +844,25 @@ export const products: Product[] = [
     "name": "Euromex BlueScope",
     "slug": "euromex-bluescope",
     "category": [
-      "education",
-      "digital"
+          "laboratory"
     ],
     "brand": "Euromex",
     "model": "BlueScope",
-    "image": "",
+    "image": "/images/products/euromex/bluescope.png",
     "magnification": "40x - 1000x",
     "eyepiece": "WF 10x/18 mm",
     "illumination": "NeoLED",
     "application": "Edukasi Digital",
     "description": "Solusi lengkap mikroskop edukasi yang mendukung pengamatan digital dengan fitur modern.",
     "specs": {
-      "Eyepiece": "WF 10x/18 mm",
-      "Objectives": "Achromatic 4x, 10x, S40x",
-      "Stage": "Mechanical stage",
-      "Focusing": "Coaxial coarse/fine",
-      "Illumination": "NeoLED"
+          "Eyepiece(s)": "Wide field WF 10x/20 mm secured eyepieces. The eyepiece of monocular models is supplied with pointer",
+          "Head": "Monocular models with 45° inclined tubes. Binocular and trinocular models have 30° inclined tubes, interpupillary distance is adjustable between 48 and 75 mm. All heads are 360° rotatable",
+          "Nosepiece": "Reversed quadruple nosepiece on ball bearings",
+          "Objectives": "All models are supplied with semi plan 4x/0.10, 10x/0.25 and S40x/0.65 objectives. Models with an S60x/0.85 or S100x/1.25 oil immersion objective are also available",
+          "Focusing": "Coaxial coarse and fine adjustments with 200 graduations. Precision 2 μm per graduation. Supplied with an adjustable rack stop. The BlueScope is equipped with a quick focus aid",
+          "Stage": "Rackless 140 x 140 mm stage with integrated 75 x 30 mm mechanical X-Y stage",
+          "Condenser": "Height adjustable color coded Abbe condenser N.A. 1.25 with iris diaphragm and filter holder",
+          "Dual Illumination System": "3 W white (Neo)LED™: 6000 – 6500 K. 3 W halogen colored (Neo)LED™: 3000 – 3200 K. The models are equipped with Köhler NeoLED™ illumination"
     },
     "inStock": true,
     "featured": true
@@ -855,23 +872,24 @@ export const products: Product[] = [
     "name": "Euromex StereoBlue (Edu)",
     "slug": "euromex-stereoblue-edu",
     "category": [
-      "stereo",
-      "education"
+          "stereo",
+          "student"
     ],
     "brand": "Euromex",
     "model": "StereoBlue",
-    "image": "",
+    "image": "/images/products/euromex/stereoblue.png",
     "magnification": "7x - 45x Zoom",
     "eyepiece": "WF 10x/20 mm",
     "illumination": "3W LED Dual",
     "application": "Inspeksi Preparat, Botani",
     "description": "Mikroskop stereo dengan rentang zoom 0.7x - 4.5x yang ideal untuk pengamatan spesimen utuh.",
     "specs": {
-      "Eyepiece": "WF 10x/20 mm",
-      "Zoom": "0.7x to 4.5x",
-      "Working Distance": "100 mm",
-      "Stand": "Rack & Pinion",
-      "Illumination": "3W LED Incident & Transmitted"
+          "Eyepieces": "Pair of WF 10x/21 mm secured eyepieces supplied with eyecups",
+          "Head": "Binocular or trinocular 45° inclined tubes. Diopter adjustment on both eyepieces. Interpupillary distance adjustable between 55 mm and 75 mm. Trinocular head is supplied with a fixed light path beam splitter",
+          "Dual Magnification Objectives": "Nosepiece with dual 1x/3x or 2x/4x revolving objectives. Magnifications 10x/30x or 20x/40x",
+          "Zoom Objective": "Zoom stereo 0.7x to 4.5x parfocal objective. Magnification from 7x to 45x",
+          "EVO Zoom Objective": "Zoom stereo 0.5x to 5.5x parfocal objective. Magnification from 5x to 55x",
+          "Stand": "The rack & pinion and pillar stands are equipped with ergonomic flat bases, complete with two object clamps and Ø 60 mm transparent and black/white stage plates. The ergonomic universal and boom stand are ideal for viewing large samples or working under the microscope"
     },
     "inStock": true,
     "featured": true
@@ -881,23 +899,23 @@ export const products: Product[] = [
     "name": "Euromex NexiusZoom",
     "slug": "euromex-nexiuszoom",
     "category": [
-      "industry",
-      "stereo"
+          "stereo"
     ],
     "brand": "Euromex",
     "model": "NexiusZoom",
-    "image": "",
+    "image": "/images/products/euromex/nexiuszoom.png",
     "magnification": "6.5x - 45x Zoom",
     "eyepiece": "WF 10x/22 mm",
     "illumination": "3W LED",
     "application": "Inspeksi Industri, PCB",
     "description": "Mikroskop stereo profesional yang tangguh untuk industri dan penelitian dengan bidang pandang luas.",
     "specs": {
-      "Eyepiece": "WF 10x/22 mm",
-      "Zoom Ratio": "1:6.7",
-      "Working Distance": "110 mm",
-      "Stand": "Pillar or Boom stand",
-      "Illumination": "3W LED (optional ring light)"
+          "Eyepieces": "The standard NexiusZoom is supplied with a pair of HWF 10x/22 mm eyepieces. The NexiusZoom EVO is supplied with a pair of HWF 10x/23 mm eyepieces",
+          "Head": "Binocular or trinocular heads with 45° inclined tubes. Both eyepieces with ± 5 diopter adjustments. Interpupillary distance adjustable between 54 mm and 75 mm. Trinocular head is supplied with a fixed light path beam splitter",
+          "Objectives": "The standard NexiusZoom is supplied with a 1:6.7 zoom objective with 0.67x to 4.5x magnifications, a field of view from 33 mm to 4.9 mm. Working distance 110 mm",
+          "Stand": "Ergonomic pillar or rack & pinion stand with 3 W incident and 3 W transmitted LED illuminations. Ergonomic universal or boom stands, without illumination",
+          "Stage": "180 x 155mm mechanical X-Y stage with 76 x 55mm translation stage and transparent glass plate for NexiusZoom",
+          "Illumination": "3 W transmitted and incident LED illuminators with internal power supply 100-240 V"
     },
     "inStock": true,
     "featured": true,
@@ -908,23 +926,23 @@ export const products: Product[] = [
     "name": "Euromex NexiusZoom EVO",
     "slug": "euromex-nexiuszoom-evo",
     "category": [
-      "industry",
-      "stereo"
+          "stereo"
     ],
     "brand": "Euromex",
     "model": "NexiusZoom EVO",
-    "image": "",
+    "image": "/images/products/euromex/nexiuszoomevo.png",
     "magnification": "6.5x - 55x Zoom",
     "eyepiece": "WF 10x/22 mm",
     "illumination": "3W LED",
     "application": "Quality Control, Microelectronics",
     "description": "Versi evolusi dari NexiusZoom dengan rentang zoom yang lebih panjang hingga 55x.",
     "specs": {
-      "Eyepiece": "WF 10x/22 mm",
-      "Zoom Ratio": "1:8.4",
-      "Working Distance": "110 mm",
-      "Stand": "Ergonomic rack & pinion",
-      "Illumination": "3W LED Incident/Transmitted"
+          "Eyepieces": "The NexiusZoom EVO is supplied with a pair of HWF 10x/23 mm eyepieces",
+          "Head": "Binocular or trinocular heads with 45° inclined tubes. Both eyepieces with ± 5 diopter adjustments. Interpupillary distance adjustable between 54 mm and 75 mm. Trinocular head is supplied with a fixed light path beam splitter",
+          "EVO Objectives": "The NexiusZoom EVO is supplied with a 1:8.4 zoom objective with 0.65x to 5.5x magnifications, a field of view from 35.4 mm to 4.2 mm. Working distance 110 mm",
+          "Stand": "Ergonomic pillar or rack & pinion stand with 3 W incident and 3 W transmitted LED illuminations. Ergonomic universal or boom stands, without illumination",
+          "Stage": "180 x 155mm mechanical X-Y stage with 76 x 55mm translation stage and transparent glass plate for NexiusZoom",
+          "Illumination": "3 W transmitted and incident LED illuminators with internal power supply 100-240 V"
     },
     "inStock": true,
     "featured": true
@@ -934,102 +952,49 @@ export const products: Product[] = [
     "name": "Euromex UltraZoom",
     "slug": "euromex-ultrazoom",
     "category": [
-      "industry",
-      "stereo"
+          "stereo"
     ],
     "brand": "Euromex",
     "model": "UltraZoom",
-    "image": "",
+    "image": "/images/products/euromex/ultrazoom.png",
     "magnification": "8x - 50x Zoom",
     "eyepiece": "WF 10x/22 mm",
     "illumination": "Various options",
     "application": "Material Science, Industri Lanjut",
     "description": "Mikroskop stereo tingkat atas dengan resolusi luar biasa dan koreksi apochromatic parsial.",
     "specs": {
-      "Eyepiece": "WF 10x/22 mm",
-      "Zoom Ratio": "1:6.3",
-      "Working Distance": "115 mm",
-      "Head": "Trinocular 20° inclined",
-      "Illumination": "Optional"
+          "Eyepieces": "Pair of EWF 10x/23 mm eyepieces",
+          "Head": "Ergonomic 0-30° tilting head or binocular 20° head. Diopter ± 5 adjustment on both eyepieces and interpupillary distance from 55 to 75 mm. Both heads have a photo port with 1x c-mount for 1” cameras",
+          "Central Zoom Unit": "Zoom ratio 1:18 for total magnifications from 0.75 to 13.5x",
+          "Common Main Objective": "Standard supplied with a 1x plan apochromatic Common Main Objective, working distance 60 mm. The objective has an anti-reflection coating for maximum light throughput and is anti-fungus treated",
+          "Stand": "Large ergonomic stand with 180 mm object plate. Oblique Contrast Illumination slider. Coaxial coarse and fine adjustment"
     },
     "inStock": true,
     "featured": true
   },
-  {
-    "id": "euromex-dz-series",
-    "name": "Euromex DZ Series",
-    "slug": "euromex-dz-series",
-    "category": [
-      "industry",
-      "stereo"
-    ],
-    "brand": "Euromex",
-    "model": "DZ Series",
-    "image": "",
-    "magnification": "8x - 80x Zoom",
-    "eyepiece": "WF 10x/22 mm",
-    "illumination": "Fluorescence / LED",
-    "application": "Riset Material, Semikonduktor",
-    "description": "Mikroskop stereoskopik modular yang mendukung pencahayaan fluoresensi dan observasi materi kompleks.",
-    "specs": {
-      "Eyepiece": "WF 10x/22 mm",
-      "Zoom Ratio": "1:10",
-      "Working Distance": "78 mm",
-      "Objective": "1x Plan Apochromatic",
-      "Illumination": "Coaxial LED / Fluorescence"
-    },
-    "inStock": true,
-    "featured": true,
-    "badge": "Premium"
-  },
-  {
-    "id": "euromex-z-series",
-    "name": "Euromex Z Series",
-    "slug": "euromex-z-series",
-    "category": [
-      "industry",
-      "stereo"
-    ],
-    "brand": "Euromex",
-    "model": "Z Series",
-    "image": "",
-    "magnification": "Customizable",
-    "eyepiece": "WF 10x/23 mm",
-    "illumination": "Cold light source",
-    "application": "OEM, Custom Integration",
-    "description": "Sistem mikroskop stereo modular (Parallel optics) untuk integrasi industri yang fleksibel.",
-    "specs": {
-      "Eyepiece": "WF 10x/23 mm",
-      "Optical System": "Parallel Galilean",
-      "Zoom": "1:6 or 1:8 options",
-      "Modularity": "High",
-      "Stand": "Articulated arm or boom stand"
-    },
-    "inStock": true,
-    "featured": true
-  },
+
   {
     "id": "euromex-be-18",
     "name": "Euromex BE-18 Series",
     "slug": "euromex-be-18",
     "category": [
-      "industry",
-      "stereo"
+          "stereo"
     ],
     "brand": "Euromex",
     "model": "BE-18",
-    "image": "",
+    "image": "/images/products/euromex/be18.png",
     "magnification": "10x, 20x (Fixed)",
     "eyepiece": "WF 10x/20 mm",
     "illumination": "Incident/Transmitted",
     "application": "Inspeksi Cepat, Jalur Perakitan",
     "description": "Mikroskop stereo kokoh dengan perbesaran ganda, sangat handal untuk inspeksi rutin di pabrik.",
     "specs": {
-      "Eyepiece": "WF 10x/20 mm",
-      "Objective": "1x/2x revolving",
-      "Working Distance": "60 mm",
-      "Head": "Binocular 45° inclined",
-      "Stand": "Pole stand"
+          "Eyepieces": "Pair of WF 10x/20 mm",
+          "Head": "Binocular 45° inclined tube. Interpupillary distance adjustable between 55 and 75 mm",
+          "Stand": "Stable overhanging heavy base stand with pillar",
+          "Focusing Adjustment": "Coarse adjustment with tension control",
+          "Illumination": "Incident 1 W LED illumination 44 cm on flexible arm. Intensity is adjustable",
+          "Objectives": "The BE-18 series comes with interchangeable objectives mounted in a slider. Magnifications vary from 2.5x to 40x. Working distance varies from 119 mm to 230 mm"
     },
     "inStock": true,
     "featured": true
@@ -1044,96 +1009,51 @@ export const products: Product[] = [
     ],
     "brand": "Euromex",
     "model": "iScope",
-    "image": "",
+    "image": "/images/products/euromex/iscope.png",
     "magnification": "40x - 1000x",
     "eyepiece": "EWF 10x/22 mm",
     "illumination": "3W NeoLED Köhler",
     "application": "Klinik, Riset Medis",
     "description": "Mikroskop laboratorium mutakhir dengan optik E-Plan / Plan IOS dan sistem cerdas iCare sensor.",
     "specs": {
-      "Eyepiece": "EWF 10x/22 mm",
-      "Objectives": "Plan IOS 4x, 10x, S40x, S100x",
-      "Stage": "Rackless 216x150 mm",
-      "Condenser": "Abbe NA 1.25",
-      "Illumination": "3W NeoLED Köhler + iCare"
+          "Eyepieces": "Extended plan wide field EWF 10x/20 mm eyepieces and EWF 10x/22 mm eyepieces with 20 mm field of view and adjustable diopter on the left eyepiece",
+          "Head": "Binocular and trinocular models. Optional tilting head. Multihead and face-to-face dual head systems available",
+          "Nosepiece": "Revolving quintuple reversed nosepiece for max. five objectives",
+          "Objectives": "E-plan, plan and plan phase objectives. E-plan, plan and plan phase IOS objectives",
+          "Stage": "156 x 138 mm stage equipped with integrated 79 x 52 mm mechanical X-Y stage. 187/230 x 140 mm rackless stage equipped with double slide holder and integrated 79 x 52 mm mechanical X-Y stage",
+          "Condenser": "Height adjustable Abbe N.A. 1.25 condenser for brightfield. Cardioid mirror darkfield condenser",
+          "Illumination": "3 W NeoLED™ Köhler illumination. Cardioid mirror darkfield condenser with 5 W NeoLED™ illumination",
+          "Smart Light Control (SLC)": "Automatically remembers the last used illumination intensity for each objective",
+          "iCare sensor": "Energy saving sensor automatically switches off the illumination when the microscope is not used"
     },
     "inStock": true,
     "featured": true,
     "badge": "Lab"
   },
-  {
-    "id": "euromex-achios-x",
-    "name": "Euromex Achios-X Observer",
-    "slug": "euromex-achios-x",
-    "category": [
-      "laboratory"
-    ],
-    "brand": "Euromex",
-    "model": "Achios-X Observer",
-    "image": "",
-    "magnification": "40x - 1000x",
-    "eyepiece": "HWF 10x/22 mm",
-    "illumination": "3W LED / Halogen",
-    "application": "Laboratorium Lanjutan",
-    "description": "Mikroskop Life Science premium dengan bidang pandang ekstra lebar dan desain ergonomis tingkat tinggi.",
-    "specs": {
-      "Eyepiece": "HWF 10x/22 mm",
-      "Objectives": "Plan Phase IOS",
-      "Focusing": "Coaxial coarse/fine",
-      "Stage": "Ceramic coated",
-      "Illumination": "3W LED or 30W Halogen"
-    },
-    "inStock": true,
-    "featured": true
-  },
-  {
-    "id": "euromex-delphi-x-obs",
-    "name": "Euromex Delphi-X Observer",
-    "slug": "euromex-delphi-x-obs",
-    "category": [
-      "laboratory",
-      "clinical"
-    ],
-    "brand": "Euromex",
-    "model": "Delphi-X Observer",
-    "image": "",
-    "magnification": "40x - 1000x",
-    "eyepiece": "SWF 10x/25 mm",
-    "illumination": "3W LED Köhler",
-    "application": "Riset Klinis, Histologi, Sitologi",
-    "description": "Mikroskop kelas atas (State-of-the-Art) dengan objektif Plan Apochromatic dan bidang pandang raksasa 25mm.",
-    "specs": {
-      "Eyepiece": "Super Wide Field 10x/25 mm",
-      "Objectives": "Plan Semi-Apochromatic IOS",
-      "Stage": "Gorilla glass coated",
-      "Condenser": "Swing-out Abbe",
-      "Illumination": "3W LED Köhler"
-    },
-    "inStock": true,
-    "featured": true,
-    "badge": "Premium"
-  },
+
   {
     "id": "euromex-delphi-x-inv",
     "name": "Euromex Delphi-X Inverso",
     "slug": "euromex-delphi-x-inv",
     "category": [
-      "laboratory"
+          "laboratory",
+          "inverted"
     ],
     "brand": "Euromex",
     "model": "Delphi-X Inverso",
-    "image": "",
+    "image": "/images/products/euromex/delphi-xinverso.png",
     "magnification": "40x - 600x",
     "eyepiece": "SWF 10x/22 mm",
     "illumination": "5W LED / 100W Halogen",
     "application": "Kultur Sel, IVF, Life Science",
     "description": "Mikroskop inverted profesional untuk observasi sel hidup dan kultur jaringan pada cawan petri atau flask.",
     "specs": {
-      "Eyepiece": "SWF 10x/22 mm",
-      "Objectives": "Long Working Distance Plan IOS",
-      "Stage": "250x230 mm with inserts",
-      "Condenser": "LWD NA 0.30",
-      "Illumination": "5W LED transmitted"
+          "Eyepieces": "Pair of HWF plan 10x/25 mm or 10x/22 mm eyepieces with diopter adjustment (optional)",
+          "Head": "Trinocular 45° inclined tubes. Interpupillary distance of 47 to 78 mm. Trinocular head with 100-0, 80/20 and 0/100 positions",
+          "Nosepiece": "Revolving sextuple nosepiece on ball-bearings. The nosepiece can be equipped with DIC prisms for the 10x, 20x, 40x and 60x objectives",
+          "Objectives": "High numerical infinity semi-apochromatic long working distance plan phase Fluarex PLPHFi 10x/0.30, 20x/0.45, S40x/0.60 IOS objectives. Optional 4x/0.13 and 60x/0.70 IOS objectives are also available",
+          "Stage": "Stage 340 x 230 mm, equipped with a coaxial mechanical 130 x 85 mm X-Y stage",
+          "Illumination": "5 W LED or 100 W halogen transmitted illumination"
     },
     "inStock": true,
     "featured": true
@@ -1143,22 +1063,28 @@ export const products: Product[] = [
     "name": "Euromex Oxion Inverso",
     "slug": "euromex-oxion-inv",
     "category": [
-      "laboratory"
+          "laboratory",
+          "fluorescence",
+          "inverted"
     ],
     "brand": "Euromex",
     "model": "Oxion Inverso",
-    "image": "",
+    "image": "/images/products/euromex/oxioninverso.png",
     "magnification": "100x - 400x",
     "eyepiece": "DIN WF 10x/22 mm",
     "illumination": "5W LED Phase Contrast",
     "application": "Observasi Sel, Mikrobiologi",
     "description": "Inverted microscope yang kuat dan sangat populer untuk analisis biologi rutin dengan fase kontras.",
     "specs": {
-      "Eyepiece": "WF 10x/22 mm",
-      "Objectives": "LWD Plan Phase IOS",
-      "Stage": "250x230 mm mechanical",
-      "Condenser": "NA 0.30 with phase annuli",
-      "Illumination": "5W LED"
+          "Eyepieces": "Pair of HWF plan 10x/22 mm eyepieces",
+          "Head": "Trinocular 45° inclined tubes with extended low and high positions for eyepieces. One diopter adjustment on left eyepiece. Interpupillary distance of 54 to 75 mm. Trinocular head with 100-0 % and 0-100 % positions",
+          "Nosepiece": "Revolving quintuple nosepiece on ball-bearings",
+          "Objectives": "Infinity color corrected long working distance plan 10x/0.25, 20x/0.40, 40x/0.60 IOS objectives. Optional 60x/0.70 IOS objective is also available",
+          "Objectives For Phase Contrast": "Infinity color corrected long working distance plan phase 10x/0.25, 20x/0.40, 40x/0.60 IOS objectives",
+          "Fluarex Objectives For Brightfield": "Infinity color corrected long working distance plan Fluarex 10x/0.30, 20x/0.45, 40x/0.65 IOS objectives. Optional plan Fluarex 60x/0.75 IOS objective is also available",
+          "Fluarex Objectives For Phase Contrast": "Infinity color corrected long working distance plan Fluarex 10x/0.30 and plan phase Fluarex 20x/0.45 and S40x/0.65 IOS objectives",
+          "Stage": "Stage 250 x 230 mm equipped with a coaxial mechanical 120 x 78 mm X-Y stage",
+          "Illumination": "5 W LED transmitted illumination"
     },
     "inStock": true,
     "featured": true
@@ -1172,18 +1098,21 @@ export const products: Product[] = [
     ],
     "brand": "Euromex",
     "model": "bScope",
-    "image": "",
+    "image": "/images/products/euromex/bscope.png",
     "magnification": "40x - 1000x",
     "eyepiece": "HWF 10x/20 mm",
     "illumination": "3W NeoLED",
     "application": "Veteriner, Biologi Rutin",
     "description": "Mikroskop serbaguna, kokoh, ringan dengan sistem penyimpanan kabel yang pintar.",
     "specs": {
-      "Eyepiece": "HWF 10x/20 mm",
-      "Objectives": "Plan IOS 4x, 10x, 40x, 100x",
-      "Stage": "Rackless mechanical stage",
-      "Focusing": "Coaxial low position",
-      "Illumination": "3W NeoLED Köhler"
+          "Eyepiece(s)": "High wide field HWF 10x/20 mm secured eyepiece(s) with 20 mm field of view",
+          "Head": "Monocular, binocular and trinocular models. Diopter adjustment on both tubes. Trinocular head comes with a Ø 23.2 mm tube",
+          "Nosepiece": "Reversed ball-bearing quadruple or quintuple nosepiece with slot for polarization filter",
+          "Objectives": "E-plan, E-plan IOS and plan IOS objectives. Plan phase IOS objectives",
+          "Focusing": "Double coaxial, low-positioned coarse and fine adjustments with 180 graduations. Precision 1.1 µm, 200 µm per rotation, total travel range is approximately 19 mm. Supplied with an adjustable rack stop. The coarse adjustment is equipped with friction control",
+          "Stage": "Scratch resistant 152/197 x 131 mm stage with integrated 75 x 36 mm rackless mechanical X-Y stage, Vernier scale, soft-close removable specimen holder",
+          "Condenser": "Height adjustable Abbe N.A. 1.25 condenser for brightfield comes with an iris diaphragm and swing-out filter holder. The condenser is color coded",
+          "Illumination": "3 W NeoLED™ adjustable illumination system. Darkfield cardioid condenser with 3 W NeoLED™"
     },
     "inStock": true,
     "featured": true

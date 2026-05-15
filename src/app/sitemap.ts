@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { products } from '@/data/products';
+import { articles } from '@/data/articles';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://jualmikroskop.id';
@@ -8,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     '',
     '/produk',
+    '/mikroskopedia',
     '/tentang',
     '/kontak',
   ].map((route) => ({
@@ -25,5 +27,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...routes, ...productRoutes];
+  // Article pages
+  const articleRoutes = articles.map((article) => ({
+    url: `${baseUrl}/mikroskopedia/${article.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  return [...routes, ...productRoutes, ...articleRoutes];
 }

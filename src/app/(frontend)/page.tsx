@@ -208,6 +208,13 @@ export default async function Home() {
               };
               
               const bgUrl = categoryBackgrounds[cat.slug] || categoryBackgrounds.default;
+              
+              const actualProductCount = products.filter(p => {
+                if (Array.isArray(p.category)) {
+                  return p.category.includes(cat.slug);
+                }
+                return p.category === cat.slug;
+              }).length;
 
               return (
                 <Link
@@ -233,7 +240,7 @@ export default async function Home() {
                     </p>
                     <div className="flex items-center justify-between text-surface-200">
                       <span className="text-xs font-semibold px-2.5 py-1 bg-white/10 rounded-lg backdrop-blur-sm">
-                        {cat.productCount} Produk
+                        {actualProductCount} Produk
                       </span>
                       <ChevronRight className="w-5 h-5 group-hover:translate-x-1 group-hover:text-accent-300 transition-all" />
                     </div>

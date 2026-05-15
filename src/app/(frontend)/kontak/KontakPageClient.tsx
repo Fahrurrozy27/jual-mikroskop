@@ -51,8 +51,6 @@ const procurementFAQ = [
   },
 ];
 
-import { submitLeadAction } from "./actions";
-
 export default function KontakPageClient() {
   const searchParams = useSearchParams();
   const initialProduk = searchParams.get("produk") || "";
@@ -65,39 +63,59 @@ export default function KontakPageClient() {
     setIsSubmitting(true);
     
     const formData = new FormData(e.currentTarget);
-    const result = await submitLeadAction(formData);
+    const name = formData.get("name") as string;
+    const companyName = formData.get("companyName") as string;
+    const email = formData.get("email") as string;
+    const phone = formData.get("phone") as string;
+    const interestedProduct = formData.get("interestedProduct") as string;
+    const unitCount = formData.get("unitCount") as string;
+    const message = formData.get("message") as string;
+
+    const waNumber = "6281290864275";
+    
+    let text = `Halo tim JualMikroskop.id, saya ingin meminta penawaran harga dengan detail berikut:\n\n`;
+    text += `*Nama:* ${name}\n`;
+    if (companyName) text += `*Instansi/Perusahaan:* ${companyName}\n`;
+    text += `*Email:* ${email}\n`;
+    text += `*No. Telp:* ${phone}\n`;
+    text += `*Produk Diminati:* ${interestedProduct}\n`;
+    if (unitCount) text += `*Estimasi Jumlah:* ${unitCount} unit\n`;
+    if (message) text += `\n*Detail Kebutuhan:*\n${message}\n`;
+    
+    const encodedText = encodeURIComponent(text);
+    const waUrl = `https://wa.me/${waNumber}?text=${encodedText}`;
+    
+    // Buka WhatsApp di tab baru
+    window.open(waUrl, "_blank");
     
     setIsSubmitting(false);
-    if (result.success) {
-      setSubmitted(true);
-    } else {
-      alert(result.error);
-    }
+    setSubmitted(true);
   };
 
   return (
     <>
-      {/* Breadcrumb */}
-      <div className="bg-surface-50 border-b border-surface-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-          <nav className="flex items-center gap-2 text-sm text-surface-500">
-            <Link href="/" className="hover:text-primary-600 transition-colors">Beranda</Link>
-            <ChevronRight className="w-3.5 h-3.5" />
-            <span className="text-surface-900 font-medium">Hubungi Kami</span>
+      {/* Hero */}
+      <section className="relative bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800 text-white overflow-hidden">
+        <div className="hero-pattern absolute inset-0" />
+        <div className="absolute top-10 right-10 w-72 h-72 bg-accent-500/10 rounded-full blur-3xl" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+          <nav className="flex items-center gap-2 text-sm text-surface-400 mb-8">
+            <Link href="/" className="hover:text-white transition-colors">Beranda</Link>
+            <span>/</span>
+            <span className="text-white font-medium">Hubungi Kami</span>
           </nav>
-        </div>
-      </div>
-
-      {/* Header */}
-      <section className="bg-white border-b border-surface-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <h1 className="text-3xl md:text-4xl font-extrabold text-primary-950 mb-3">
-            Hubungi Kami
-          </h1>
-          <p className="text-lg text-surface-600 max-w-3xl">
-            Butuh penawaran harga, konsultasi spesifikasi teknis, atau informasi pengadaan?
-            Tim kami siap membantu Anda. Isi form di bawah atau hubungi kami langsung.
-          </p>
+          <div className="max-w-3xl">
+            <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
+              Hubungi{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-400 to-accent-300">
+                Kami
+              </span>
+            </h1>
+            <p className="text-lg text-surface-300 leading-relaxed">
+              Butuh penawaran harga, konsultasi spesifikasi teknis, atau informasi pengadaan?
+              Tim <strong>JualMikroskop<span className="text-accent-500">.id</span></strong> siap membantu Anda. Isi form di bawah atau hubungi kami langsung.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -298,7 +316,7 @@ export default function KontakPageClient() {
                     </div>
                     <div>
                       <p className="text-sm font-semibold text-surface-900">Alamat Kantor</p>
-                      <p className="text-sm text-surface-500">Jl. Raya Laboratorium No. 88, Jakarta Selatan, DKI Jakarta 12345</p>
+                      <p className="text-sm text-surface-500">Jl. Pangeran Sogiri No.135B, Tanah Baru, Kec. Bogor Utara, Kota Bogor, Jawa Barat 16154</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">

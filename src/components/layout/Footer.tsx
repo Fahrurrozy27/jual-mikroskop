@@ -35,6 +35,9 @@ export default function Footer() {
               Indonesia. Melayani kebutuhan alat lab untuk instansi pendidikan,
               rumah sakit, klinik, dan industri.
             </p>
+            <p className="text-sm text-surface-400 leading-relaxed mb-4">
+              Dikelola secara resmi oleh <a href="https://haianlab.com" target="_blank" rel="noopener noreferrer" className="text-accent-400 hover:text-accent-300 transition-colors font-medium">PT. Haian Saintika Eltanindo</a>.
+            </p>
             <div className="flex flex-col gap-2 text-sm text-surface-400">
               <a href="tel:+6281290864275" className="flex items-center gap-2 hover:text-accent-400 transition-colors">
                 <Phone className="w-4 h-4" /> 0812-9086-4275
@@ -42,8 +45,9 @@ export default function Footer() {
               <a href="mailto:info@jualmikroskop.id" className="flex items-center gap-2 hover:text-accent-400 transition-colors">
                 <Mail className="w-4 h-4" /> info@jualmikroskop.id
               </a>
-              <span className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 flex-shrink-0" /> Jl. Raya Laboratorium No. 88, Jakarta Selatan
+              <span className="flex items-start gap-2">
+                <MapPin className="w-4 h-4 flex-shrink-0 mt-0.5" /> 
+                <span>Jl. Pangeran Sogiri No.135B, Tanah Baru, Kec. Bogor Utara, Kota Bogor, Jawa Barat 16154</span>
               </span>
               <span className="flex items-center gap-2">
                 <Clock className="w-4 h-4" /> Senin - Jumat, 08:00 - 17:00 WIB
@@ -100,8 +104,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/produk" className="text-sm text-surface-400 hover:text-accent-400 transition-colors">
-                  Cara Pemesanan
+                <Link href="/mikroskopedia" className="text-sm text-surface-400 hover:text-accent-400 transition-colors">
+                  Mikroskopedia (Blog)
                 </Link>
               </li>
 

@@ -8,7 +8,6 @@ import { products, Product } from "@/data/products";
 import { categories } from "@/data/categories";
 
 const brandLogos = [
-  { id: "Semua", label: "Semua Brand", src: null },
   { id: "Olympus", label: "Olympus/Evident", src: "/images/brands/olympus2.png" },
   { id: "Euromex", label: "Euromex", src: "/images/brands/euromex.png" },
   { id: "Optilab", label: "Optilab (TKDN)", src: "/images/brands/optilab.svg" },
@@ -18,25 +17,26 @@ const brandLogos = [
 ];
 
 export default function FeaturedProducts() {
-  const [selectedBrand, setSelectedBrand] = useState<string>("Semua");
+  const [selectedBrand, setSelectedBrand] = useState<string>("Olympus");
 
-  const [displayProducts, setDisplayProducts] = useState<Product[]>(() => {
-    return products.filter(p => p.featured).slice(0, 4);
-  });
+  const featuredSlugs: Record<string, string[]> = {
+    "olympus": ["olympus-cx23", "olympus-cx33", "olympus-bx43", "olympus-bx63"],
+    "euromex": ["euromex-bioblue", "euromex-stereoblue-edu", "euromex-be-18", "euromex-iscope"],
+    "optilab": ["optilab-iris-2-binocular", "optilab-iris-4-stereo-binocular", "optilab-iris-4-trinocular", "optilab-iris-4-stereo-trinocular"],
+    "b-one": ["bone-btnc-8-4100"],
+    "biobase": ["biobase-szm-45", "biobase-st-20", "biobase-st-40", "biobase-st-60"],
+    "others": ["olympus-ep50", "olympus-dp28", "optilab-advance-plus", "optilab-nvecam"],
+  };
+
+  const getFeaturedProducts = (brand: string): Product[] => {
+    const slugs = featuredSlugs[brand.toLowerCase()] || [];
+    return slugs.map(slug => products.find(p => p.slug === slug)).filter(Boolean) as Product[];
+  };
+
+  const [displayProducts, setDisplayProducts] = useState<Product[]>([]);
 
   useEffect(() => {
-    const filtered = products.filter((p) => {
-      if (!p.featured) return false;
-      if (selectedBrand === "Semua") return true;
-      if (selectedBrand === "Others") {
-        return !["olympus", "euromex", "optilab", "b-one", "biobase"].includes(p.brand.toLowerCase());
-      }
-      return p.brand.toLowerCase() === selectedBrand.toLowerCase();
-    });
-
-    // Randomize the products on client-side
-    const shuffled = [...filtered].sort(() => 0.5 - Math.random());
-    setDisplayProducts(shuffled.slice(0, 4));
+    setDisplayProducts(getFeaturedProducts(selectedBrand));
   }, [selectedBrand]);
 
   return (

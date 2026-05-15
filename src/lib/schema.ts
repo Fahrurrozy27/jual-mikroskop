@@ -12,10 +12,10 @@ export function generateOrganizationSchema() {
       "Distributor dan supplier mikroskop laboratorium terpercaya di Indonesia. Menyediakan mikroskop binokuler, trinokuler, digital, dan stereo untuk kebutuhan pendidikan, riset, dan industri.",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Jl. Raya Laboratorium No. 88",
-      addressLocality: "Jakarta Selatan",
-      addressRegion: "DKI Jakarta",
-      postalCode: "12345",
+      streetAddress: "Jl. Pangeran Sogiri No.135B, Tanah Baru, Kec. Bogor Utara",
+      addressLocality: "Kota Bogor",
+      addressRegion: "Jawa Barat",
+      postalCode: "16154",
       addressCountry: "ID",
     },
     contactPoint: {

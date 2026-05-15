@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import {
   Microscope,
   Star,
@@ -31,12 +31,25 @@ const comparisonData = [
 ];
 
 export default function ProdukPageClient({ initialProducts, initialCategories }: { initialProducts: Product[], initialCategories: Category[] }) {
+  const router = useRouter();
+  const pathname = usePathname();
   const searchParams = useSearchParams();
-  const initialKategori = searchParams.get("kategori") || "semua";
-  const [activeCategory, setActiveCategory] = useState(initialKategori);
-  const [activeBrand, setActiveBrand] = useState("semua");
+  
+  const activeCategory = searchParams.get("kategori") || "semua";
+  const activeBrand = searchParams.get("brand") || "semua";
+  
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
   const [showMobileFilter, setShowMobileFilter] = useState(false);
+
+  const updateFilter = (key: string, value: string) => {
+    const current = new URLSearchParams(Array.from(searchParams.entries()));
+    if (value === "semua") {
+      current.delete(key);
+    } else {
+      current.set(key, value);
+    }
+    router.push(`${pathname}?${current.toString()}`, { scroll: false });
+  };
 
   const brandsList = ["Olympus/Evident", "Euromex", "Optilab", "B-ONE", "Biobase", "Others"];
 
@@ -64,28 +77,29 @@ export default function ProdukPageClient({ initialProducts, initialCategories }:
 
   return (
     <>
-      {/* Breadcrumb */}
-      <div className="bg-surface-50 border-b border-surface-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-          <nav className="flex items-center gap-2 text-sm text-surface-500">
-            <Link href="/" className="hover:text-primary-600 transition-colors">Beranda</Link>
-            <ChevronRight className="w-3.5 h-3.5" />
-            <span className="text-surface-900 font-medium">Produk Mikroskop</span>
+      {/* Hero */}
+      <section className="relative bg-gradient-to-br from-primary-950 via-primary-900 to-primary-800 text-white overflow-hidden">
+        <div className="hero-pattern absolute inset-0" />
+        <div className="absolute top-10 right-10 w-72 h-72 bg-accent-500/10 rounded-full blur-3xl" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+          <nav className="flex items-center gap-2 text-sm text-surface-400 mb-8">
+            <Link href="/" className="hover:text-white transition-colors">Beranda</Link>
+            <span>/</span>
+            <span className="text-white font-medium">Produk Mikroskop</span>
           </nav>
-        </div>
-      </div>
-
-      {/* SEO Header */}
-      <section className="bg-white border-b border-surface-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <h1 className="text-3xl md:text-4xl font-extrabold text-primary-950 mb-3">
-            Jual Mikroskop Laboratorium
-          </h1>
-          <p className="text-lg text-surface-600 max-w-3xl leading-relaxed">
-            Temukan mikroskop laboratorium berkualitas tinggi untuk kebutuhan pendidikan, riset, klinik, dan industri.
-            Semua produk dilengkapi garansi resmi, sertifikat kalibrasi, dan dukungan teknis profesional.
-            Tersedia pengiriman ke seluruh Indonesia dengan penerbitan faktur pajak.
-          </p>
+          <div className="max-w-3xl">
+            <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
+              Jual Mikroskop{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-400 to-accent-300">
+                Laboratorium
+              </span>
+            </h1>
+            <p className="text-lg text-surface-300 leading-relaxed">
+              Temukan mikroskop laboratorium berkualitas tinggi untuk kebutuhan pendidikan, riset, klinik, dan industri.
+              Semua produk dilengkapi garansi resmi, sertifikat kalibrasi, dan dukungan teknis profesional.
+              Tersedia pengiriman ke seluruh Indonesia dengan penerbitan faktur pajak.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -101,7 +115,7 @@ export default function ProdukPageClient({ initialProducts, initialCategories }:
                 </h3>
                 <div className="space-y-1 max-h-60 overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-surface-200 scrollbar-track-transparent">
                   <button
-                    onClick={() => setActiveCategory("semua")}
+                    onClick={() => updateFilter("kategori", "semua")}
                     className={`w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
                       activeCategory === "semua"
                         ? "bg-primary-50 text-primary-700 border border-primary-200"
@@ -119,7 +133,7 @@ export default function ProdukPageClient({ initialProducts, initialCategories }:
                     return (
                       <button
                         key={cat.id}
-                        onClick={() => setActiveCategory(cat.id)}
+                        onClick={() => updateFilter("kategori", cat.id)}
                         className={`w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
                           activeCategory === cat.id
                             ? "bg-primary-50 text-primary-700 border border-primary-200"
@@ -143,7 +157,7 @@ export default function ProdukPageClient({ initialProducts, initialCategories }:
                   </h3>
                   <div className="space-y-1">
                     <button
-                      onClick={() => setActiveBrand("semua")}
+                      onClick={() => updateFilter("brand", "semua")}
                       className={`w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
                         activeBrand === "semua"
                           ? "bg-primary-50 text-primary-700 border border-primary-200"
@@ -158,7 +172,7 @@ export default function ProdukPageClient({ initialProducts, initialCategories }:
                     {brandsList.map((brand) => (
                       <button
                         key={brand}
-                        onClick={() => setActiveBrand(brand)}
+                        onClick={() => updateFilter("brand", brand)}
                         className={`w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
                           activeBrand === brand
                             ? "bg-primary-50 text-primary-700 border border-primary-200"
@@ -210,7 +224,7 @@ export default function ProdukPageClient({ initialProducts, initialCategories }:
                   </div>
                   <div className="space-y-2">
                     <button
-                      onClick={() => { setActiveCategory("semua"); setShowMobileFilter(false); }}
+                      onClick={() => { updateFilter("kategori", "semua"); setShowMobileFilter(false); }}
                       className={`w-full text-left px-4 py-3 rounded-xl text-base font-medium ${activeCategory === "semua" ? "bg-primary-50 text-primary-700 border border-primary-200" : "text-surface-600"}`}
                     >
                       Semua Mikroskop ({initialProducts.length})
@@ -218,7 +232,7 @@ export default function ProdukPageClient({ initialProducts, initialCategories }:
                     {initialCategories.map((cat) => (
                       <button
                         key={cat.id}
-                        onClick={() => { setActiveCategory(cat.id); setShowMobileFilter(false); }}
+                        onClick={() => { updateFilter("kategori", cat.id); setShowMobileFilter(false); }}
                         className={`w-full text-left px-4 py-3 rounded-xl text-base font-medium ${activeCategory === cat.id ? "bg-primary-50 text-primary-700 border border-primary-200" : "text-surface-600"}`}
                       >
                         {cat.name} ({initialProducts.filter((p) => Array.isArray(p.category) ? p.category.includes(cat.id) : p.category === cat.id).length})
@@ -230,7 +244,7 @@ export default function ProdukPageClient({ initialProducts, initialCategories }:
                     <h3 className="text-base font-bold mb-4">Brand / Merek</h3>
                     <div className="space-y-2">
                       <button
-                        onClick={() => { setActiveBrand("semua"); setShowMobileFilter(false); }}
+                        onClick={() => { updateFilter("brand", "semua"); setShowMobileFilter(false); }}
                         className={`w-full text-left px-4 py-3 rounded-xl text-base font-medium ${activeBrand === "semua" ? "bg-primary-50 text-primary-700 border border-primary-200" : "text-surface-600"}`}
                       >
                         Semua Brand
@@ -238,7 +252,7 @@ export default function ProdukPageClient({ initialProducts, initialCategories }:
                       {brandsList.map((brand) => (
                         <button
                           key={brand}
-                          onClick={() => { setActiveBrand(brand); setShowMobileFilter(false); }}
+                          onClick={() => { updateFilter("brand", brand); setShowMobileFilter(false); }}
                           className={`w-full text-left px-4 py-3 rounded-xl text-base font-medium ${activeBrand === brand ? "bg-primary-50 text-primary-700 border border-primary-200" : "text-surface-600"}`}
                         >
                           {brand}

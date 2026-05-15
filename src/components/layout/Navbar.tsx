@@ -9,6 +9,7 @@ import {
   Phone,
   MessageCircle,
   ChevronDown,
+  BookOpen,
 } from "lucide-react";
 
 const navigation = [
@@ -28,6 +29,7 @@ const navigation = [
   },
   { name: "Tentang Kami", href: "/tentang" },
   { name: "Kontak", href: "/kontak" },
+  { name: "Mikroskopedia", href: "/mikroskopedia", highlight: false },
 ];
 
 export default function Navbar() {
@@ -86,6 +88,19 @@ export default function Navbar() {
                     </div>
                   )}
                 </div>
+              ) : item.highlight ? (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="group relative flex items-center gap-1.5 px-4 py-2 text-sm font-bold text-accent-600 hover:text-accent-700 bg-accent-50/50 hover:bg-accent-100 rounded-lg transition-all overflow-hidden"
+                >
+                  <BookOpen className="w-4 h-4 text-accent-500" />
+                  {item.name}
+                  <span className="absolute top-1.5 right-1.5 flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-500"></span>
+                  </span>
+                </Link>
               ) : (
                 <Link
                   key={item.name}
@@ -139,10 +154,18 @@ export default function Navbar() {
                 <div key={item.name}>
                   <Link
                     href={item.href}
-                    className="block px-4 py-3 text-base font-medium text-surface-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors"
+                    className={`block px-4 py-3 text-base font-medium rounded-lg transition-colors ${
+                      item.highlight 
+                        ? 'text-accent-700 bg-accent-50 hover:bg-accent-100 flex items-center gap-2 border border-accent-100' 
+                        : 'text-surface-700 hover:text-primary-600 hover:bg-primary-50'
+                    }`}
                     onClick={() => setMobileOpen(false)}
                   >
+                    {item.highlight && <BookOpen className="w-5 h-5 text-accent-500" />}
                     {item.name}
+                    {item.highlight && (
+                      <span className="ml-auto px-2 py-0.5 text-[10px] font-bold bg-gradient-to-r from-accent-500 to-accent-600 text-white rounded-md shadow-sm">NEW</span>
+                    )}
                   </Link>
                   {item.children && (
                     <div className="pl-6">

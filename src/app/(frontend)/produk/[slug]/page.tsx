@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { products } from "@/data/products";
 import { categories } from "@/data/categories";
+import { articles } from "@/data/articles";
 import ProductDetailClient from "./ProductDetailClient";
 
 interface Props {
@@ -85,13 +86,32 @@ export default async function ProductDetailPage({ params }: Props) {
     }
   };
 
+  // Calculate Related Articles (SILO logic)
+  const productTags = product.tags || [];
+  let relatedArticles = articles
+    .filter((article) => {
+      const hasMatchingTag = article.tags.some((tag) => productTags.includes(tag));
+      const hasMatchingCategory = Array.isArray(product.category) 
+        ? product.category.some(c => article.category.toLowerCase().includes(c.toLowerCase()))
+        : article.category.toLowerCase().includes(product.category.toLowerCase());
+      
+      return hasMatchingTag || hasMatchingCategory;
+    });
+
+  // Fallback: If no strict match, just show the latest 3 articles
+  if (relatedArticles.length === 0) {
+    relatedArticles = articles;
+  }
+  
+  relatedArticles = relatedArticles.slice(0, 3);
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <ProductDetailClient product={product} category={category} />
+      <ProductDetailClient product={product} category={category} relatedArticles={relatedArticles} />
     </>
   );
 }
