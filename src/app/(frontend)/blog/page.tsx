@@ -15,21 +15,21 @@ import Image from "next/image";
 import { articles } from "@/data/articles";
 import ArticleListClient from "./ArticleListClient";
 export const metadata: Metadata = {
-  title: "Mikroskopedia - Pusat Edukasi & Artikel Mikroskop | JualMikroskop.id",
+  title: "Blog Mikroskopedia - Pusat Edukasi & Artikel Mikroskop | JualMikroskop.id",
   description:
-    "Pelajari segala hal tentang mikroskop, mulai dari tutorial penggunaan, tips perawatan, hingga perkembangan teknologi mikroskop terbaru di Mikroskopedia.",
+    "Pelajari segala hal tentang mikroskop, mulai dari tutorial penggunaan, tips perawatan, hingga perkembangan teknologi mikroskop terbaru di Blog Mikroskopedia.",
   openGraph: {
-    title: "Mikroskopedia - Pusat Edukasi & Artikel Mikroskop",
+    title: "Blog Mikroskopedia - Pusat Edukasi & Artikel Mikroskop",
     description:
       "Temukan panduan lengkap, tips praktis, dan artikel edukatif seputar mikroskop laboratorium, mikroskop stereo, hingga mikroskop digital.",
-    url: "https://jualmikroskop.id/mikroskopedia",
+    url: "https://jualmikroskop.id/blog",
     siteName: "JualMikroskop.id",
     images: [
       {
         url: "https://jualmikroskop.id/images/og-mikroskopedia.jpg", // Placeholder
         width: 1200,
         height: 630,
-        alt: "Mikroskopedia - Edukasi Mikroskop",
+        alt: "Blog Mikroskopedia - Edukasi Mikroskop",
       },
     ],
     locale: "id_ID",

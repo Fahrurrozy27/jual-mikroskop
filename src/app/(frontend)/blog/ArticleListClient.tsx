@@ -93,7 +93,7 @@ export default function ArticleListClient({ initialArticles }: { initialArticles
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {displayedArticles.map((article, idx) => (
                 <Link
-                  href={`/mikroskopedia/${article.slug}`}
+                  href={`/blog/${article.slug}`}
                   key={article.id}
                   className="group flex flex-col bg-white border border-surface-200 rounded-2xl overflow-hidden hover:border-primary-300 hover:shadow-xl hover:shadow-primary-500/10 transition-all duration-300 animate-fade-in-up"
                   style={{ animationDelay: `${idx * 50}ms` }}

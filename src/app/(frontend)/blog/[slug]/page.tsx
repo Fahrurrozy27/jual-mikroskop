@@ -26,12 +26,12 @@ export async function generateMetadata({
 
   if (!article) {
     return {
-      title: "Artikel Tidak Ditemukan | Mikroskopedia",
+      title: "Artikel Tidak Ditemukan | Blog Mikroskopedia",
     };
   }
 
   return {
-    title: `${article.title} | Mikroskopedia`,
+    title: `${article.title} | Blog Mikroskopedia`,
     description: article.excerpt,
     openGraph: {
       title: article.title,
@@ -39,7 +39,7 @@ export async function generateMetadata({
       type: "article",
       authors: [article.author.name],
       publishedTime: article.date,
-      url: `https://jualmikroskop.id/mikroskopedia/${article.slug}`,
+      url: `https://jualmikroskop.id/blog/${article.slug}`,
       images: [
         {
           url: `https://jualmikroskop.id${article.image}`,
@@ -131,7 +131,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           <nav className="flex items-center gap-2 text-sm text-surface-500 mb-8 overflow-x-auto whitespace-nowrap pb-2">
             <Link href="/" className="hover:text-primary-600 transition-colors">Beranda</Link>
             <ChevronRight className="w-4 h-4 flex-shrink-0" />
-            <Link href="/mikroskopedia" className="hover:text-primary-600 transition-colors">Mikroskopedia</Link>
+            <Link href="/blog" className="hover:text-primary-600 transition-colors">Blog</Link>
             <ChevronRight className="w-4 h-4 flex-shrink-0" />
             <span className="text-surface-900 font-medium truncate">{article.title}</span>
           </nav>
@@ -277,8 +277,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           </div>
           
           <div className="mt-12 text-center">
-             <Link href="/mikroskopedia" className="inline-flex items-center gap-2 text-surface-500 hover:text-primary-600 font-medium transition-colors">
-               <ArrowLeft className="w-4 h-4" /> Kembali ke Mikroskopedia
+             <Link href="/blog" className="inline-flex items-center gap-2 text-surface-500 hover:text-primary-600 font-medium transition-colors">
+               <ArrowLeft className="w-4 h-4" /> Kembali ke Blog
              </Link>
           </div>
         </div>

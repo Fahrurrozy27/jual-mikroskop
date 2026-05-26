@@ -104,8 +104,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/mikroskopedia" className="text-sm text-surface-400 hover:text-accent-400 transition-colors">
-                  Mikroskopedia (Blog)
+                <Link href="/blog" className="text-sm text-surface-400 hover:text-accent-400 transition-colors">
+                  Blog Mikroskopedia
                 </Link>
               </li>
 

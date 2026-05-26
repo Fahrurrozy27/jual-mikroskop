@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     '',
     '/produk',
-    '/mikroskopedia',
+    '/blog',
     '/tentang',
     '/kontak',
   ].map((route) => ({
@@ -29,7 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Article pages
   const articleRoutes = articles.map((article) => ({
-    url: `${baseUrl}/mikroskopedia/${article.slug}`,
+    url: `${baseUrl}/blog/${article.slug}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
     priority: 0.7,

@@ -253,7 +253,7 @@ export default function ProductDetailClient({ product, category, relatedArticles
                       <div className="flex flex-col gap-4">
                         {relatedArticles.map((article) => (
                           <Link
-                            href={`/mikroskopedia/${article.slug}`}
+                            href={`/blog/${article.slug}`}
                             key={article.id}
                             className="group flex gap-3 p-3 bg-white border border-surface-200 rounded-xl hover:border-primary-300 hover:shadow-md transition-all"
                           >
