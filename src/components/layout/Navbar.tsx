@@ -30,7 +30,7 @@ const navigation = [
   },
   { name: "Tentang Kami", href: "/tentang" },
   { name: "Kontak", href: "/kontak" },
-  { name: "Blog", href: "/blog", highlight: false },
+  { name: "Mikroskopedia", href: "/blog", highlight: false },
 ];
 
 export default function Navbar() {
