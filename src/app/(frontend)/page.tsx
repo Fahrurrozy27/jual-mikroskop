@@ -21,6 +21,7 @@ import {
   Diamond,
   FlipVertical,
 } from "lucide-react";
+import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 import { categories } from "@/data/categories";
 import { products } from "@/data/products";
 import FeaturedProducts from "@/components/FeaturedProducts";
@@ -74,13 +75,13 @@ const audiences = [
 ];
 
 const row1Logos = [
-  "brin.png", "inalum.png", "indo-ethanol.png", "itb.jpg", "jbcocoa.png", "klinik-citra.png"
+  "brin.webp", "inalum.webp", "indo-ethanol.webp", "itb.webp", "jbcocoa.webp", "klinik-citra.webp"
 ];
 const row2Logos = [
-  "krakatau-water.png", "lh-papua.png", "patra-sk.png", "pdam-tirta-giri-nata.png", "playfield.png", "pln.png", "qbic.png"
+  "krakatau-water.webp", "lh-papua.webp", "patra-sk.webp", "pdam-tirta-giri-nata.webp", "playfield.webp", "pln.webp", "qbic.webp"
 ];
 const row3Logos = [
-  "rs-bali-royal.png", "rs-estomihi.jpg", "rs-hastien.png", "rsud-arrozy.png", "samator.png", "ut.png"
+  "rs-bali-royal.webp", "rs-estomihi.webp", "rs-hastien.webp", "rsud-arrozy.webp", "samator.webp", "ut.webp"
 ];
 
 export default async function Home() {
@@ -188,23 +189,23 @@ export default async function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 stagger-children">
             {categories.map((cat) => {
               const categoryBackgrounds: Record<string, string> = {
-                student: "/images/categories/student.png",
-                edukasi: "/images/categories/student.png",
-                laboratory: "/images/categories/laboratory.png",
-                laboratorium: "/images/categories/laboratory.png",
-                stereo: "/images/categories/digital.png",
-                "stereo-zoom": "/images/categories/digital.png",
-                digital: "/images/categories/bacteria.png",
-                lcd: "/images/categories/bacteria.png",
-                "digital-lcd": "/images/categories/bacteria.png",
-                metallurgical: "/images/categories/metallurgical.png",
-                metalurgi: "/images/categories/metallurgical.png",
-                polarizing: "/images/categories/polarizing.png",
-                polarisasi: "/images/categories/polarizing.png",
-                fluorescent: "/images/categories/fluorescent.png",
-                fluorescence: "/images/categories/fluorescent.png",
-                inverted: "/images/categories/inverted.png",
-                default: "/images/categories/laboratory.png",
+                student: "/images/categories/student.webp",
+                edukasi: "/images/categories/student.webp",
+                laboratory: "/images/categories/laboratory.webp",
+                laboratorium: "/images/categories/laboratory.webp",
+                stereo: "/images/categories/digital.webp",
+                "stereo-zoom": "/images/categories/digital.webp",
+                digital: "/images/categories/bacteria.webp",
+                lcd: "/images/categories/bacteria.webp",
+                "digital-lcd": "/images/categories/bacteria.webp",
+                metallurgical: "/images/categories/metallurgical.webp",
+                metalurgi: "/images/categories/metallurgical.webp",
+                polarizing: "/images/categories/polarizing.webp",
+                polarisasi: "/images/categories/polarizing.webp",
+                fluorescent: "/images/categories/fluorescent.webp",
+                fluorescence: "/images/categories/fluorescent.webp",
+                inverted: "/images/categories/inverted.webp",
+                default: "/images/categories/laboratory.webp",
               };
               
               const bgUrl = categoryBackgrounds[cat.slug] || categoryBackgrounds.default;
@@ -364,11 +365,10 @@ export default async function Home() {
               <ArrowRight className="w-5 h-5" />
             </Link>
             <a
-              href="https://wa.me/6281290864275?text=Halo,%20saya%20ingin%20konsultasi%20pengadaan%20mikroskop%20untuk%20laboratorium"
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`/terimakasih?redirect=${encodeURIComponent("https://wa.me/6281290864275?text=Halo,%20saya%20ingin%20konsultasi%20pengadaan%20mikroskop%20untuk%20laboratorium")}`}
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl border border-white/20 transition-all text-base"
             >
+              <WhatsAppIcon className="w-5 h-5 text-green-400" />
               Konsultasi via WhatsApp
             </a>
           </div>

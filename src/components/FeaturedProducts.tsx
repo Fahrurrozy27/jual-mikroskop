@@ -8,10 +8,10 @@ import { products, Product } from "@/data/products";
 import { categories } from "@/data/categories";
 
 const brandLogos = [
-  { id: "Olympus", label: "Olympus/Evident", src: "/images/brands/olympus2.png" },
-  { id: "Euromex", label: "Euromex", src: "/images/brands/euromex.png" },
+  { id: "Olympus", label: "Olympus/Evident", src: "/images/brands/olympus2.webp" },
+  { id: "Euromex", label: "Euromex", src: "/images/brands/euromex.webp" },
   { id: "Optilab", label: "Optilab (TKDN)", src: "/images/brands/optilab.svg" },
-  { id: "B-ONE", label: "B-ONE", src: "/images/brands/bone.png" },
+  { id: "B-ONE", label: "B-ONE", src: "/images/brands/bone.webp" },
   { id: "Biobase", label: "Biobase", src: "/images/brands/logo-biobase.webp" },
   { id: "Others", label: "Others", src: null },
 ];

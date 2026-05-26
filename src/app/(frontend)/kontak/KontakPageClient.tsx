@@ -18,6 +18,7 @@ import {
   ChevronDown,
   ChevronUp,
 } from "lucide-react";
+import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 
 const productOptions = [
   "Mikroskop Edukasi / Student",
@@ -85,11 +86,8 @@ export default function KontakPageClient() {
     const encodedText = encodeURIComponent(text);
     const waUrl = `https://wa.me/${waNumber}?text=${encodedText}`;
     
-    // Buka WhatsApp di tab baru
-    window.open(waUrl, "_blank");
-    
     setIsSubmitting(false);
-    setSubmitted(true);
+    window.location.href = `/terimakasih?redirect=${encodeURIComponent(waUrl)}`;
   };
 
   return (
@@ -282,9 +280,9 @@ export default function KontakPageClient() {
               <div className="bg-white rounded-2xl border border-surface-200 p-6 shadow-sm">
                 <h3 className="text-lg font-bold text-surface-900 mb-5">Kontak Langsung</h3>
                 <div className="space-y-4">
-                  <a href="https://wa.me/6281290864275" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 group">
+                  <a href={`/terimakasih?redirect=${encodeURIComponent("https://wa.me/6281290864275")}`} className="flex items-start gap-3 group">
                     <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-green-200 transition-colors">
-                      <MessageCircle className="w-5 h-5 text-green-600" />
+                      <WhatsAppIcon className="w-5 h-5 text-green-600" />
                     </div>
                     <div>
                       <p className="text-sm font-semibold text-surface-900 group-hover:text-green-700 transition-colors">WhatsApp</p>

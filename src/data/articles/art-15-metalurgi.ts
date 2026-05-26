@@ -8,7 +8,7 @@ export const article15: Article = {
   category: "Studi Kasus Lab",
   date: "09 Juni 2024",
   readTime: "6 min read",
-  image: "/images/articles/microscope-15.png",
+  image: "/images/articles/microscope-15.webp",
   author: { 
     name: "Evans Abqoury", 
     role: "Optics & Microscope Tech Consultant", 

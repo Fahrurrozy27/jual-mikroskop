@@ -5,7 +5,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
 import { generateOrganizationSchema, generateWebSiteSchema } from "@/lib/schema";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -97,11 +97,22 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col bg-white text-surface-900 font-sans">
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-P6877GRB"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
+
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
         <WhatsAppButton />
         <GoogleAnalytics gaId="G-XXXXXXXXXX" />
+        <GoogleTagManager gtmId="GTM-P6877GRB" />
       </body>
     </html>
   );

@@ -8,7 +8,7 @@ export const article1: Article = {
   category: "Tutorial Penggunaan",
   date: "10 Mei 2024",
   readTime: "8 min read",
-  image: "/images/articles/microscope-1.png",
+  image: "/images/articles/microscope-1.webp",
   author: { 
     name: "Evans Abqoury", 
     role: "Optics & Microscope Tech Consultant", 

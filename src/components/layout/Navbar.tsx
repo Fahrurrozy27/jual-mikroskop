@@ -11,6 +11,7 @@ import {
   ChevronDown,
   BookOpen,
 } from "lucide-react";
+import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 
 const navigation = [
   { name: "Beranda", href: "/" },
@@ -116,12 +117,10 @@ export default function Navbar() {
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-3">
             <a
-              href="https://wa.me/6281290864275?text=Halo,%20saya%20ingin%20bertanya%20tentang%20produk%20mikroskop"
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`/terimakasih?redirect=${encodeURIComponent("https://wa.me/6281290864275?text=Halo,%20saya%20ingin%20bertanya%20tentang%20produk%20mikroskop")}`}
               className="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-accent-700 bg-accent-50 hover:bg-accent-100 rounded-lg border border-accent-200 transition-all hover:shadow-md"
             >
-              <MessageCircle className="w-4 h-4" />
+              <WhatsAppIcon className="w-4 h-4 text-green-600" />
               WhatsApp
             </a>
             <Link
@@ -186,12 +185,10 @@ export default function Navbar() {
             </div>
             <div className="mt-4 pt-4 border-t border-surface-200 flex flex-col gap-3 px-4">
               <a
-                href="https://wa.me/6281290864275"
-                target="_blank"
-                rel="noopener noreferrer"
+                href={`/terimakasih?redirect=${encodeURIComponent("https://wa.me/6281290864275")}`}
                 className="flex items-center justify-center gap-2 px-4 py-3 text-sm font-semibold text-accent-700 bg-accent-50 rounded-lg border border-accent-200"
               >
-                <MessageCircle className="w-4 h-4" />
+                <WhatsAppIcon className="w-4 h-4 text-green-600" />
                 Hubungi via WhatsApp
               </a>
               <Link
