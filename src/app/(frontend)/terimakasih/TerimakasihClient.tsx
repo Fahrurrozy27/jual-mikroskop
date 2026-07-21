@@ -6,7 +6,7 @@ import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 
 export default function TerimakasihClient() {
   const searchParams = useSearchParams();
-  const [countdown, setCountdown] = useState(1);
+  const [countdown, setCountdown] = useState(3);
   const [redirectUrl, setRedirectUrl] = useState("");
 
   useEffect(() => {
@@ -16,7 +16,18 @@ export default function TerimakasihClient() {
     const targetUrl = paramUrl ? decodeURIComponent(paramUrl) : defaultUrl;
     setRedirectUrl(targetUrl);
 
-    // Countdown interval (1s)
+    // Push a custom dataLayer event so GTM can fire conversion tags reliably
+    if (typeof window !== "undefined") {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const dl = ((window as any).dataLayer = (window as any).dataLayer || []);
+      dl.push({
+        event: "thankyou_page_view",
+        page_path: "/terimakasih",
+        redirect_url: targetUrl,
+      });
+    }
+
+    // Countdown interval (every 1s, counting down from 3)
     const interval = setInterval(() => {
       setCountdown((prev) => {
         if (prev <= 1) {
@@ -27,11 +38,12 @@ export default function TerimakasihClient() {
       });
     }, 1000);
 
-    // Timeout to redirect after 1 second (1000ms)
+
+    // Redirect after 3 seconds — gives GTM enough time to fully load,
+    // evaluate triggers, fire the conversion tag, and send the data
     const timeout = setTimeout(() => {
-      // Use replace so they don't get stuck in a back-button loop
       window.location.replace(targetUrl);
-    }, 1000);
+    }, 3000);
 
     return () => {
       clearInterval(interval);
@@ -60,8 +72,13 @@ export default function TerimakasihClient() {
           Terima Kasih!
         </h1>
         
-        <p className="text-base text-surface-600 font-medium mb-8 leading-relaxed max-w-sm">
+        <p className="text-base text-surface-600 font-medium mb-2 leading-relaxed max-w-sm">
           Menghubungkan Anda ke WhatsApp resmi kami...
+        </p>
+
+        {/* Visible countdown */}
+        <p className="text-sm text-surface-500 mb-8">
+          Dialihkan dalam <span className="font-bold text-green-600">{countdown}</span> detik
         </p>
 
         {/* Fallback & active redirection button */}
@@ -75,10 +92,11 @@ export default function TerimakasihClient() {
 
         {/* Tiny hint */}
         <p className="text-xs text-surface-400 mt-4">
-          Jika tidak teralihkan otomatis dalam 1 detik, silakan klik tombol di atas.
+          Jika tidak teralihkan otomatis, silakan klik tombol di atas.
         </p>
 
       </div>
     </div>
   );
 }
+
