@@ -19,6 +19,7 @@ import {
   ChevronUp,
 } from "lucide-react";
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
+import FullPageLink from "@/components/ui/FullPageLink";
 
 const productOptions = [
   "Mikroskop Edukasi / Student",
@@ -280,7 +281,7 @@ export default function KontakPageClient() {
               <div className="bg-white rounded-2xl border border-surface-200 p-6 shadow-sm">
                 <h3 className="text-lg font-bold text-surface-900 mb-5">Kontak Langsung</h3>
                 <div className="space-y-4">
-                  <a href={`/terimakasih?redirect=${encodeURIComponent("https://wa.me/6281290864275")}`} className="flex items-start gap-3 group">
+                  <FullPageLink href={`/terimakasih?redirect=${encodeURIComponent("https://wa.me/6281290864275")}`} className="flex items-start gap-3 group">
                     <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-green-200 transition-colors">
                       <WhatsAppIcon className="w-5 h-5 text-green-600" />
                     </div>
@@ -289,7 +290,7 @@ export default function KontakPageClient() {
                       <p className="text-sm text-surface-500">0812-9086-4275</p>
                       <p className="text-xs text-green-600 font-medium">Online — Respon cepat</p>
                     </div>
-                  </a>
+                  </FullPageLink>
                   <a href="tel:+6281290864275" className="flex items-start gap-3 group">
                     <div className="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-primary-200 transition-colors">
                       <Phone className="w-5 h-5 text-primary-600" />

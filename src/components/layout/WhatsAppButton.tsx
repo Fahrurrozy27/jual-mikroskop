@@ -1,13 +1,14 @@
 "use client";
 
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
+import FullPageLink from "@/components/ui/FullPageLink";
 
 export default function WhatsAppButton() {
   const waUrl = "https://wa.me/6281290864275?text=Halo,%20saya%20tertarik%20dengan%20produk%20mikroskop%20di%20JualMikroskop.id";
   const redirectUrl = `/terimakasih?redirect=${encodeURIComponent(waUrl)}`;
 
   return (
-    <a
+    <FullPageLink
       href={redirectUrl}
       className="fixed bottom-6 right-6 z-50 group"
       aria-label="Hubungi kami via WhatsApp"
@@ -25,6 +26,7 @@ export default function WhatsAppButton() {
           <div className="absolute top-full right-4 border-4 border-transparent border-t-surface-800" />
         </div>
       </div>
-    </a>
+    </FullPageLink>
   );
 }
+

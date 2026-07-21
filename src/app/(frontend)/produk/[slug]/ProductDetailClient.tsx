@@ -17,6 +17,7 @@ import {
   ArrowRight
 } from "lucide-react";
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
+import FullPageLink from "@/components/ui/FullPageLink";
 import { Product } from "@/data/products";
 import { Category } from "@/data/categories";
 import { Article } from "@/data/types";
@@ -173,13 +174,13 @@ export default function ProductDetailClient({ product, category, relatedArticles
                   <FileText className="w-5 h-5" />
                   Minta Penawaran B2B
                 </Link>
-                <a
+                <FullPageLink
                   href={`/terimakasih?redirect=${encodeURIComponent(`https://wa.me/6281290864275?text=Halo,%20saya%20tertarik%20dengan%20${encodeURIComponent(product.name)}%20(${product.model})`)}`}
                   className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-green-50 hover:bg-green-100 text-green-700 text-base font-bold rounded-xl border border-green-200 transition-colors"
                 >
                   <WhatsAppIcon className="w-5 h-5 text-green-600" />
                   Konsultasi via WA
-                </a>
+                </FullPageLink>
               </div>
 
               {/* Quick Trust Signals */}

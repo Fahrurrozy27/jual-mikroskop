@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, Clock, Calendar, ChevronRight, Microscope } from "lucide-react";
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
+import FullPageLink from "@/components/ui/FullPageLink";
 import { articles } from "@/data/articles";
 import { products } from "@/data/products";
 import TableOfContents from "./TableOfContents";
@@ -227,13 +228,13 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                   <p className="text-sm text-surface-300 mb-6 leading-relaxed">
                     Jangan ambil risiko dalam pengadaan atau perbaikan alat vital lab Anda. Konsultasikan langsung dengan {article.author.name} dan tim teknis kami.
                   </p>
-                  <a
+                  <FullPageLink
                     href={`/terimakasih?redirect=${encodeURIComponent("https://wa.me/6281290864275")}`}
                     className="flex items-center justify-center gap-2 w-full py-3 bg-accent-500 hover:bg-accent-600 text-white text-sm font-bold rounded-xl transition-colors"
                   >
                     <WhatsAppIcon className="w-5 h-5 text-white" />
                     Konsultasi via WhatsApp
-                  </a>
+                  </FullPageLink>
                 </div>
               </div>
 

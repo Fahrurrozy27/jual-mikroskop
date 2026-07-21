@@ -22,6 +22,7 @@ import {
   FlipVertical,
 } from "lucide-react";
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
+import FullPageLink from "@/components/ui/FullPageLink";
 import { categories } from "@/data/categories";
 import { products } from "@/data/products";
 import FeaturedProducts from "@/components/FeaturedProducts";
@@ -364,13 +365,13 @@ export default async function Home() {
               Minta Penawaran Sekarang
               <ArrowRight className="w-5 h-5" />
             </Link>
-            <a
+            <FullPageLink
               href={`/terimakasih?redirect=${encodeURIComponent("https://wa.me/6281290864275?text=Halo,%20saya%20ingin%20konsultasi%20pengadaan%20mikroskop%20untuk%20laboratorium")}`}
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl border border-white/20 transition-all text-base"
             >
               <WhatsAppIcon className="w-5 h-5 text-green-400" />
               Konsultasi via WhatsApp
-            </a>
+            </FullPageLink>
           </div>
         </div>
       </section>
